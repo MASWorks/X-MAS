@@ -35,7 +35,7 @@ def deduplicate(data_list):
 
 # load MATH dataset
 if args.dataset_name == "MATH":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/MATH"
+    load_dataset_path = "your_path/datasets/MATH"
     dataset = load_dataset(load_dataset_path, "all", split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     data_list = [
@@ -52,7 +52,7 @@ if args.dataset_name == "MATH":
 
 # load GSM8K dataset
 elif args.dataset_name == "GSM8K":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/gsm8k"
+    load_dataset_path = "your_path/datasets/gsm8k"
     dataset = load_dataset(load_dataset_path, "main", split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     data_list = [
@@ -69,7 +69,7 @@ elif args.dataset_name == "GSM8K":
 
 # load AQUA-RAT dataset
 elif args.dataset_name == "AQUA-RAT":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/aqua_rat"
+    load_dataset_path = "your_path/datasets/aqua_rat"
     dataset = load_dataset(load_dataset_path, "raw", split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)   # question / options / rationale / correct
     def format_aqua_rat_query(example):
@@ -92,7 +92,7 @@ elif args.dataset_name == "AQUA-RAT":
 
 # load MedMCQA
 elif args.dataset_name == "MedMCQA":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/medmcqa"
+    load_dataset_path = "your_path/datasets/medmcqa"
     dataset = load_dataset(load_dataset_path, split="validation", trust_remote_code=True)
     filtered_dataset = dataset.filter(lambda example: example['choice_type'] != 'multi')
     print(f"{'='*50}\n", filtered_dataset)
@@ -122,7 +122,7 @@ elif args.dataset_name == "MedMCQA":
 
 # load MedQA
 elif args.dataset_name == "MedQA":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/med_qa"
+    load_dataset_path = "your_path/datasets/med_qa"
     dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     def format_medqa_query(example):
@@ -148,7 +148,7 @@ elif args.dataset_name == "MedQA":
 
 # load MMLU
 elif args.dataset_name == "MMLU":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/mmlu"
+    load_dataset_path = "your_path/datasets/mmlu"
     dataset = load_dataset(load_dataset_path, "all", split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
 
@@ -183,7 +183,7 @@ Please choose the correct answer from the above choices."""
 
 # load MMLU-Pro
 elif args.dataset_name == "MMLU-Pro":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/MMLU-Pro"
+    load_dataset_path = "your_path/datasets/MMLU-Pro"
     dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     option_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
@@ -216,7 +216,7 @@ elif args.dataset_name == "MMLU-Pro":
 
 # load GSM-Hard dataset
 elif args.dataset_name == "GSM-Hard":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/gsm-hard"
+    load_dataset_path = "your_path/datasets/gsm-hard"
     dataset = load_dataset(load_dataset_path, split="train", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     data_list = [
@@ -238,7 +238,7 @@ elif args.dataset_name == "GSM-Hard":
 
 # load SVAMP dataset
 elif args.dataset_name == "SVAMP":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/SVAMP"
+    load_dataset_path = "your_path/datasets/SVAMP"
     dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     data_list = [
@@ -256,7 +256,7 @@ elif args.dataset_name == "SVAMP":
 
 # load ARC dataset
 elif args.dataset_name == "ARC":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/ai2_arc"
+    load_dataset_path = "your_path/datasets/ai2_arc"
     dataset = load_dataset(load_dataset_path, "ARC-Challenge", split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     def format_arc_query(example):
@@ -283,7 +283,7 @@ elif args.dataset_name == "ARC":
 
 # load GPQA dataset
 elif args.dataset_name.startswith("GPQA"):
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/gpqa"
+    load_dataset_path = "your_path/datasets/gpqa"
     if args.dataset_name == "GPQA-Diamond":
         dataset = load_dataset(load_dataset_path, "gpqa_diamond", split="train", trust_remote_code=True)
     else:
@@ -315,7 +315,7 @@ elif args.dataset_name.startswith("GPQA"):
 
 # load SciBench dataset
 elif args.dataset_name == "SciBench":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/scibench"
+    load_dataset_path = "your_path/datasets/scibench"
     dataset = load_dataset(load_dataset_path, split="train", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     def format_scibench_gt(example):
@@ -335,7 +335,7 @@ elif args.dataset_name == "SciBench":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == 'HumanEval':
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/openai_humaneval"
+    load_dataset_path = "your_path/datasets/openai_humaneval"
     dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     def format_humaneval_query(example):
@@ -357,7 +357,7 @@ elif args.dataset_name == 'HumanEval':
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "HumanEval-Plus":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/humanevalplus"
+    load_dataset_path = "your_path/datasets/humanevalplus"
     dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     def format_humanevalplus_query(example):
@@ -379,7 +379,7 @@ elif args.dataset_name == "HumanEval-Plus":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "MBPP":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/mbpp"
+    load_dataset_path = "your_path/datasets/mbpp"
     dataset = load_dataset(load_dataset_path, "full", split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     def format_mbpp_query(example):
@@ -402,7 +402,7 @@ elif args.dataset_name == "MBPP":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "MBPP-Plus":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/mbppplus"
+    load_dataset_path = "your_path/datasets/mbppplus"
     dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     def extract_function_signature(text):
@@ -439,7 +439,7 @@ elif args.dataset_name == "MBPP-Plus":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "FullStackBench":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/FullStackBench"
+    load_dataset_path = "your_path/datasets/FullStackBench"
     dataset = load_dataset(load_dataset_path, "en", split="test", trust_remote_code=True)
     def filter_function(example):
         language = example["labels"]["execution_language"]
@@ -467,7 +467,7 @@ elif args.dataset_name == "FullStackBench":
     sample_pool.extend(data_list)
     
 elif args.dataset_name == "DS-1000":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/DS-1000"
+    load_dataset_path = "your_path/datasets/DS-1000"
     dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     def format_ds_1000_query(example):
@@ -492,7 +492,7 @@ elif args.dataset_name == "DS-1000":
     print(f">> A data sample from {args.dataset_name}:\n{data_list[0]}")
     sample_pool.extend(data_list)
 elif args.dataset_name == "LiveCodeBench":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/LiveCodeBench" # the json path
+    load_dataset_path = "your_path/datasets/LiveCodeBench" # the json path
     with open(load_dataset_path, "r",encoding='utf-8') as f:
         data_list = json.load(f)
     data_list = shuffle_and_sample(data_list, args.num2sample)
@@ -500,7 +500,7 @@ elif args.dataset_name == "LiveCodeBench":
     sample_pool.extend(data_list)
 
 elif args.dataset_name in ["EvoEval_difficult", "EvoEval_creative", "EvoEval_subtle", "EvoEval_combine"]:
-    load_dataset_path = f"/mnt/petrelfs/yerui/mac/datasets/{args.dataset_name}"
+    load_dataset_path = f"your_path/datasets/{args.dataset_name}"
     dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     def format_evoeval_query(example):
@@ -522,7 +522,7 @@ elif args.dataset_name in ["EvoEval_difficult", "EvoEval_creative", "EvoEval_sub
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "BigCodeBench":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/bigcodebench"
+    load_dataset_path = "your_path/datasets/bigcodebench"
     dataset = load_dataset(load_dataset_path, split="v0.1.3", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     data_list = [
@@ -540,7 +540,7 @@ elif args.dataset_name == "BigCodeBench":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "AIME_2024":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/AIME_2024"
+    load_dataset_path = "your_path/datasets/AIME_2024"
     dataset = load_dataset(load_dataset_path, split="train", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     data_list = [
@@ -557,7 +557,7 @@ elif args.dataset_name == "AIME_2024":
     sample_pool.extend(data_list)
     
 elif args.dataset_name == "FinQA":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/finqa"
+    load_dataset_path = "your_path/datasets/finqa"
     dataset = load_dataset(load_dataset_path, split="train", trust_remote_code=True)
     def remove_space(text_in):
         res = []
@@ -613,7 +613,7 @@ elif args.dataset_name == "FinQA":
     sample_pool.extend(data_list)
     
 elif args.dataset_name == "FinanceBench":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/financebench"
+    load_dataset_path = "your_path/datasets/financebench"
     dataset = load_dataset(load_dataset_path, split="train", trust_remote_code=True)
     def format_financebench_query(example):
         # no retriever, use longformer
@@ -638,7 +638,7 @@ elif args.dataset_name == "FinanceBench":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "FPB":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/financial_phrasebank"
+    load_dataset_path = "your_path/datasets/financial_phrasebank"
     dataset = load_dataset(load_dataset_path, 'sentences_allagree', trust_remote_code=True)
     def format_FPB_query(example):
         # no retriever, use longformer
@@ -672,7 +672,7 @@ elif args.dataset_name == "FPB":
     sample_pool.extend(data_list)
     
 elif args.dataset_name == "PubMedQA":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/PubMedQA"
+    load_dataset_path = "your_path/datasets/PubMedQA"
     dataset = load_dataset(load_dataset_path, split="train", trust_remote_code=True)
     def format_FPB_query(example):
         # no retriever, use longformer
@@ -696,7 +696,7 @@ elif args.dataset_name == "PubMedQA":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "SciEval":
-    load_dataset_path = '/GPFS/rhome/qiminwu/Scieval/scieval-test-local.json'
+    load_dataset_path = 'your_path/Scieval/scieval-test-local.json'
     # dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     dataset = load_dataset("json", data_files = load_dataset_path, trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
@@ -728,7 +728,7 @@ elif args.dataset_name == "SciEval":
 elif args.dataset_name == "SciKnowEval":
     from collections import defaultdict
 
-    load_dataset_path = '/mnt/petrelfs/yerui/mac/datasets/SciKnowEval'
+    load_dataset_path = 'your_path/datasets/SciKnowEval'
     subset_names = ['Biology', 'Chemistry', 'Material', 'Physics']
     random.seed(2024)
 
@@ -801,7 +801,7 @@ elif args.dataset_name == "SciKnowEval":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "MATH-500":
-    load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/MATH-500"
+    load_dataset_path = "your_path/datasets/MATH-500"
     dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     print(f"{'='*50}\n", dataset)
     data_list = [
@@ -818,8 +818,7 @@ elif args.dataset_name == "MATH-500":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "MATH-MAS":
-    load_dataset_path = "/home/ma-user/modelarts/work/ruiye/xiangruiliu/ReSo-main/datasets/MATH-MAS"
-    # load_dataset_path = '/GPFS/rhome/qiminwu/Scieval/scieval-test-local.json'
+    load_dataset_path = "your_path/ReSo-main/datasets/MATH-MAS"
     # dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     # dataset = load_dataset("json", data_files = load_dataset_path, trust_remote_code=True)
     file_names = [
@@ -850,7 +849,7 @@ elif args.dataset_name == "MATH-MAS":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "AIME2025":
-    load_dataset_path = "/home/ma-user/modelarts/work/ruiye/xiangruiliu/AIME2025"
+    load_dataset_path = "your_path/AIME2025"
     dataset1 = load_dataset(load_dataset_path, 'AIME2025-I', split = 'test',  trust_remote_code=True)
     dataset2 = load_dataset(load_dataset_path, 'AIME2025-II', split = 'test', trust_remote_code=True)
     dataset = concatenate_datasets([dataset1, dataset2])
@@ -869,8 +868,7 @@ elif args.dataset_name == "AIME2025":
     sample_pool.extend(data_list)
 
 elif args.dataset_name == "Scibench-MAS":
-    load_dataset_path = "/home/ma-user/modelarts/work/ruiye/xiangruiliu/ReSo-main/datasets/Scibench-MAS"
-    # load_dataset_path = '/GPFS/rhome/qiminwu/Scieval/scieval-test-local.json'
+    load_dataset_path = "your_path/ReSo-main/datasets/Scibench-MAS"
     # dataset = load_dataset(load_dataset_path, split="test", trust_remote_code=True)
     # dataset = load_dataset("json", data_files = load_dataset_path, trust_remote_code=True)
     file_names = [
@@ -901,25 +899,6 @@ elif args.dataset_name == "Scibench-MAS":
     sample_pool.extend(data_list)
 
 
-# # load MBPP dataset
-# elif args.dataset_name == "MBPP":
-#     load_dataset_path = "/mnt/petrelfs/yerui/mac/datasets/mbpp"
-#     dataset = load_dataset(load_dataset_path, "full", split="test", trust_remote_code=True)
-#     print(f"{'='*50}\n", dataset)
-#     data_list = [
-#         {
-#             "query": example["text"],
-#             "gt_test": example["test_list"],
-#             "gt_test_challenge": example["challenge_test_list"],
-#             "task_id": example["task_id"],
-#             "tag": ["code", args.dataset_name],
-#             "source": args.dataset_name
-#         }
-#         for example in dataset
-#     ]
-#     data_list = shuffle_and_sample(data_list, num2sample)
-#     print(f">> A data sample from {args.dataset_name}:\n{data_list[0]}")
-#     sample_pool.extend(data_list)
 
 sample_pool = deduplicate(sample_pool)
 print(f">> A data sample from the pool:\n{sample_pool[0]}")

@@ -24,6 +24,13 @@ bash script/infer_XMAS_B.sh
 bash script/eval_XMAS_B.sh
 ```
 
+4. To get the results of our X-MAS-Bench in the paper
+```
+The link to the experimental results of the X-MAS-Bench is here https://drive.google.com/file/. 
+Please download the .zip file named results.zip to the "./XMAS-Bench/results/" path and unzip it
+```
+
+
 ### X-MAS-Design
 
 1. Specify your model configs in `./configs/model_api_config.json`:

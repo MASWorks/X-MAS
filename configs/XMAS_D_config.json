@@ -8,77 +8,8 @@
         },
         "llama-3.1-70b-instruct": {
             "model_list": [
-                {"model_name": "llama-3.1-70b-instruct", "model_url": "http://10.140.1.132:8090/v1", "api_key": "EMPTY"},
-                {"model_name": "llama-3.1-70b-instruct", "model_url": "http://10.140.1.57:8091/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 25
-        },
-        "qwq-32b": {
-            "model_list": [
-                {"model_name": "qwq-32b", "model_url": "http://10.140.1.4:8091/v1", "api_key": "EMPTY"},
-                {"model_name": "qwq-32b", "model_url": "http://10.140.1.4:8092/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 10
-        },
-        "deepdeek-r1-distill-qwen-32b": {
-            "model_list": [
-                {"model_name": "deepdeek-r1-distill-qwen-32b", "model_url": "http://29.26.108.229:8091/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 25
-        },
-        "qwen-2.5-72b-instruct": {
-            "model_list": [
-                {"model_name": "qwen-2.5-72b-instruct", "model_url": "http://29.26.108.229:8090/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 25
-        },
-        "qwen-2.5-32b-instruct": {
-            "model_list": [
-                {"model_name": "qwen-2.5-32b-instruct", "model_url": "http://29.26.108.229:8090/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 25
-        },
-        "qwen-2.5-14b-instruct": {
-            "model_list": [
-                {"model_name": "qwen-2.5-14b-instruct", "model_url": "http://10.140.1.76:9917/v1", "api_key": "EMPTY"},
-                {"model_name": "qwen-2.5-14b-instruct", "model_url": "http://10.140.0.204:9918/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 25
-        },
-        "qwen-2.5-7b-instruct": {
-            "model_list": [
-                {"model_name": "qwen-2.5-7b-instruct", "model_url": "http://10.140.1.53:9915/v1", "api_key": "EMPTY"},
-                {"model_name": "qwen-2.5-7b-instruct", "model_url": "http://10.140.0.204:9916/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 25
-        },
-        "qwen-2.5-coder-32b-instruct": {
-            "model_list": [
-                {"model_name": "qwen-2.5-coder-32b-instruct", "model_url": "http://29.26.108.229:8091/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 25
-        },
-        "qwen-2.5-coder-7b-instruct": {
-            "model_list": [
-                {"model_name": "qwen-2.5-coder-7b-instruct", "model_url": "http://10.140.1.53:9818/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 25
-        },
-        "qwen-2.5-math-7b-instruct": {
-            "model_list": [
-                {"model_name": "qwen-2.5-math-7b-instruct", "model_url": "http://29.26.108.229:8092/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 10
-        },
-        "mistral-small-3.1-24b-instruct-2503": {
-            "model_list": [
-                {"model_name": "mistral-small-3.1-24b-instruct-2503", "model_url": "http://29.26.108.229:8093/v1", "api_key": "EMPTY"}
-            ],
-            "max_workers_per_model": 25
-        },
-        "llama3-openbiollm-70b": {
-            "model_list": [
-                {"model_name": "llama3-openbiollm-70b", "model_url": "http://10.140.1.141:9820/v1", "api_key": "EMPTY"}
+                {"model_name": "llama-3.1-70b-instruct", "model_url": "http://../v1", "api_key": "EMPTY"},
+                {"model_name": "llama-3.1-70b-instruct", "model_url": "http://../v1", "api_key": "EMPTY"}
             ],
             "max_workers_per_model": 25
         }

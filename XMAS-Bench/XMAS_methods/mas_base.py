@@ -54,16 +54,6 @@ class MAS():
         
         model_temperature = temperature if temperature is not None else self.model_temperature
         model_max_tokens = 2048 if "7b" in model_name else 8192
-        # if model_name == "gpt-4o-mini-2024-07-18":
-        #     import os
-        #     os.environ["http_proxy"] = "http://yerui:bKW9b5eWaDmnG8kzxAVjXaolvlCg7vekRhMqL0fXgDCvgKLtqm2DWu5neARS@10.1.20.50:23128/"
-        #     os.environ["https_proxy"] = "http://yerui:bKW9b5eWaDmnG8kzxAVjXaolvlCg7vekRhMqL0fXgDCvgKLtqm2DWu5neARS@10.1.20.50:23128/"
-        #     model_max_tokens = 8192
-        # else:
-        #     import os
-        #     os.environ.pop("http_proxy", None)
-        #     os.environ.pop("https_proxy", None)
-        #     model_max_tokens = self.model_max_tokens
 
         request_dict = {
             "model": model_name,

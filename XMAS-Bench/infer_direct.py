@@ -15,7 +15,6 @@ parser.add_argument("--sample_num", type=int, default=500)
 parser.add_argument("--dry_run", action="store_true")
 args = parser.parse_args()
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../mas_pool')))
 from utils import LLM
 
 print("="*50)

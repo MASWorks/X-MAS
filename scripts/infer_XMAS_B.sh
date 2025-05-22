@@ -8,14 +8,14 @@ model_names=("deepseek-r1-distill-qwen-32b" "llama-3.3-70b-instruct" "qwen2.5-32
 run_direct() {
   local model_name=$1
   python save_expri_log.py --messages "start direct $model_name"
-  python HeteroMAS-Bench/infer_direct.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
+  python XMAS-Bench/infer_direct.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
   python save_expri_log.py --messages "end direct $model_name"
 }
 
 run_aggregate() {
   local model_name=$1
   python save_expri_log.py --messages "start aggregate $model_name"
-  python HeteroMAS-Bench/infer_aggregate.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
+  python XMAS-Bench/infer_aggregate.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
   python save_expri_log.py --messages "end aggregate $model_name"
 }
 
@@ -23,21 +23,21 @@ run_aggregate() {
 run_revise() {
   local model_name=$1
   python save_expri_log.py --messages "start revise $model_name"
-  python HeteroMAS-Bench/infer_revise.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
+  python XMAS-Bench/infer_revise.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
   python save_expri_log.py --messages "end revise $model_name"
 }
 
 run_evaluate() {
   local model_name=$1
   python save_expri_log.py --messages "start evaluate $model_name"
-  python HeteroMAS-Bench/infer_evaluate.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
+  python XMAS-Bench/infer_evaluate.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
   python save_expri_log.py --messages "end evaluate $model_name"
 }
 
 run_plan() {
   local model_name=$1
   python save_expri_log.py --messages "start plan $model_name"
-  python HeteroMAS-Bench/infer_plan.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
+  python XMAS-Bench/infer_plan.py --model_name $model_name --model_config $config_path --test_dataset_names "${TEST_DATASET_NAMES[@]}"
   python save_expri_log.py --messages "end plan $model_name"
 }
 

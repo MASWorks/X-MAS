@@ -7,13 +7,7 @@ import random
 import re
 import sys
 import requests
-try:
-    sys.path.append("../Apptainer")
-    from apptainer_exe import ApptainerClient
-except ImportError:
-    print("Failed to import ApptainerClient. Skipping this part.")
-except Exception as e:
-    print(f"An unexpected error occurred when import ApptainerClient: {e}")
+
 
 import argparse
 
@@ -79,14 +73,14 @@ def call_llm(prompt, temperature, model_url_list, model_name):
         }
         payload = json.dumps(payload_dict)
         headers = {
-            'Authorization': 'sk-7cEFlTBXX4sPi8Xx6a32DdA4B5A74b85Aa2893896f2c01Bc',
+            'Authorization': '',
             'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',
             'Content-Type': 'application/json',
             'Accept': '*/*',
-            'Host': '47.88.65.188:8405',
+            'Host': '',
             'Connection': 'keep-alive'
             }
-        result = requests.request("POST", "http://47.88.65.188:8405/v1/chat/completions", headers=headers, data=payload)
+        result = requests.request("POST", "http://./v1/chat/completions", headers=headers, data=payload)
         response = result.json()["choices"][0]["message"]["content"]
     else:
         model_url = random.choice(model_url_list)
@@ -246,6 +240,178 @@ Please follow the following rules:
                 print(f"After 3 retries, request failed with error: {e}")
                 return None
 
+def execute_code(code, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3", timeout=10):
+    """
+    Executes a given code string in a temporary directory and captures print statements 
+    in the output. Cleans up the directory after execution.
+
+    Args:
+        code (str): A string containing Python code. The code is expected to define a 
+                    variable named 'output' whose value will be retrieved and returned.
+        temp_dir (str): The directory in which the code will be executed.
+        timeout (int): Maximum time (in seconds) allowed for code execution.
+
+    Returns:
+        str: The value of the 'output' variable and captured print statements as a string.
+             If 'output' is not defined, returns "None".
+             If there is an error during execution, returns the error message as a string.
+             If execution times out, returns "Execution Time Out".
+    """
+    if not code:
+        return "Empty code. No output."
+
+    # Ensure the temp directory exists
+    original_dir = os.getcwd()
+    temp_dir_path = os.path.join(original_dir, temp_dir)
+    os.makedirs(temp_dir_path, exist_ok=True)
+    
+    def execute(queue):
+        try:
+            # Change to the temp directory
+            os.chdir(temp_dir_path)
+            
+            # Local dictionary to store variables during code execution
+            local_context = {}
+            
+            # Capture print output
+            with io.StringIO() as buf, contextlib.redirect_stdout(buf):
+                exec(code, {}, local_context)
+                captured_output = buf.getvalue()
+            
+            # Retrieve the 'output' variable
+            output = local_context.get("output", "None")
+            
+            # Combine output and captured print statements
+            result = f"Final output:{output}\nPrint during execution:{captured_output}\n".strip()
+            queue.put(result)  # Send the result back via the queue
+        except Exception as e:
+            queue.put(f"Error: {str(e)}")  # Send error message to the queue
+        finally:
+            os.chdir(original_dir)  # Restore the original directory
+
+    # Create a queue for inter-process communication
+    queue = multiprocessing.Queue()
+
+    # Create a separate process to execute the code
+    process = multiprocessing.Process(target=execute, args=(queue,))
+    process.start()
+    process.join(timeout)
+
+    if process.is_alive():
+        # If the process is still running after the timeout, terminate it
+        process.terminate()
+        process.join()
+        return "Execution Time Out"
+
+    # Retrieve the result from the queue
+    try:
+        result = queue.get_nowait()  # Get the result from the queue
+    except multiprocessing.queues.Empty:
+        result = "None"  # Default result if the queue is empty
+
+    # Clean up the temp directory
+    shutil.rmtree(temp_dir_path, ignore_errors=True)
+    
+    return result
+
+
+
+def test_code_get_feedback(code, test_cases, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3", timeout=20):
+    """
+    Test the given code against a list of test cases in a specified directory with a time limit and provide feedback.
+
+    Args:
+        code (str): The Python code to be tested, typically a function definition.
+        test_cases (list of str): A list of test cases, where each test case is an assert statement represented as a string.
+        temp_dir (str): The directory in which the code will be executed.
+        timeout (int): Maximum time (in seconds) allowed for testing all test cases.
+
+    Returns:
+        tuple: A tuple containing:
+            - int: The number of test cases that passed.
+            - str: Feedback detailing errors or a success message.
+    """
+    if not code:
+        return 0, "Empty code! This might be due to the code not being provided in the correct format (wrapped with triple backticks ```), causing extraction to fail."
+
+    if not test_cases:
+        return 0, "No test case provided!"
+
+    # Ensure the temp directory exists
+    original_dir = os.getcwd()
+    temp_dir_path = os.path.join(original_dir, temp_dir)
+    os.makedirs(temp_dir_path, exist_ok=True)
+
+    def execute_tests(queue):
+        """
+        Worker function to execute the code and test cases.
+        Sends the result back via a multiprocessing.Queue.
+        """
+        correct_count = 0
+        feedback = ""
+        shared_context = {}  # Shared context for exec() calls
+
+        try:
+            # Change to the temp directory
+            os.chdir(temp_dir_path)
+
+            # Execute the provided code to define the function or variables
+            with io.StringIO() as buf, contextlib.redirect_stdout(buf):
+                exec(code, shared_context)
+
+            # print(shared_context)
+
+
+            for assert_str in test_cases:
+                try:
+                    with io.StringIO() as buf, contextlib.redirect_stdout(buf):
+                        exec(assert_str, shared_context)  # Use the shared context for test cases
+                    correct_count += 1
+                except AssertionError:
+                    feedback += f"Assertion failed: {assert_str}\n\n"
+                except Exception as e:
+                    feedback += f"Execution error in: {assert_str} -> {e}\n\n"
+
+            # If all test cases pass
+            if correct_count == len(test_cases):
+                feedback = "All assertions passed successfully."
+
+        except Exception as e:
+            queue.put((0, f"Function definition error: {e}"))
+            return
+
+        finally:
+            # Restore the original directory after all assertions
+            os.chdir(original_dir)
+
+        # Send results back to the main process
+        queue.put((correct_count, feedback))
+
+    # Create a multiprocessing.Queue for inter-process communication
+    queue = multiprocessing.Queue()
+
+    # Create a subprocess to run the test cases
+    process = multiprocessing.Process(target=execute_tests, args=(queue,))
+    process.start()
+    process.join(timeout)
+
+    if process.is_alive():
+        # If the process is still running after the timeout, terminate it
+        process.terminate()
+        process.join()
+        return 0, "Execution Time Out"
+
+    # Retrieve results from the queue
+    try:
+        result = queue.get_nowait()
+    except multiprocessing.queues.Empty:
+        result = (0, "No feedback available.")
+
+    # Clean up the temp directory content
+    shutil.rmtree(temp_dir_path, ignore_errors=True)
+    
+    return result
+
 def eval_mbpp(item, model_url_list, model_name, source_data):
     code = extract_code_function_llm(item['query'], item["generated_output"], model_url_list, model_name)
     item['extracted_code'] = code
@@ -254,9 +420,7 @@ def eval_mbpp(item, model_url_list, model_name, source_data):
         print("No valid code extracted")
         return "No valid code extracted", 0
 
-    container = ApptainerClient("/mnt/petrelfs/yerui/mac/Apptainer/sandbox")
-
-    correct_cnt, feedback = container.test_code_with_testcases(code, test_cases)
+    correct_cnt, feedback = test_code_get_feedback(code, test_cases)
 
     # print("="*50, "\n>>Query:\n", item["query"])
     # print("="*50, "\n>>Code:\n", code)
@@ -285,9 +449,8 @@ for i, (inp, exp) in enumerate(zip(inputs, results)):
         pass
 output /= len(inputs)
 """
-    container = ApptainerClient("/mnt/petrelfs/yerui/mac/Apptainer/sandbox")
 
-    feedback, success_rate = container.exec_code(test_code, timeout=120)
+    feedback, success_rate = execute_code(test_code, timeout=120)
     success_rate = 0 if success_rate is None else success_rate
     if 'Error' in feedback or 'error' in feedback:
         print(feedback)
@@ -302,8 +465,7 @@ def eval_fullstackbench(item, model_url_list, model_name, source_data):
         print("No valid code extracted")
         return "No valid code extracted", 0
     code += "\nmy_solution = Solution()\n"
-    container = ApptainerClient("/mnt/petrelfs/yerui/mac/Apptainer/sandbox")
-    correct_cnt, feedback = container.test_code_with_testcases(code, test_cases)
+    correct_cnt, feedback = test_code_get_feedback(code, test_cases)
     if 'Error' in feedback:
         print(feedback)
     return feedback, correct_cnt/len(test_cases)
@@ -321,8 +483,7 @@ def eval_livecode_functional(item, model_url_list, model_name, source_data):
     if not code:
         print("No valid code extracted")
         return "No valid code extracted", 0
-    container = ApptainerClient("/mnt/petrelfs/yerui/mac/Apptainer/sandbox")
-    correct_cnt, feedback = container.test_code_with_testcases(code, test_cases)
+    correct_cnt, feedback = test_code_get_feedback(code, test_cases)
     if 'Error' in feedback:
         print(feedback)
     return feedback, correct_cnt/len(test_cases)
@@ -347,8 +508,7 @@ try:
 except Exception as e:
     pass
 """
-    container = ApptainerClient("/mnt/petrelfs/yerui/mac/Apptainer/sandbox")
-    feedback, score = container.exec_code(test_code, timeout=120)
+    feedback, score = execute_code(test_code, timeout=120)
     if ('time' in feedback and 'out' in feedback) or ('Error' in feedback) or ('error' in feedback):
         score = 0
     
@@ -375,8 +535,7 @@ try:
 except Exception as e:
     pass
 """
-    container = ApptainerClient("/mnt/petrelfs/yerui/mac/Apptainer/sandbox")
-    feedback, score = container.exec_code(test_code, timeout=120)
+    feedback, score = execute_code(test_code, timeout=120)
     if ('time' in feedback and 'out' in feedback) or ('Error' in feedback) or ('error' in feedback):
         score = 0
     
@@ -405,8 +564,7 @@ except Exception as e:
     pass
 """
     print(test_code)
-    container = ApptainerClient("/mnt/petrelfs/yerui/mac/Apptainer/sandbox")
-    feedback, score = container.exec_code(test_code, timeout=120)
+    feedback, score = execute_code(test_code, timeout=120)
     if ('time' in feedback and 'out' in feedback) or ('Error' in feedback) or ('error' in feedback):
         score = 0
     
@@ -437,8 +595,7 @@ if run_tests():
 else:
     output = 0
 """
-    container = ApptainerClient("/mnt/petrelfs/yerui/mac/Apptainer/sandbox")
-    feedback, score = container.exec_code(test_code, timeout=120)
+    feedback, score = execute_code(test_code, timeout=120)
     return feedback, score
 
 def eval_eval(item, model_url_list, model_name, source_data):

@@ -13,28 +13,7 @@ import requests
 import tiktoken
 from datetime import datetime
 
-try:
-    sys.path.append("/mnt/petrelfs/yerui/mac/Apptainer")
-    from apptainer_exe import ApptainerClient
-except ImportError:
-    print("Failed to import ApptainerClient. Skipping this part.")
-except Exception as e:
-    print(f"An unexpected error occurred when import ApptainerClient: {e}")
 
-default_model_list = ["biomedgpt-lm-7b", "huatuogpt-o1-7b"]
-
-def proxy_on():
-    proxy_addr = "http://yerui:L5OUlLMt9QmwNSMmSUaY80oZYgVZ9BmIg88suLAi7Ql47PaLmxJf0hcpWKeB@10.1.20.50:23128/"
-    os.environ['HTTP_PROXY'] = proxy_addr
-    os.environ['HTTPS_PROXY'] = proxy_addr
-    os.environ['http_proxy'] = proxy_addr
-    os.environ['https_proxy'] = proxy_addr      
-
-def proxy_off():
-    os.environ['HTTP_PROXY'] = ""
-    os.environ['HTTPS_PROXY'] = ""
-    os.environ['http_proxy'] = ""
-    os.environ['https_proxy'] = ""
 
 def parse_to_json(input_str):
     """
@@ -159,7 +138,7 @@ class LLM():
 
                 if self.model_name == "deepseek-reasoner":
                     proxy_on()
-                    llm = openai.OpenAI(base_url="https://api.deepseek.com", api_key="sk-35134a687cf6409183a3bc4f5350722c")
+                    llm = openai.OpenAI(base_url="https://api.deepseek.com", api_key="..")
                     completion = llm.chat.completions.create(
                         model="deepseek-reasoner",
                         messages=[
@@ -232,14 +211,14 @@ class LLM():
                     #     payload_dict["max_completion_tokens"] = 16384
                     payload = json.dumps(payload_dict)
                     headers = {
-                        'Authorization': 'sk-7cEFlTBXX4sPi8Xx6a32DdA4B5A74b85Aa2893896f2c01Bc',
+                        'Authorization': 'sk-',
                         'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',
                         'Content-Type': 'application/json',
                         'Accept': '*/*',
-                        'Host': '47.88.65.188:8405',
+                        'Host': '..',
                         'Connection': 'keep-alive'
                         }
-                    result = requests.request("POST", "http://47.88.65.188:8405/v1/chat/completions", headers=headers, data=payload)
+                    result = requests.request("POST", "http://../v1/chat/completions", headers=headers, data=payload)
                     print(result.json())
                     # if "o1" in self.model_name:
                     print(result)
@@ -271,7 +250,7 @@ class LLM():
             try:
                 if self.model_name == "deepseek-reasoner":
                     proxy_on()
-                    llm = openai.OpenAI(base_url="https://api.deepseek.com", api_key="sk-35134a687cf6409183a3bc4f5350722c")
+                    llm = openai.OpenAI(base_url="https://api.deepseek.com", api_key="..")
                     response = llm.chat.completions.create(
                         model="deepseek-reasoner",
                         messages=messages,
@@ -329,14 +308,14 @@ class LLM():
                         payload_dict["max_completion_tokens"] = 4096
                     payload = json.dumps(payload_dict)
                     headers = {
-                        'Authorization': 'sk-hBgybDTlbHcb3du371F28825975e46D294D75bC26b5dBd2c',
+                        'Authorization': '..',
                         'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',
                         'Content-Type': 'application/json',
                         'Accept': '*/*',
-                        'Host': '47.88.65.188:8405',
+                        'Host': '..',
                         'Connection': 'keep-alive'
                         }
-                    result = requests.request("POST", "http://47.88.65.188:8405/v1/chat/completions", headers=headers, data=payload)
+                    result = requests.request("POST", "http://../v1/chat/completions", headers=headers, data=payload)
                     response = result.json()["choices"][0]["message"]["content"]
                     
                     messages.append(
@@ -365,7 +344,7 @@ class LLM():
                     )
                     return None, messages
     
-'''
+
 def execute_code(code, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3", timeout=10):
     """
     Executes a given code string in a temporary directory and captures print statements 
@@ -439,49 +418,10 @@ def execute_code(code, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3
     shutil.rmtree(temp_dir_path, ignore_errors=True)
     
     return result
-'''
-
-def execute_code(code, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3", timeout=30):
-    """
-    Executes a given code string in a temporary directory and captures print statements 
-    in the output. Cleans up the directory after execution.
-
-    Args:
-        code (str): A string containing Python code. The code is expected to define a 
-                    variable named 'output' whose value will be retrieved and returned.
-        temp_dir (str): The directory in which the code will be executed.
-        timeout (int): Maximum time (in seconds) allowed for code execution.
-
-    Returns:
-        str: The value of the 'output' variable and captured print statements as a string.
-             If 'output' is not defined, returns "None".
-             If there is an error during execution, returns the error message as a string.
-             If execution times out, returns "Execution Time Out".
-    """
-    if not code:
-        return "Empty code. No output."
-
-    container = ApptainerClient("../Apptainer/sandbox")
-    # container = ApptainerClient("/home/ubuntu/DATA3/ruige/python-sandbox.sif")
-
-    captured_output, output = container.exec_code(code, timeout=timeout)
-
-    
-    result = f"Final output:{output}\nPrint during execution:{captured_output}\n".strip()
-    return result
 
 
-def test_code_get_feedback(code, test_cases, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3", timeout=30):
 
-    container = ApptainerClient("../Apptainer/sandbox")
-    # container = ApptainerClient("/home/ubuntu/DATA3/ruige/python-sandbox.sif")
-
-    result = container.test_code_with_testcases(code, test_cases, timeout)
-
-    return result   # tuple (passed test cases, feedback)
-
-
-# def test_code_get_feedback(code, test_cases, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3", timeout=20):
+def test_code_get_feedback(code, test_cases, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3", timeout=20):
     """
     Test the given code against a list of test cases in a specified directory with a time limit and provide feedback.
 
