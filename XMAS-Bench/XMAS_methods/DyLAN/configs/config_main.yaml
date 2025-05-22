@@ -1,0 +1,26 @@
+# DyLAN Method Configuration
+
+# General settings
+random_seed: 0
+debug: false
+
+# Agent settings
+num_agents: 4
+num_rounds: 3
+activation: "listwise"
+type: "open-ended"
+
+# Agent roles - must match the number of agents
+roles:
+  - "Assistant"
+  - "Assistant"
+  - "Assistant"
+  - "Assistant"
+
+# model names
+model_names:
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct" # ranker

@@ -1,0 +1,8 @@
+cnt_agents: 2
+max_turn: 3
+max_criticizing_rounds: 3
+model_names:
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"

@@ -1,0 +1,9 @@
+cnt_d_agents: 3
+cnt_e_agents: 1
+max_revise_rounds: 3
+model_names:
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"

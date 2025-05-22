@@ -3,7 +3,30 @@
 
 ## Get Started
 
-1. Specify your model configs in `./model_api_configs/model_api_config.json`:
+### X-MAS-Bench
+
+1. Specify your model configs in `./configs/XMAS_B_config.json`:
+```
+"deepdeek-r1-distill-qwen-14b": [
+    ["deepdeek-r1-distill-qwen-14b", "http://a.b.c.d:e/v1", "xyz"]
+]
+```
+
+2. To inference on a dataset/several datasets(The output_path will be "./XMAS-Bench/results/")
+```
+# Or Step 2 (Parallel): Inference on several datasets
+bash script/infer_XMAS_B.sh
+```
+
+3. To evaluate on a dataset/several datasets(The output_path will be "./XMAS-Bench/results/")
+```
+# Step 1: evaluate on several datasets
+bash script/eval_XMAS_B.sh
+```
+
+### X-MAS-Design
+
+1. Specify your model configs in `./configs/model_api_config.json`:
 ```
 "gpt-4o-mini-2024-07-18": {
         "model_list": [
@@ -18,7 +41,7 @@
 python inference.py --method_name <method_name> --debug
 ```
 
-3. To inference on a dataset
+3. To inference on a dataset/several datasets(The output_path will be "./results/")
 ```
 # Step 1: build the test dataset
 python datasets/build_test_dataset.py --dataset_name <dataset_name>
@@ -28,4 +51,13 @@ python inference.py --method_name <method_name> --test_dataset_name <dataset_nam
 
 # Or Step 2 (Parallel): Inference on the whole dataset
 python inference.py --method_name <method_name> --test_dataset_name <dataset_name>
+
+# Or Step 2 (Parallel): Inference on several datasets
+bash script/infer_XMAS_D.sh
+```
+
+4. To evaluate on a dataset/several datasets(The output_path will be "./results/")
+```
+# Step 1: evaluate on several datasets
+bash script/eval_XMAS_D.sh
 ```

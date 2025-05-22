@@ -1,0 +1,5 @@
+agents_num: 3
+rounds_num: 2
+model_names:
+  - "qwen-2.5-32b-instruct"
+  - "qwen-2.5-32b-instruct"

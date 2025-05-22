@@ -1,0 +1,18 @@
+{
+    "model_dict": {
+        "llama-3-8b-instruct": [
+            []
+        ],
+        "llama-3-70b-instruct": [
+            []
+        ],
+        "llama-3.3-70b-instruct": [
+            ["llama-3.3-70b-instruct", "http://a.b.c.d:e/v1", "xyz"]
+        ]
+    },
+    "worker_dict": {
+        "llama-3-8b-instruct": 10,
+        "llama-3-70b-instruct": 32,
+        "llama-3.3-70b-instruct": 32
+    }
+}
