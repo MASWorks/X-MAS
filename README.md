@@ -26,7 +26,7 @@ bash script/eval_XMAS_B.sh
 
 4. To get the results of our X-MAS-Bench in the paper
 ```
-The link to the experimental results of the X-MAS-Bench is here https://drive.google.com/file/. 
+The link to the experimental results of the X-MAS-Bench is here https://drive.google.com/file/d/1oukYZLDOuc98i-ICkoZ6OYME9a7-AuH1/view?usp=drive_link. 
 Please download the .zip file named results.zip to the "./XMAS-Bench/results/" path and unzip it
 ```
 
