@@ -27,7 +27,7 @@ infer_names=(
 
 for infer_name in "${infer_names[@]}"; do
   python save_expri_log.py --messages "start eval $infer_name"
-  python eval_output_D.py --model_name llama-3.1-70b-instruct --model_config $config_path --dataset_names "${TEST_DATASET_NAMES[@]}" --infer_name $infer_name --eval_mode bench-test
+  python eval_output_x-mas-design.py --model_name llama-3.1-70b-instruct --model_config $config_path --dataset_names "${TEST_DATASET_NAMES[@]}" --infer_name $infer_name --eval_mode bench-test
   python save_expri_log.py --messages "end eval $infer_name"
 done
 

@@ -45,7 +45,7 @@ Please download the .zip file named results.zip to the "./XMAS-Bench/results/" p
 
 2. To see if the codebase is executable (e.g., vanilla, cot, agentverse)
 ```
-python inference.py --method_name <method_name> --debug
+python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --debug
 ```
 
 3. To inference on a dataset/several datasets(The output_path will be "./results/")
@@ -54,10 +54,10 @@ python inference.py --method_name <method_name> --debug
 python datasets/build_test_dataset.py --dataset_name <dataset_name>
 
 # Step 2 (Sequential): Inference on the whole dataset
-python inference.py --method_name <method_name> --test_dataset_name <dataset_name> --sequential
+python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --test_dataset_name <dataset_name> --sequential
 
 # Or Step 2 (Parallel): Inference on the whole dataset
-python inference.py --method_name <method_name> --test_dataset_name <dataset_name>
+python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --test_dataset_name <dataset_name>
 
 # Or Step 2 (Parallel): Inference on several datasets
 bash script/infer_XMAS_D.sh

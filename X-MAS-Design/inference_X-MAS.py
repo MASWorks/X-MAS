@@ -108,7 +108,7 @@ if __name__ == "__main__":
                 val_dataset = json.load(f)
         
         # get output path
-        output_path = args.output_path if args.output_path is not None else f"./results/{args.test_dataset_name}/{args.method_name}_manual_4m_infer.jsonl"
+        output_path = args.output_path if args.output_path is not None else f"./X-MAS-Design/results/{args.test_dataset_name}/{args.method_name}_manual_4m_infer.jsonl"
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         
         # reserve unprocessed samples
