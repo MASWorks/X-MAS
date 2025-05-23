@@ -70,8 +70,8 @@ for i, test_dataset_name in enumerate(args.test_dataset_names):
     print(f">> Processing {i}-th dataset: {test_dataset_name}")
 
     # ================== Define the output files ==================
-    output_logging = f"XMAS-Bench/results/{test_dataset_name}/log/{args.model_name}_direct.txt"
-    output_json = f"XMAS-Bench/results/{test_dataset_name}/{args.model_name}_direct.jsonl"
+    output_logging = f"X-MAS-Bench/results/{test_dataset_name}/log/{args.model_name}_direct.txt"
+    output_json = f"X-MAS-Bench/results/{test_dataset_name}/{args.model_name}_direct.jsonl"
     test_data_path = f"benchmarks/test_pool/{test_dataset_name}.json"
 
     output_dir = os.path.dirname(output_logging)

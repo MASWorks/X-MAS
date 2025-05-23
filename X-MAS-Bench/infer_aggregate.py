@@ -43,7 +43,7 @@ def aggregate_init_answers(query, answer_dict, shuffle_index):
 def get_sample_pool(test_dataset_name, aggregate_model_names):
     query_dict = defaultdict(dict)
     for model_name in aggregate_model_names:
-        with open(f"XMAS-Bench/results/{test_dataset_name}/{model_name}_direct.jsonl", "r") as f:
+        with open(f"X-MAS-Bench/results/{test_dataset_name}/{model_name}_direct.jsonl", "r") as f:
             for line in f:
                 sample = json.loads(line)
                 query = sample["query"]
@@ -51,7 +51,7 @@ def get_sample_pool(test_dataset_name, aggregate_model_names):
                 
     shuffle_matrix = create_shuffled_matrix(len(query_dict), len(aggregate_model_names))
     sample_pool = []
-    with open(f"XMAS-Bench/results/{test_dataset_name}/{aggregate_model_names[0]}_direct.jsonl", "r") as f:
+    with open(f"X-MAS-Bench/results/{test_dataset_name}/{aggregate_model_names[0]}_direct.jsonl", "r") as f:
         for i, line in enumerate(f):
             sample = json.loads(line)
             query = sample["query"]
@@ -128,8 +128,8 @@ for i, test_dataset_name in enumerate(args.test_dataset_names):
         print(f">> Processing Aggregate {i}-th dataset: {test_dataset_name} with {args.model_name}")
 
         # ================== Define the output files ==================
-        output_logging = f"XMAS-Bench/results/{test_dataset_name}/log/{args.model_name}_aggregate.txt"
-        output_json = f"XMAS-Bench/results/{test_dataset_name}/{args.model_name}_aggregate.jsonl"
+        output_logging = f"X-MAS-Bench/results/{test_dataset_name}/log/{args.model_name}_aggregate.txt"
+        output_json = f"X-MAS-Bench/results/{test_dataset_name}/{args.model_name}_aggregate.jsonl"
         output_dir = os.path.dirname(output_logging)
         os.makedirs(output_dir, exist_ok=True)
         logging.basicConfig(filename=output_logging, level=logging.INFO, format='%(asctime)s - %(message)s')

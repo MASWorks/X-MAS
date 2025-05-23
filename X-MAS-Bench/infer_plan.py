@@ -72,7 +72,7 @@ def plan_init_answers(query):
 
 def get_sample_pool(test_dataset_name):              
     sample_pool = []
-    with open(f"XMAS-Bench/results/{test_dataset_name}/qwen2.5-32b-instruct_direct.jsonl", "r") as f:
+    with open(f"X-MAS-Bench/results/{test_dataset_name}/qwen2.5-32b-instruct_direct.jsonl", "r") as f:
         for i, line in enumerate(f):
             sample = json.loads(line)
             query = sample["query"]
@@ -190,8 +190,8 @@ for i, test_dataset_name in enumerate(args.test_dataset_names):
         print(f">> Processing plan {i}-th dataset: {test_dataset_name} with {args.model_name}")
 
         # ================== Define the output files ==================
-        output_logging = f"XMAS-Bench/results/{test_dataset_name}/log/{args.model_name}_plan.txt"
-        output_json = f"XMAS-Bench/results/{test_dataset_name}/{args.model_name}_plan.jsonl"
+        output_logging = f"X-MAS-Bench/results/{test_dataset_name}/log/{args.model_name}_plan.txt"
+        output_json = f"X-MAS-Bench/results/{test_dataset_name}/{args.model_name}_plan.jsonl"
         output_dir = os.path.dirname(output_logging)
         os.makedirs(output_dir, exist_ok=True)
         logging.basicConfig(filename=output_logging, level=logging.INFO, format='%(asctime)s - %(message)s')
