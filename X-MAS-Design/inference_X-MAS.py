@@ -68,7 +68,6 @@ if __name__ == "__main__":
     # args related to dataset
     parser.add_argument("--test_dataset_name", type=str, default="example_math", help="The dataset to be used for testing.")
     parser.add_argument("--output_path", type=str, default=None, help="Path to the output file.")
-    parser.add_argument("--require_val", action="store_true")
     parser.add_argument("--sample_num", type=int, default=500)
 
     parser.add_argument("--debug", action="store_true")
@@ -103,9 +102,6 @@ if __name__ == "__main__":
         # load dataset
         with open(f"./benchmarks/test_pool/{args.test_dataset_name}.json", "r") as f:
             test_dataset = json.load(f)
-        if args.require_val:
-            with open(f"./benchmarks/test_pool/{args.test_dataset_name}_val.json", "r") as f:
-                val_dataset = json.load(f)
         
         # get output path
         output_path = args.output_path if args.output_path is not None else f"./X-MAS-Design/results/{args.test_dataset_name}/{args.method_name}_manual_4m_infer.jsonl"
@@ -119,16 +115,6 @@ if __name__ == "__main__":
         test_dataset = test_dataset[:sample_num] if sample_num > 0 else test_dataset
         test_dataset = reserve_unprocessed(output_path, test_dataset)
         print(f">> After filtering: {len(test_dataset)} samples")
-        
-        # optimize mas if required
-        if args.require_val:
-            # get MAS instance
-            MAS_METHOD = get_method_class(args.method_name, args.test_dataset_name)
-            if args.method_config_name is not None:
-                mas = MAS_METHOD(general_config, method_config_name=args.method_config_name)
-            else:
-                mas = MAS_METHOD(general_config)
-            mas.optimizing(val_dataset)
         
         lock = threading.Lock()
         # inference the mas

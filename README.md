@@ -1,37 +1,35 @@
-# X-MAS: Diversity for The Win: Towards Building Multi-Agent Systems with Heterogeneous LLMs
+# X-MAS: Towards Building Multi-Agent Systems with Heterogeneous LLMs
 
+![X-MAS](./assets/xmas_overview.png)
 
-## Get Started
+## 🔥 News
+- [2025/05/23] See our preprint paper in [ArXiv](https://arxiv.org/pdf/2505.16997).
 
-### X-MAS-Bench
+## X-MAS-Bench
 
 1. Specify your model configs in `./configs/X-MAS_Bench_config.json`:
 ```
-"deepdeek-r1-distill-qwen-14b": [
-    ["deepdeek-r1-distill-qwen-14b", "http://a.b.c.d:e/v1", "xyz"]
+"qwen2.5-32b-instruct": [
+    ["qwen2.5-32b-instruct", "http://a.b.c.d:e/v1", "xyz"]
 ]
 ```
 
-2. To inference on a dataset/several datasets(The output_path will be "./X-MAS-Bench/results/")
+2. Inference on a dataset/several datasets (the outputs will be saved under "./X-MAS-Bench/results/")
 ```
-# Or Step 2 (Parallel): Inference on several datasets
-bash script/infer_X-MAS_Bench.sh
-```
-
-3. To evaluate on a dataset/several datasets(The output_path will be "./X-MAS-Bench/results/")
-```
-# Step 1: evaluate on several datasets
-bash script/eval_X-MAS_Bench.sh
+# bash scripts/infer_X-MAS_Bench.sh
+python X-MAS-Bench/infer_direct.py --model_name <model_name> --model_config <model_config> --test_dataset_names <test_dataset_name_1> <test_dataset_name_2>
 ```
 
-4. To get the results of our X-MAS-Bench in the paper
+3. Evaluate on a dataset/several datasets (the outputs will be saved under "./X-MAS-Bench/results/")
 ```
-The link to the experimental results of the X-MAS-Bench is here https://drive.google.com/file/d/1oukYZLDOuc98i-ICkoZ6OYME9a7-AuH1/view?usp=drive_link. 
-Please download the .zip file named results.zip to the "./X-MAS-Bench/results/" path and unzip it
+# bash scripts/eval_X-MAS_Bench.sh
+python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --model_name <model_name> --test_dataset_name <test_dataset_name> --model_api_config <model_api_config>
 ```
 
+Note that we release the experimental results of the X-MAS-Bench in [Google Drive](https://drive.google.com/file/d/1oukYZLDOuc98i-ICkoZ6OYME9a7-AuH1/view?usp=drive_link).
+You can download the .zip file named results.zip to the "./X-MAS-Bench/results/" path and unzip it.
 
-### X-MAS-Design
+## X-MAS-Design
 
 1. Specify your model configs in `./configs/X-MAS_Design_config.json`:
 ```
@@ -43,28 +41,23 @@ Please download the .zip file named results.zip to the "./X-MAS-Bench/results/" 
     }
 ```
 
-2. To see if the codebase is executable (e.g., vanilla, cot, agentverse)
+2. To see if the codebase is executable (e.g., vanilla)
 ```
-python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --debug
+python X-MAS-Design/inference_X-MAS.py --method_name vanilla --debug
 ```
 
-3. To inference on a dataset/several datasets(The output_path will be "./results/")
+3. To inference on a dataset/several datasets (the outputs will be saved under "./X-MAS-Design/results/")
 ```
-# Step 1: build the test dataset
-python datasets/build_test_dataset.py --dataset_name <dataset_name>
-
-# Step 2 (Sequential): Inference on the whole dataset
-python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --test_dataset_name <dataset_name> --sequential
-
-# Or Step 2 (Parallel): Inference on the whole dataset
+# Inference on the whole dataset (Parallel)
 python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --test_dataset_name <dataset_name>
 
-# Or Step 2 (Parallel): Inference on several datasets
-bash script/infer_X-MAS_Design.sh
+# Or inference on the whole dataset (Sequential)
+python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --test_dataset_name <dataset_name> --sequential
+
+# bash scripts/infer_X-MAS_Design.sh
 ```
 
-4. To evaluate on a dataset/several datasets(The output_path will be "./results/")
+4. To evaluate on a dataset/several datasets (the outputs will be saved under "./X-MAS-Design/results/")
 ```
-# Step 1: evaluate on several datasets
-bash script/eval_X-MAS_Design.sh
+bash scripts/eval_X-MAS_Design.sh
 ```

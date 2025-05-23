@@ -27,9 +27,7 @@ infer_names=(
 run_eval() {
   local model_name=$1
   for infer_name in "${infer_names[@]}"; do
-    python save_expri_log.py --messages "start eval $infer_name"
     python eval_output_x-mas-bench.py --model_name "$model_name" --model_config $config_path --dataset_names "${TEST_DATASET_NAMES[@]}" --infer_name $infer_name --eval_mode bench-test
-    python save_expri_log.py --messages "end eval $infer_name"
   done
 
 }

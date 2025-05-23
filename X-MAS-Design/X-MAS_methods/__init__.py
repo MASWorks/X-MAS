@@ -1,11 +1,11 @@
-from .xmasp import XMASP_MAIN
+from .x_mas_proto import X_MAS_PROTO_MAIN
 from .mas_base import MAS
 from .llm_debate import LLMDebate, LLMDebate_MATH, LLMDebate_GSM, LLMDebate_MMLU
 from .DyLAN import DyLAN_Main, DyLAN_MMLU, DyLAN_Humaneval, DyLAN_MATH
 from .agentverse import Agentverse_HumanEval, Agentverse_MGSM, Agentverse_MAIN
 
 method2class = {
-    "xmasp": XMASP_MAIN,
+    "x_mas_proto": X_MAS_PROTO_MAIN,
     "llm_debate_math": LLMDebate_MATH,
     "llm_debate_gsm": LLMDebate_GSM,
     "llm_debate_mmlu": LLMDebate_MMLU,

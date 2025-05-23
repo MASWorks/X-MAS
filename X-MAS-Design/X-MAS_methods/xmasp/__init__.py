@@ -1,1 +1,0 @@
-from .xmasp_main import XMASP_MAIN

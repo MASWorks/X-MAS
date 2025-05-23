@@ -9,7 +9,7 @@ import sys
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--model_name", type=str, default="llama-3-70b-instruct", help="The agent backend to be used for inference.")
-parser.add_argument("--model_config", type=str, default="config_.json")
+parser.add_argument("--model_config", type=str, default="./configs/X-MAS_Bench_config.json")
 parser.add_argument("--test_dataset_names", type=str, nargs='+', default=["MATH", "GSM8K", "AQUA-RAT", "MedMCQA"])
 parser.add_argument("--sample_num", type=int, default=500)
 parser.add_argument("--dry_run", action="store_true")
@@ -72,7 +72,7 @@ for i, test_dataset_name in enumerate(args.test_dataset_names):
     # ================== Define the output files ==================
     output_logging = f"X-MAS-Bench/results/{test_dataset_name}/log/{args.model_name}_direct.txt"
     output_json = f"X-MAS-Bench/results/{test_dataset_name}/{args.model_name}_direct.jsonl"
-    test_data_path = f"benchmarks/test_pool/{test_dataset_name}.json"
+    test_data_path = f"X-MAS-Bench/benchmarks/{test_dataset_name}.json"
 
     output_dir = os.path.dirname(output_logging)
     os.makedirs(output_dir, exist_ok=True)

@@ -117,9 +117,6 @@ class LLM():
 
     def __init__(self, model_list):
         self.model_list = model_list
-        ## 用于记录 call 模型次数和token数
-        self.save_path = None
-        self.query = None
 
         if len(self.model_list[0]) == 2:
             self.model_name, self.model_url = random.choice(self.model_list)
@@ -224,7 +221,6 @@ class LLM():
                     print(result)
                     response = result.json()["choices"][0]["message"]["content"]
 
-                    proxy_off()
                     ############### 添加 写入文件的逻辑 ######################
                     response_text = result.json()["choices"][0]["message"]["content"]
                     save_obj_to_jsonl(self.query, response_text, prompt, self.save_path)
@@ -237,113 +233,6 @@ class LLM():
                     logging.error(f"After 3 retries, request failed with error: {e}")
                     return None
 
-    def multi_turn_conversation(self, prompt, messages, temperature=0.5):
-        
-        messages.append(
-            {
-                "role": "user",
-                "content": prompt
-            }
-        )
-        retries = 0
-        while retries < 3:
-            try:
-                if self.model_name == "deepseek-reasoner":
-                    proxy_on()
-                    llm = openai.OpenAI(base_url="https://api.deepseek.com", api_key="..")
-                    response = llm.chat.completions.create(
-                        model="deepseek-reasoner",
-                        messages=messages,
-                        max_tokens=8192,
-                        stream=False
-                    )
-
-                    messages.append(
-                        {
-                            "role": "assistant",
-                            "content": completion.choices[0].message.content
-                        }
-                    )
-                    proxy_off()
-                    ############### 添加 写入文件的逻辑 ######################
-                    response_text = response.choices[0].message.content, messages
-                    save_obj_to_jsonl(self.query, response_text, prompt, self.save_path)
-                    ########################################################
-
-                    return response.choices[0].message.content, messages
-
-                elif "gpt" not in self.model_name and "o1" not in self.model_name:
-                    
-                    llm = openai.OpenAI(base_url=f"{self.model_url}", api_key=self.api_key)
-                    completion = llm.chat.completions.create(
-                        model=f"{self.model_name}",
-                        messages=messages,
-                        stop=['<|eot_id|>'],
-                        temperature=temperature,
-                        max_tokens=2048,
-                        timeout=60
-                    )
-                    messages.append(
-                        {
-                            "role": "assistant",
-                            "content": completion.choices[0].message.content
-                        }
-                    )
-
-                    ############### 添加 写入文件的逻辑 ######################
-                    response_text = completion.choices[0].message.content, messages
-                    save_obj_to_jsonl(self.query, response_text, prompt, self.save_path)
-                    ########################################################
-                    
-                    return completion.choices[0].message.content, messages
-                else:
-                    proxy_on()
-                    payload_dict = {
-                        "model": self.model_name,
-                        "messages": messages
-                    }
-                    if "o1" not in self.model_name:
-                        payload_dict["temperature"] = temperature
-                    if "o1" not in self.model_name:
-                        payload_dict["max_completion_tokens"] = 4096
-                    payload = json.dumps(payload_dict)
-                    headers = {
-                        'Authorization': '..',
-                        'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',
-                        'Content-Type': 'application/json',
-                        'Accept': '*/*',
-                        'Host': '..',
-                        'Connection': 'keep-alive'
-                        }
-                    result = requests.request("POST", "http://../v1/chat/completions", headers=headers, data=payload)
-                    response = result.json()["choices"][0]["message"]["content"]
-                    
-                    messages.append(
-                        {
-                            "role": "assistant",
-                            "content": response
-                        }
-                    )
-                    proxy_off()
-
-                    ############### 添加 写入文件的逻辑 ######################
-                    response_text = result.json()["choices"][0]["message"]["content"]
-                    save_obj_to_jsonl(self.query, response_text, prompt, self.save_path)
-                    ########################################################
-
-                    return response, messages
-            except Exception as e:
-                retries += 1
-                if retries == 3:
-                    logging.error(f"After 3 retries, request failed with error: {e}")
-                    messages.append(
-                        {
-                            "role": "assistant",
-                            "content": "The LLM failed to give a response."
-                        }
-                    )
-                    return None, messages
-    
 
 def execute_code(code, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3", timeout=10):
     """
