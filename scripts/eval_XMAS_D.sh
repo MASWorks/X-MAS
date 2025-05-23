@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 配置文件和数据集名称
-config_path="./configs/XMAS_B_config.json"
+config_path="./configs/X-MAS_B_config.json"
 TEST_DATASET_NAMES=("GSM-Hard" "MATH-500" "AQUA-RAT" "AIME_2024" "MBPP-Plus" "MBPP" "HumanEval" "HumanEval-Plus" "MedQA" "MedMCQA" "PubMedQA" "FinanceBench" "FinQA" "FPB" "SciEval" "SciKnowEval" "SciBench" "GPQA" "GPQA-Diamond" "MMLU-Pro" "MMLU")
 # TEST_DATASET_NAMES=("AIME_2024" "FinanceBench" "FinQA" "FPB" "MBPP-Plus" "MBPP")
 # TEST_DATASET_NAMES=("AIME_2024")

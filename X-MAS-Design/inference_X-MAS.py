@@ -101,10 +101,10 @@ if __name__ == "__main__":
     else:
         print(f">> Method: {args.method_name} | Dataset: {args.test_dataset_name}")
         # load dataset
-        with open(f"../benchmarks/test_pool/{args.test_dataset_name}.json", "r") as f:
+        with open(f"./benchmarks/test_pool/{args.test_dataset_name}.json", "r") as f:
             test_dataset = json.load(f)
         if args.require_val:
-            with open(f"../benchmarks/test_pool/{args.test_dataset_name}_val.json", "r") as f:
+            with open(f"./benchmarks/test_pool/{args.test_dataset_name}_val.json", "r") as f:
                 val_dataset = json.load(f)
         
         # get output path

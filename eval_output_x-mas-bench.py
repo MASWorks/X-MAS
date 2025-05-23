@@ -666,7 +666,7 @@ def get_evaluation(eval_data, model_url_list, model_name, dataset_name, infer_na
     """
     # print(eval_data)
     if "evaluate" in infer_name:
-        source_dir = f"./XMAS-Bench/results/{dataset_name}/qwen2.5-32b-instruct_direct_eval.json"
+        source_dir = f"./X-MAS-Bench/results/{dataset_name}/qwen2.5-32b-instruct_direct_eval.json"
         source_map = load_source_data(source_dir)
     else:
         source_map = {}
@@ -731,7 +731,7 @@ if __name__ == "__main__":
 
         print('-'*20 + f"\n>> Evaluating {i}-th dataset: {dataset_name}")
         if args.eval_mode == "bench-test":
-            infer_path = f"./XMAS-Bench/results/{dataset_name}/{args.infer_name}"
+            infer_path = f"./X-MAS-Bench/results/{dataset_name}/{args.infer_name}"
             # infer_path = f"./results/{dataset_name}/{args.infer_name}"
 
 

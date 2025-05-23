@@ -6,7 +6,7 @@ TEST_DATASET_NAMES=("GSM-Hard" "MATH-500" "AQUA-RAT" "AIME_2024" "MBPP-Plus" "MB
 
 
 METHOD_NAME_LIST=(
-    hmas
+    xmasp
     llm_debate
     dylan
     agentverse
