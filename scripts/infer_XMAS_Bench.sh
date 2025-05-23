@@ -1,6 +1,6 @@
 #!/bin/bash
 
-config_path="./configs/X-MAS_B_config.json"
+config_path="./configs/X-MAS_Bench_config.json"
 TEST_DATASET_NAMES=("MedQA" "MedMCQA")
 model_names=("deepseek-r1-distill-qwen-32b" "llama-3.3-70b-instruct" "qwen2.5-32b-instruct")
 

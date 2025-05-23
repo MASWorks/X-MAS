@@ -1,4 +1,4 @@
-model_api_config=./configs/X-MAS_D_config.json
+model_api_config=./configs/X-MAS_Design_config.json
 model_name=gpt-4o-mini-2024-07-18
 
 # ==================================

@@ -703,7 +703,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", type=str, default="llama-3.1-70b-instruct", help="the LLM for judgement")
-    parser.add_argument("--model_config", type=str, default="config_yerui.json")
+    parser.add_argument("--model_config", type=str, default="config_.json")
     parser.add_argument("--dataset_names", type=str, nargs='+', default=["MATH", "GSM8K", "AQUA-RAT", "MedMCQA"])
     parser.add_argument("--eval_mode", type=str, choices=["test", "train", "bench-test"], required=True)
     parser.add_argument("--infer_name", type=str, default="mas_3_5cot-sc_general_infer.jsonl")

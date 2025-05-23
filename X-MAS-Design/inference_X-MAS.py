@@ -6,8 +6,8 @@ import concurrent.futures
 from tqdm import tqdm
 import traceback
 
-from XMAS_methods.mas_base import MAS
-from XMAS_methods import get_method_class
+from X-MAS_methods.mas_base import MAS
+from X-MAS_methods import get_method_class
 
 def load_model_api_config(model_api_config):
     with open(model_api_config, "r") as f:
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
     # args related to the model
     parser.add_argument("--model_name", type=str, default="gpt-4o-mini-2024-07-18", help="The agent backend to be used for inference.")
-    parser.add_argument("--model_api_config", type=str, default="configs/XMAS_D_config.json")
+    parser.add_argument("--model_api_config", type=str, default="configs/X-MAS_Design_config.json")
     parser.add_argument("--model_temperature", type=float, default=0.5, help="Temperature for sampling.")
     parser.add_argument("--model_max_tokens", type=int, default=2048, help="Maximum tokens for sampling.")
     parser.add_argument("--model_timeout", type=int, default=600, help="Timeout for sampling.")
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     model_api_config = load_model_api_config(args.model_api_config)
     general_config.update({"model_api_config": model_api_config})
     print("-"*50, f"\n>> Model API config: {general_config['model_api_config']}")
-    print("-"*50, f"\n>> Model API config for XMAS: {model_api_config[args.model_name]}")
+    print("-"*50, f"\n>> Model API config for X-MAS: {model_api_config[args.model_name]}")
     
     if args.debug:
         # MAS inference

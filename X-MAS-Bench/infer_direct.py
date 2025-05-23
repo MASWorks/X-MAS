@@ -9,7 +9,7 @@ import sys
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--model_name", type=str, default="llama-3-70b-instruct", help="The agent backend to be used for inference.")
-parser.add_argument("--model_config", type=str, default="config_yerui.json")
+parser.add_argument("--model_config", type=str, default="config_.json")
 parser.add_argument("--test_dataset_names", type=str, nargs='+', default=["MATH", "GSM8K", "AQUA-RAT", "MedMCQA"])
 parser.add_argument("--sample_num", type=int, default=500)
 parser.add_argument("--dry_run", action="store_true")
