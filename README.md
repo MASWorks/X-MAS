@@ -61,3 +61,14 @@ python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --model_name 
 ```
 bash scripts/eval_X-MAS_Design.sh
 ```
+
+## Citation
+
+```
+@article{ye2025x,
+  title={X-MAS: Towards Building Multi-Agent Systems with Heterogeneous LLMs},
+  author={Ye, Rui and Liu, Xiangrui and Wu, Qimin and Pang, Xianghe and Yin, Zhenfei and Bai, Lei and Chen, Siheng},
+  journal={arXiv preprint arXiv:2505.16997},
+  year={2025}
+}
+```
