@@ -1,6 +1,5 @@
-datasets/*
-
-results/*
+X-MAS-Design/results/*
+X-MAS-Bench/results/*
 
 *nopush*
 

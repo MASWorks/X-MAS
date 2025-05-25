@@ -1,0 +1,2252 @@
+[
+  {
+    "query": "A mass of $0.25 \\mathrm{~kg}$ is dropped from rest in a medium offering a resistance of $0.2|v|$, where $v$ is measured in $\\mathrm{m} / \\mathrm{s}$.\r\nIf the mass is to attain a velocity of no more than $10 \\mathrm{~m} / \\mathrm{s}$, find the maximum height from which it can be dropped.",
+    "gt": " 13.45",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. A sample consisting of $3.00 \\mathrm{~mol}$ of diatomic perfect gas molecules at $200 \\mathrm{~K}$ is compressed reversibly and adiabatically until its temperature reaches $250 \\mathrm{~K}$. Given that $C_{V, \\mathrm{~m}}=27.5 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$, calculate $\\Delta H$.",
+    "gt": "+5.4",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "In an industrial process, nitrogen is heated to $500 \\mathrm{~K}$ at a constant volume of $1.000 \\mathrm{~m}^3$. The gas enters the container at $300 \\mathrm{~K}$ and $100 \\mathrm{~atm}$. The mass of the gas is $92.4 \\mathrm{~kg}$. Use the van der Waals equation to determine the approximate pressure of the gas at its working temperature of $500 \\mathrm{~K}$. For nitrogen, $a=1.39 \\mathrm{dm}^6 \\mathrm{~atm} \\mathrm{~mol}^{-2}, b=0.0391 \\mathrm{dm}^3 \\mathrm{~mol}^{-1}$.",
+    "gt": "140",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "In Fig. 21-26, particle 1 of charge $-5.00 q$ and particle 2 of charge $+2.00 q$ are held at separation $L$ on an $x$ axis. If particle 3 of unknown charge $q_3$ is to be located such that the net electrostatic force on it from particles 1 and 2 is zero, what must be the $x$ coordinate of particle 3?",
+    "gt": "2.72",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A rocket starts from rest in free space by emitting mass. At what fraction of the initial mass is the momentum a maximum?",
+    "gt": "0.367879",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Two charged particles are fixed to an $x$ axis: Particle 1 of charge $q_1=2.1 \\times 10^{-8} \\mathrm{C}$ is at position $x=20 \\mathrm{~cm}$ and particle 2 of charge $q_2=-4.00 q_1$ is at position $x=70 \\mathrm{~cm}$. At what coordinate on the axis (other than at infinity) is the net electric field produced by the two particles equal to zero?\r\n",
+    "gt": "-30",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate the kinetic energy of an electron in a beam of electrons accelerated by a voltage increment of $100 \\mathrm{~V}$",
+    "gt": "1.602",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "What would be the magnitude of the electrostatic force between two 1.00 C point charges separated by a distance of $1.00 \\mathrm{~m}$  if such point charges existed (they do not) and this configuration could be set up?",
+    "gt": "8.99",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The World Series in baseball continues until either the American League team or the National League team wins four games. How many different orders are possible (e.g., ANNAAA means the American League team wins in six games) if the series goes four games?",
+    "gt": "2",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Two components operate in parallel in a device, so the device fails when and only when both components fail. The lifetimes, $X_1$ and $X_2$, of the respective components are independent and identically distributed with an exponential distribution with $\\theta=2$. The cost of operating the device is $Z=2 Y_1+Y_2$, where $Y_1=\\min \\left(X_1, X_2\\right)$ and $Y_2=\\max \\left(X_1, X_2\\right)$. Compute $E(Z)$.",
+    "gt": "5",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A clown is juggling four balls simultaneously. Students use a video tape to determine that it takes the clown $0.9 \\mathrm{~s}$ to cycle each ball through his hands (including catching, transferring, and throwing) and to be ready to catch the next ball. What is the minimum vertical speed the clown must throw up each ball?\r\n",
+    "gt": "13.2",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Let $X_1$ and $X_2$ be independent Poisson random variables with respective means $\\lambda_1=2$ and $\\lambda_2=3$. Find $P\\left(X_1=3, X_2=5\\right)$. HINT. Note that this event can occur if and only if $\\left\\{X_1=1, X_2=0\\right\\}$ or $\\left\\{X_1=0, X_2=1\\right\\}$.",
+    "gt": "0.0182",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Suppose that $2.5 \\mathrm{mmol} \\mathrm{N}_2$ (g) occupies $42 \\mathrm{~cm}^3$ at $300 \\mathrm{~K}$ and expands isothermally to $600 \\mathrm{~cm}^3$. Calculate $\\Delta G$ for the process.",
+    "gt": "-17",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A steel ball of velocity $5$ m/s strikes a smooth, heavy steel plate at an angle of $30^\\circ$ from the normal. If the coefficient of restitution is 0.8, at what angle from the normal does the steel ball bounce off the plate?",
+    "gt": "36",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "$$\r\n\\text { If we locate an electron to within } 20 \\mathrm{pm} \\text {, then what is the uncertainty in its speed? }\r\n$$",
+    "gt": "3.7",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K.  Given the reactions (1) and (2) below, determine $\\Delta_{\\mathrm{r}} H^{\\ominus}$ for reaction (3).\r\n\r\n(1) $\\mathrm{H}_2(\\mathrm{g})+\\mathrm{Cl}_2(\\mathrm{g}) \\rightarrow 2 \\mathrm{HCl}(\\mathrm{g})$, $\\Delta_{\\mathrm{r}} H^{\\ominus}=-184.62 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$\r\n\r\n(2) $2 \\mathrm{H}_2(\\mathrm{g})+\\mathrm{O}_2(\\mathrm{g}) \\rightarrow 2 \\mathrm{H}_2 \\mathrm{O}(\\mathrm{g})$, $\\Delta_{\\mathrm{r}} H^\\ominus=-483.64 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$\r\n\r\n(3) $4 \\mathrm{HCl}(\\mathrm{g})+\\mathrm{O}_2(\\mathrm{g}) \\rightarrow 2 \\mathrm{Cl}_2(\\mathrm{g})+2 \\mathrm{H}_2 \\mathrm{O}(\\mathrm{g})$",
+    "gt": "-114.40",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A child slides a block of mass $2 \\mathrm{~kg}$ along a slick kitchen floor. If the initial speed is 4 $\\mathrm{m} / \\mathrm{s}$ and the block hits a spring with spring constant $6 \\mathrm{~N} / \\mathrm{m}$, what is the maximum compression of the spring? ",
+    "gt": "2.3",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Express the van der Waals parameters $b=0.0226 \\mathrm{dm}^3 \\mathrm{~mol}^{-1}$ in SI base units.",
+    "gt": "0.0000226",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Note that 1 atm = 1.013 25 bar. Unless otherwise stated, thermochemical data are for 298.15 K. A sample consisting of $2.0 \\mathrm{~mol} \\mathrm{CO}_2$ occupies a fixed volume of $15.0 \\mathrm{dm}^3$ at $300 \\mathrm{~K}$. When it is supplied with $2.35 \\mathrm{~kJ}$ of energy as heat its temperature increases to $341 \\mathrm{~K}$. Assume that $\\mathrm{CO}_2$ is described by the van der Waals equation of state, and calculate $w$.",
+    "gt": "0",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "An astronaut travels to the nearest star system, 4 light years away, and returns at a speed $0.3c$. How much has the astronaut aged relative to those people remaining on Earth?",
+    "gt": "25.4",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Your swimming pool containing 60,000 gal of water has been contaminated by $5 \\mathrm{~kg}$ of a nontoxic dye that leaves a swimmer's skin an unattractive green. The pool's filtering system can take water from the pool, remove the dye, and return the water to the pool at a flow rate of $200 \\mathrm{gal} / \\mathrm{min}$. Find the time $T$ at which the concentration of dye first reaches the value $0.02 \\mathrm{~g} / \\mathrm{gal}$.",
+    "gt": "7.136",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Use differentials to estimate the amount of tin in a closed tin can with diameter $8 \\mathrm{~cm}$ and height $12 \\mathrm{~cm}$ if the tin is $0.04 \\mathrm{~cm}$ thick.",
+    "gt": "16",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Frozen-core $\\mathrm{SCF} / \\mathrm{DZP}$ and CI-SD/DZP calculations on $\\mathrm{H}_2 \\mathrm{O}$ at its equilibrium geometry gave energies of -76.040542 and -76.243772 hartrees. Application of the Davidson correction brought the energy to -76.254549 hartrees. Find the coefficient of $\\Phi_0$ in the normalized CI-SD wave function.",
+    "gt": "0.9731",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A ground-state hydrogen atom absorbs a photon of light that has a wavelength of $97.2 \\mathrm{~nm}$. It then gives off a photon that has a wavelength of $486 \\mathrm{~nm}$. What is the final state of the hydrogen atom?",
+    "gt": "2",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The initial charges on the three identical metal spheres in Fig. 21-24 are the following: sphere $A, Q$; sphere $B,-Q / 4$; and sphere $C, Q / 2$, where $Q=2.00 \\times 10^{-14}$ C. Spheres $A$ and $B$ are fixed in place, with a center-to-center separation of $d=1.20 \\mathrm{~m}$, which is much larger than the spheres. Sphere $C$ is touched first to sphere $A$ and then to sphere $B$ and is then removed. What then is the magnitude of the electrostatic force between spheres $A$ and $B$ ?\r\n",
+    "gt": "4.68",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate the de Broglie wavelength of an electron moving at 1/137th the speed of light. (At this speed, the relativistic correction to the mass is negligible.)",
+    "gt": "0.332",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A spacecraft is placed in orbit $200 \\mathrm{~km}$ above Earth in a circular orbit. Calculate the minimum escape speed from Earth. ",
+    "gt": "3.23",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A mass weighing $8 \\mathrm{lb}$ stretches a spring 1.5 in. The mass is also attached to a damper with coefficient $\\gamma$. Determine the value of $\\gamma$ for which the system is critically damped; be sure to give the units for $\\gamma$",
+    "gt": "8",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Let the distribution of $T$ be $t(17)$. Find $t_{0.01}(17)$.",
+    "gt": "2.567",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": " If $125 \\mathrm{~cm}^3$ of hydrogen gas effuses through a small hole in 135 seconds, how long will it take the same volume of oxygen gas to effuse under the same temperature and pressure?",
+    "gt": "537",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "How many electrons would have to be removed from a coin to leave it with a charge of $+1.0 \\times 10^{-7} \\mathrm{C}$ ?",
+    "gt": "6.3",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "If $X$ is a random variable with mean 33 and variance 16, use Chebyshev's inequality to find A lower bound for $P(23 < X < 43)$.",
+    "gt": "0.84",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Let $X$ equal the tarsus length for a male grackle. Assume that the distribution of $X$ is $N(\\mu, 4.84)$. Find the sample size $n$ that is needed so that we are $95 \\%$ confident that the maximum error of the estimate of $\\mu$ is 0.4 .",
+    "gt": "117",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Note that 1 atm = 1.013 25 bar. Unless otherwise stated, thermochemical data are for 298.15 K. The standard enthalpy of formation of the metallocene bis(benzene)chromium was measured in a calorimeter. It was found for the reaction $\\mathrm{Cr}\\left(\\mathrm{C}_6 \\mathrm{H}_6\\right)_2(\\mathrm{~s}) \\rightarrow \\mathrm{Cr}(\\mathrm{s})+2 \\mathrm{C}_6 \\mathrm{H}_6(\\mathrm{~g})$ that $\\Delta_{\\mathrm{r}} U^{\\bullet}(583 \\mathrm{~K})=+8.0 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$. Estimate the standard enthalpy of formation of the compound at $583 \\mathrm{~K}$. The constant-pressure molar heat capacity of benzene is $136.1 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$ in its liquid range and $81.67 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$ as a gas.",
+    "gt": "+116.0",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. A sample of $4.50 \\mathrm{~g}$ of methane occupies $12.7 \\mathrm{dm}^3$ at $310 \\mathrm{~K}$. Calculate the work that would be done if the same expansion occurred reversibly.",
+    "gt": "-167",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "In order to estimate the proportion, $p$, of a large class of college freshmen that had high school GPAs from 3.2 to 3.6 , inclusive, a sample of $n=50$ students was taken. It was found that $y=9$ students fell into this interval. Give a point estimate of $p$.",
+    "gt": "0.1800",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A particle of charge $+3.00 \\times 10^{-6} \\mathrm{C}$ is $12.0 \\mathrm{~cm}$ distant from a second particle of charge $-1.50 \\times 10^{-6} \\mathrm{C}$. Calculate the magnitude of the electrostatic force between the particles.",
+    "gt": "2.81",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. Consider a system consisting of $2.0 \\mathrm{~mol} \\mathrm{CO}_2(\\mathrm{~g})$, initially at $25^{\\circ} \\mathrm{C}$ and $10 \\mathrm{~atm}$ and confined to a cylinder of cross-section $10.0 \\mathrm{~cm}^2$. It is allowed to expand adiabatically against an external pressure of 1.0 atm until the piston has moved outwards through $20 \\mathrm{~cm}$. Assume that carbon dioxide may be considered a perfect gas with $C_{V, \\mathrm{~m}}=28.8 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$ and calculate $\\Delta S$.",
+    "gt": "+0.60",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Carbon-14 is a radioactive nucleus with a half-life of 5760 years. Living matter exchanges carbon with its surroundings (for example, through $\\mathrm{CO}_2$ ) so that a constant level of ${ }^{14} \\mathrm{C}$ is maintained, corresponding to 15.3 decay events per minute. Once living matter has died, carbon contained in the matter is not exchanged with the surroundings, and the amount of ${ }^{14} \\mathrm{C}$ that remains in the dead material decreases with time due to radioactive decay. Consider a piece of fossilized wood that demonstrates $2.4{ }^{14} \\mathrm{C}$ decay events per minute. How old is the wood?",
+    "gt": "4.86",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A perfect gas undergoes isothermal compression, which reduces its volume by $2.20 \\mathrm{dm}^3$. The final pressure and volume of the gas are $5.04 \\mathrm{bar}$ and $4.65 \\mathrm{dm}^3$, respectively. Calculate the original pressure of the gas in atm.",
+    "gt": "3.38",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Determine the total collisional frequency for $\\mathrm{CO}_2$ at $1 \\mathrm{~atm}$ and $298 \\mathrm{~K}$.",
+    "gt": "8.44",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The dye dilution method is used to measure cardiac output with $6 \\mathrm{mg}$ of dye. The dye concentrations, in $\\mathrm{mg} / \\mathrm{L}$, are modeled by $c(t)=20 t e^{-0.6 t}, 0 \\leqslant t \\leqslant 10$, where $t$ is measured in seconds. Find the cardiac output.",
+    "gt": "6.6",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A deuteron (nucleus of deuterium atom consisting of a proton and a neutron) with speed $14.9$ km / s collides elastically with a neutron at rest. Use the approximation that the deuteron is twice the mass of the neutron. If the deuteron is scattered through a LAB angle $\\psi = 10^\\circ$, what is the final speed of the neutron?",
+    "gt": "5.18",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A gas sample is known to be a mixture of ethane and butane. A bulb having a $230.0 \\mathrm{~cm}^3$ capacity is filled with the gas to a pressure of $97.5 \\times 10^3 \\mathrm{~Pa}$ at $23.1^{\\circ} \\mathrm{C}$. If the mass of the gas in the bulb is $0.3554 \\mathrm{~g}$, what is the mole percent of butane in the mixture?\r\n",
+    "gt": "32",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate the pressure exerted by Ar for a molar volume of $1.31 \\mathrm{~L} \\mathrm{~mol}^{-1}$ at $426 \\mathrm{~K}$ using the van der Waals equation of state. The van der Waals parameters $a$ and $b$ for Ar are 1.355 bar dm ${ }^6 \\mathrm{~mol}^{-2}$ and $0.0320 \\mathrm{dm}^3 \\mathrm{~mol}^{-1}$, respectively. Is the attractive or repulsive portion of the potential dominant under these conditions?\r\n",
+    "gt": "26.9",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A grade school boy has five blue and four white marbles in his left pocket and four blue and five white marbles in his right pocket. If he transfers one marble at random from his left to his right pocket, what is the probability of his then drawing a blue marble from his right pocket?",
+    "gt": "0.444444444444444 ",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A new single-stage rocket is developed in the year 2023, having a gas exhaust velocity of $4000$ m/s. The total mass of the rocket is $10^5$ kg, with $90$% of its mass being fuel. The fuel burns quickly in $100$ s at a constant rate. For testing purposes, the rocket is launched vertically at rest from Earth's surface. Neglect air resistance and assume that the acceleration of gravity is constant. Determine how high the launched object can reach above the surface of Earth.",
+    "gt": "3700",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A poker hand is defined as drawing 5 cards at random without replacement from a deck of 52 playing cards. Find the probability of four of a kind (four cards of equal face value and one card of a different value).",
+    "gt": "0.00024",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A manometer consists of a U-shaped tube containing a liquid. One side is connected to the apparatus and the other is open to the atmosphere. The pressure inside the apparatus is then determined from the difference in heights of the liquid. Suppose the liquid is water, the external pressure is 770 Torr, and the open side is $10.0 \\mathrm{cm}$ lower than the side connected to the apparatus. What is the pressure in the apparatus? (The density of water at $25^{\\circ} \\mathrm{C}$ is $0.99707 \\mathrm{g} \\mathrm{cm}^{-3}$.)",
+    "gt": "102",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A tank originally contains $100 \\mathrm{gal}$ of fresh water. Then water containing $\\frac{1}{2} \\mathrm{lb}$ of salt per gallon is poured into the tank at a rate of $2 \\mathrm{gal} / \\mathrm{min}$, and the mixture is allowed to leave at the same rate. After $10 \\mathrm{~min}$ the process is stopped, and fresh water is poured into the tank at a rate of $2 \\mathrm{gal} / \\mathrm{min}$, with the mixture again leaving at the same rate. Find the amount of salt in the tank at the end of an additional $10 \\mathrm{~min}$.",
+    "gt": " 7.42",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "When an electron in a certain excited energy level in a one-dimensional box of length $2.00  Å$ makes a transition to the ground state, a photon of wavelength $8.79 \\mathrm{~nm}$ is emitted. Find the quantum number of the initial state.",
+    "gt": "4",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. A strip of magnesium of mass $15 \\mathrm{~g}$ is placed in a beaker of dilute hydrochloric acid. Calculate the work done by the system as a result of the reaction. The atmospheric pressure is 1.0 atm and the temperature $25^{\\circ} \\mathrm{C}$.",
+    "gt": "-1.5",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "How much work is required to turn an electric dipole $180^{\\circ}$ in a uniform electric field of magnitude $E=46.0 \\mathrm{~N} / \\mathrm{C}$ if the dipole moment has a magnitude of $p=3.02 \\times$ $10^{-25} \\mathrm{C} \\cdot \\mathrm{m}$ and the initial angle is $64^{\\circ} ?$\r\n",
+    "gt": "1.22",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Let the distribution of $W$ be $F(8,4)$. Find the following: $F_{0.01}(8,4)$.",
+    "gt": "14.80",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. When $229 \\mathrm{~J}$ of energy is supplied as heat to $3.0 \\mathrm{~mol} \\mathrm{Ar}(\\mathrm{g})$ at constant pressure, the temperature of the sample increases by $2.55 \\mathrm{~K}$. Calculate the molar heat capacities at constant volume.",
+    "gt": "30",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "An effusion cell has a circular hole of diameter $1.50 \\mathrm{~mm}$. If the molar mass of the solid in the cell is $300 \\mathrm{~g} \\mathrm{~mol}^{-1}$ and its vapour pressure is $0.735 \\mathrm{~Pa}$ at $500 \\mathrm{~K}$, by how much will the mass of the solid decrease in a period of $1.00 \\mathrm{~h}$ ?",
+    "gt": "16",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A long, straight wire has fixed negative charge with a linear charge density of magnitude $3.6 \\mathrm{nC} / \\mathrm{m}$. The wire is to be enclosed by a coaxial, thin-walled nonconducting cylindrical shell of radius $1.5 \\mathrm{~cm}$. The shell is to have positive charge on its outside surface with a surface charge density $\\sigma$ that makes the net external electric field zero. Calculate $\\sigma$.\r\n",
+    "gt": "3.8",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The electric field in a certain region of Earth's atmosphere is directed vertically down. At an altitude of $300 \\mathrm{~m}$ the field has magnitude $60.0 \\mathrm{~N} / \\mathrm{C}$; at an altitude of $200 \\mathrm{~m}$, the magnitude is $100 \\mathrm{~N} / \\mathrm{C}$. Find the net amount of charge contained in a cube $100 \\mathrm{~m}$ on edge, with horizontal faces at altitudes of 200 and $300 \\mathrm{~m}$.",
+    "gt": "3.54",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "To determine the effect of $100 \\%$ nitrate on the growth of pea plants, several specimens were planted and then watered with $100 \\%$ nitrate every day. At the end of\r\ntwo weeks, the plants were measured. Here are data on seven of them:\r\n$$\r\n\\begin{array}{lllllll}\r\n17.5 & 14.5 & 15.2 & 14.0 & 17.3 & 18.0 & 13.8\r\n\\end{array}\r\n$$\r\nAssume that these data are a random sample from a normal distribution $N\\left(\\mu, \\sigma^2\\right)$. Find the value of a point estimate of $\\mu$.",
+    "gt": "15.757",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The composition of the atmosphere is approximately 80 per cent nitrogen and 20 per cent oxygen by mass. At what height above the surface of the Earth would the atmosphere become 90 per cent nitrogen and 10 per cent oxygen by mass? Assume that the temperature of the atmosphere is constant at $25^{\\circ} \\mathrm{C}$. What is the pressure of the atmosphere at that height?",
+    "gt": "0.0029",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. Calculate $\\Delta S_\\text{tot}$ when two copper blocks, each of mass $10.0 \\mathrm{~kg}$, one at $100^{\\circ} \\mathrm{C}$ and the other at $0^{\\circ} \\mathrm{C}$, are placed in contact in an isolated container. The specific heat capacity of copper is $0.385 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~g}^{-1}$ and may be assumed constant over the temperature range involved.",
+    "gt": "+93.4",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "An Earth satellite has a perigee of $300 \\mathrm{~km}$ and an apogee of $3,500 \\mathrm{~km}$ above Earth's surface. How far is the satellite above Earth when it has rotated $90^{\\circ}$ around Earth from perigee?",
+    "gt": "1590",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Evaluate the series\r\n$$\r\nS=\\sum_{n=0}^{\\infty} \\frac{1}{3^n}\r\n$$",
+    "gt": "1.5",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "What is the mean speed, $\\bar{c}$, of $\\mathrm{N}_2$ molecules in air at $25^{\\circ} \\mathrm{C}$ ?",
+    "gt": "475",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A mass weighing $2 \\mathrm{lb}$ stretches a spring 6 in. If the mass is pulled down an additional 3 in. and then released, and if there is no damping, by determining the position $u$ of the mass at any time $t$, find the frequency of the motion",
+    "gt": "0.7854",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The lowest-frequency pure-rotational absorption line of ${ }^{12} \\mathrm{C}^{32} \\mathrm{~S}$ occurs at $48991.0 \\mathrm{MHz}$. Find the bond distance in ${ }^{12} \\mathrm{C}^{32} \\mathrm{~S}$.",
+    "gt": "1.5377",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "If $\\bar{X}$ and $\\bar{Y}$ are the respective means of two independent random samples of the same size $n$, find $n$ if we want $\\bar{x}-\\bar{y} \\pm 4$ to be a $90 \\%$ confidence interval for $\\mu_X-\\mu_Y$. Assume that the standard deviations are known to be $\\sigma_X=15$ and $\\sigma_Y=25$.",
+    "gt": "144",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Consider the initial value problem\r\n$$\r\n9 y^{\\prime \\prime}+12 y^{\\prime}+4 y=0, \\quad y(0)=a>0, \\quad y^{\\prime}(0)=-1\r\n$$\r\nFind the critical value of $a$ that separates solutions that become negative from those that are always positive.",
+    "gt": "1.5",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Use the normalized Numerov-method harmonic-oscillator wave functions found by going from -5 to 5 in steps of 0.1 to estimate the probability of being in the classically forbidden region for the $v=0$ state.",
+    "gt": "0.16",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The huge advantage of using the conservation of energy instead of Newton's laws of motion is that we can jump from the initial state to the final state without considering all the intermediate motion. Here is an example. In Figure, a child of mass $m$ is released from rest at the top of a water slide, at height $h=8.5 \\mathrm{~m}$ above the bottom of the slide. Assuming that the slide is frictionless because of the water on it, find the child's speed at the bottom of the slide.",
+    "gt": "13",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate $\\Delta G$ for the isothermal expansion of $2.25 \\mathrm{~mol}$ of an ideal gas at $325 \\mathrm{~K}$ from an initial pressure of 12.0 bar to a final pressure of 2.5 bar.",
+    "gt": "-9.54",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "What is the temperature of a two-level system of energy separation equivalent to $400 \\mathrm{~cm}^{-1}$ when the population of the upper state is one-third that of the lower state?",
+    "gt": "524",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "In this problem, 3.00 mol of liquid mercury is transformed from an initial state characterized by $T_i=300 . \\mathrm{K}$ and $P_i=1.00$ bar to a final state characterized by $T_f=600 . \\mathrm{K}$ and $P_f=3.00$ bar.\r\nCalculate $\\Delta S$ for this process; $\\beta=1.81 \\times 10^{-4} \\mathrm{~K}^{-1}, \\rho=13.54 \\mathrm{~g} \\mathrm{~cm}^{-3}$, and $C_{P, m}$ for $\\mathrm{Hg}(l)=27.98 \\mathrm{~J} \\mathrm{~mol}^{-1} \\mathrm{~K}^{-1}$.",
+    "gt": "58.2",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Note that 1 atm = 1.01325 bar. Unless otherwise stated, thermochemical data are for 298.15 K. Take nitrogen to be a van der Waals gas with $a=1.352 \\mathrm{dm}^6 \\mathrm{~atm} \\mathrm{\\textrm {mol } ^ { - 2 }}$ and $b=0.0387 \\mathrm{dm}^3 \\mathrm{~mol}^{-1}$, and calculate $\\Delta H_{\\mathrm{m}}$ when the pressure on the gas is decreased from $500 \\mathrm{~atm}$ to $1.00 \\mathrm{~atm}$ at $300 \\mathrm{~K}$. For a van der Waals gas, $\\mu=\\{(2 a / R T)-b\\} / C_{p, \\mathrm{~m}}$. Assume $C_{p, \\mathrm{~m}}=\\frac{7}{2} R$.",
+    "gt": "+3.60",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A particle of mass $m$ starts at rest on top of a smooth fixed hemisphere of radius $a$. Determine the angle at which the particle leaves the hemisphere.",
+    "gt": "48.189685",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The enthalpy of fusion of mercury is $2.292 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$, and its normal freezing point is $234.3 \\mathrm{~K}$ with a change in molar volume of $+0.517 \\mathrm{~cm}^3 \\mathrm{~mol}^{-1}$ on melting. At what temperature will the bottom of a column of mercury (density $13.6 \\mathrm{~g} \\mathrm{~cm}^{-3}$ ) of height $10.0 \\mathrm{~m}$ be expected to freeze?",
+    "gt": "234.4",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": " The charges of an electron and a positron are $-e$ and $+e$. The mass of each is $9.11 \\times 10^{-31} \\mathrm{~kg}$. What is the ratio of the electrical force to the gravitational force between an electron and a positron?\r\n",
+    "gt": "4.16",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A rocket has an initial mass of $7 \\times 10^4 \\mathrm{~kg}$ and on firing burns its fuel at a rate of 250 $\\mathrm{kg} / \\mathrm{s}$. The exhaust velocity is $2500 \\mathrm{~m} / \\mathrm{s}$. If the rocket has a vertical ascent from resting on the earth, how long after the rocket engines fire will the rocket lift off?",
+    "gt": "25",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "In an elastic collision of two particles with masses $m_1$ and $m_2$, the initial velocities are $\\mathbf{u}_1$ and $\\mathbf{u}_2=\\alpha \\mathbf{u}_1$. If the initial kinetic energies of the two particles are equal, find the conditions on $u_1 / u_2$ such that $m_1$ is at rest after the collision and $\\alpha$ is positive. ",
+    "gt": "5.828427125",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Estimate the molar volume of $\\mathrm{CO}_2$ at $500 \\mathrm{~K}$ and 100 atm by treating it as a van der Waals gas.",
+    "gt": "0.366",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The power output of a laser is measured in units of watts (W), where one watt is equal to one joule per second. $\\left(1 \\mathrm{~W}=1 \\mathrm{~J} \\cdot \\mathrm{s}^{-1}\\right.$.) What is the number of photons emitted per second by a $1.00 \\mathrm{~mW}$ nitrogen laser? The wavelength emitted by a nitrogen laser is $337 \\mathrm{~nm}$.",
+    "gt": "1.70",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "If $y_1$ and $y_2$ are a fundamental set of solutions of $t y^{\\prime \\prime}+2 y^{\\prime}+t e^t y=0$ and if $W\\left(y_1, y_2\\right)(1)=2$, find the value of $W\\left(y_1, y_2\\right)(5)$.",
+    "gt": "0.08",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Note that 1 atm = 1.013 25 bar. Unless otherwise stated, thermochemical data are for 298.15 K. Concerns over the harmful effects of chlorofluorocarbons on stratospheric ozone have motivated a search for new refrigerants. One such alternative is 2,2-dichloro-1,1,1-trifluoroethane (refrigerant 123). Younglove and McLinden published a compendium of thermophysical properties of this substance (J. Phys. Chem. Ref. Data 23, 7 (1994)), from which properties such as the Joule-Thomson coefficient $\\mu$ can be computed. Compute the temperature change that would accompany adiabatic expansion of $2.0 \\mathrm{~mol}$ of this refrigerant from $1.5 \\mathrm{bar}$ to 0.5 bar at $50^{\\circ} \\mathrm{C}$.",
+    "gt": "-2.99",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "For water, $\\Delta H_{\\text {vaporization }}$ is $40.656 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$, and the normal boiling point is $373.12 \\mathrm{~K}$. Calculate the boiling point for water on the top of Mt. Everest (elevation $8848 \\mathrm{~m}$ ), where the barometric pressure is 253 Torr.",
+    "gt": "344",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A free neutron is unstable and decays into a proton and an electron. How much energy other than the rest energies of the proton and electron is available if a neutron at rest decays? (This is an example of nuclear beta decay. Another particle, called a neutrino-- actually an antineutrino $\\bar v$ is also produced.)",
+    "gt": "0.8",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Find the work done by a force $\\mathbf{F}=8 \\mathbf{i}-6 \\mathbf{j}+9 \\mathbf{k}$ that moves an object from the point $(0,10,8)$ to the point $(6,12,20)$ along a straight line. The distance is measured in meters and the force in newtons.",
+    "gt": "144",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A skier weighing $90 \\mathrm{~kg}$ starts from rest down a hill inclined at $17^{\\circ}$. He skis $100 \\mathrm{~m}$ down the hill and then coasts for $70 \\mathrm{~m}$ along level snow until he stops. Find the coefficient of kinetic friction between the skis and the snow. ",
+    "gt": "0.18",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "An isolated conductor has net charge $+10 \\times 10^{-6} \\mathrm{C}$ and a cavity with a particle of charge $q=+3.0 \\times 10^{-6} \\mathrm{C}$. What is the charge on the cavity wall?",
+    "gt": "-3.0",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Let $\\bar{X}$ be the mean of a random sample of size 36 from an exponential distribution with mean 3 . Approximate $P(2.5 \\leq \\bar{X} \\leq 4)$",
+    "gt": "0.8185",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A radioactive material, such as the isotope thorium-234, disintegrates at a rate proportional to the amount currently present. If $Q(t)$ is the amount present at time $t$, then $d Q / d t=-r Q$, where $r>0$ is the decay rate. If $100 \\mathrm{mg}$ of thorium-234 decays to $82.04 \\mathrm{mg}$ in 1 week, determine the decay rate $r$.",
+    "gt": "0.02828",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A $10.0 \\mathrm{~g}$ block with a charge of $+8.00 \\times 10^{-5} \\mathrm{C}$ is placed in an electric field $\\vec{E}=(3000 \\hat{\\mathrm{i}}-600 \\hat{\\mathrm{j}}) \\mathrm{N} / \\mathrm{C}$. What is the magnitude of the electrostatic force on the block?",
+    "gt": "0.245",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Bowl $B_1$ contains two white chips, bowl $B_2$ contains two red chips, bowl $B_3$ contains two white and two red chips, and bowl $B_4$ contains three white chips and one red chip. The probabilities of selecting bowl $B_1, B_2, B_3$, or $B_4$ are $1 / 2,1 / 4,1 / 8$, and $1 / 8$, respectively. A bowl is selected using these probabilities and a chip is then drawn at random. Find $P(W)$, the probability of drawing a white chip.",
+    "gt": "0.65625",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Astronaut Stumblebum wanders too far away from the space shuttle orbiter while repairing a broken communications satellite. Stumblebum realizes that the orbiter is moving away from him at $3 \\mathrm{~m} / \\mathrm{s}$. Stumblebum and his maneuvering unit have a mass of $100 \\mathrm{~kg}$, including a pressurized tank of mass $10 \\mathrm{~kg}$. The tank includes only $2 \\mathrm{~kg}$ of gas that is used to propel him in space. The gas escapes with a constant velocity of $100 \\mathrm{~m} / \\mathrm{s}$. With what velocity will Stumblebum have to throw the empty tank away to reach the orbiter?",
+    "gt": "11",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Newton's law of cooling states that the temperature of an object changes at a rate proportional to the difference between its temperature and that of its surroundings. Suppose that the temperature of a cup of coffee obeys Newton's law of cooling. If the coffee has a temperature of $200^{\\circ} \\mathrm{F}$ when freshly poured, and $1 \\mathrm{~min}$ later has cooled to $190^{\\circ} \\mathrm{F}$ in a room at $70^{\\circ} \\mathrm{F}$, determine when the coffee reaches a temperature of $150^{\\circ} \\mathrm{F}$.",
+    "gt": " 6.07",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The carbon-carbon bond length in diamond is $154.45 \\mathrm{pm}$. If diamond were considered to be a close-packed structure of hard spheres with radii equal to half the bond length, what would be its expected density? The diamond lattice is face-centred cubic and its actual density is $3.516 \\mathrm{~g} \\mathrm{~cm}^{-3}$.",
+    "gt": "7.654",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The ground level of $\\mathrm{Cl}$ is ${ }^2 \\mathrm{P}_{3 / 2}$ and a ${ }^2 \\mathrm{P}_{1 / 2}$ level lies $881 \\mathrm{~cm}^{-1}$ above it. Calculate the electronic contribution to the molar Gibbs energy of $\\mathrm{Cl}$ atoms at  $500 \\mathrm{~K}$.",
+    "gt": "-6.42",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate the Debye-Hückel screening length $1 / \\kappa$ at $298 \\mathrm{~K}$ in a $0.0075 \\mathrm{~m}$ solution of $\\mathrm{K}_3 \\mathrm{PO}_4$.",
+    "gt": "1.4",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A mass of $100 \\mathrm{~g}$ stretches a spring $5 \\mathrm{~cm}$. If the mass is set in motion from its equilibrium position with a downward velocity of $10 \\mathrm{~cm} / \\mathrm{s}$, and if there is no damping, determine when does the mass first return to its equilibrium position.",
+    "gt": "0.2244",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A model for the surface area of a human body is given by $S=0.1091 w^{0.425} h^{0.725}$, where $w$ is the weight (in pounds), $h$ is the height (in inches), and $S$ is measured in square feet. If the errors in measurement of $w$ and $h$ are at most $2 \\%$, use differentials to estimate the maximum percentage error in the calculated surface area.",
+    "gt": "2.3",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A ball is thrown at an angle of $45^{\\circ}$ to the ground. If the ball lands $90 \\mathrm{~m}$ away, what was the initial speed of the ball?\r\n",
+    "gt": "30",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A charged cloud system produces an electric field in the air near Earth's surface. A particle of charge $-2.0 \\times 10^{-9} \\mathrm{C}$ is acted on by a downward electrostatic force of $3.0 \\times 10^{-6} \\mathrm{~N}$ when placed in this field. What is the magnitude of the electric field? ",
+    "gt": "1.5",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "What is the total charge in coulombs of $75.0 \\mathrm{~kg}$ of electrons?",
+    "gt": "-1.32",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A square metal plate of edge length $8.0 \\mathrm{~cm}$ and negligible thickness has a total charge of $6.0 \\times 10^{-6} \\mathrm{C}$. Estimate the magnitude $E$ of the electric field just off the center of the plate (at, say, a distance of $0.50 \\mathrm{~mm}$ from the center) by assuming that the charge is spread uniformly over the two faces of the plate. ",
+    "gt": "5.4",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A boy found a bicycle lock for which the combination was unknown. The correct combination is a four-digit number, $d_1 d_2 d_3 d_4$, where $d_i, i=1,2,3,4$, is selected from $1,2,3,4,5,6,7$, and 8 . How many different lock combinations are possible with such a lock?",
+    "gt": "4096",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A doctor is concerned about the relationship between blood pressure and irregular heartbeats. Among her patients, she classifies blood pressures as high, normal, or low and heartbeats as regular or irregular and finds that 16\\% have high blood pressure; (b) 19\\% have low blood pressure; (c) $17 \\%$ have an irregular heartbeat; (d) of those with an irregular heartbeat, $35 \\%$ have high blood pressure; and (e) of those with normal blood pressure, $11 \\%$ have an irregular heartbeat. What percentage of her patients have a regular heartbeat and low blood pressure?",
+    "gt": "15.1",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A force of $40 \\mathrm{~N}$ is required to hold a spring that has been stretched from its natural length of $10 \\mathrm{~cm}$ to a length of $15 \\mathrm{~cm}$. How much work is done in stretching the spring from $15 \\mathrm{~cm}$ to $18 \\mathrm{~cm}$ ?",
+    "gt": "1.56",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate the ratio of the electrical and gravitational forces between a proton and an electron.",
+    "gt": "2",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A crude model for the molecular distribution of atmospheric gases above Earth's surface (denoted by height $h$ ) can be obtained by considering the potential energy due to gravity:\r\n$$\r\nP(h)=e^{-m g h / k T}\r\n$$\r\nIn this expression $m$ is the per-particle mass of the gas, $g$ is the acceleration due to gravity, $k$ is a constant equal to $1.38 \\times 10^{-23} \\mathrm{~J} \\mathrm{~K}^{-1}$, and $T$ is temperature. Determine $\\langle h\\rangle$ for methane $\\left(\\mathrm{CH}_4\\right)$ using this distribution function.",
+    "gt": "1.6",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. The enthalpy of vaporization of chloroform $\\left(\\mathrm{CHCl}_3\\right)$ is $29.4 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$ at its normal boiling point of $334.88 \\mathrm{~K}$. Calculate the entropy of vaporization of chloroform at this temperature.",
+    "gt": "+87.8",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "What is the minimum escape velocity of a spacecraft from the moon?",
+    "gt": "2380",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298 K unless otherwise stated. Estimate the standard reaction Gibbs energy of $\\mathrm{N}_2(\\mathrm{g})+3 \\mathrm{H}_2(\\mathrm{g}) \\rightarrow$ $2 \\mathrm{NH}_3$ (g) at $500 \\mathrm{~K}$.",
+    "gt": "7",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The volume charge density of a solid nonconducting sphere of radius $R=5.60 \\mathrm{~cm}$ varies with radial distance $r$ as given by $\\rho=$ $\\left(14.1 \\mathrm{pC} / \\mathrm{m}^3\\right) r / R$. What is the sphere's total charge?",
+    "gt": "7.78",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "For a two-level system where $v=1.50 \\times 10^{13} \\mathrm{~s}^{-1}$, determine the temperature at which the internal energy is equal to $0.25 \\mathrm{Nhv}$, or $1 / 2$ the limiting value of $0.50 \\mathrm{Nhv}$.",
+    "gt": "655",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "There is a disk mounted on a fixed horizontal axle. A block hangs from a massless cord that is wrapped around the rim of the disk. The cord does not slip and there is no friction at the axle. Let the disk start from rest at time $t=0$ and also let the tension in the massless cord be $6.0 \\mathrm{~N}$ and the angular acceleration of the disk be $-24 \\mathrm{rad} / \\mathrm{s}^2$. What is its rotational kinetic energy $K$ at $t=2.5 \\mathrm{~s}$ ?",
+    "gt": "90",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate the magnitude of the spin angular momentum of a proton. Give a numerical answer. ",
+    "gt": "9.13",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. The volume of a certain liquid varies with temperature as\r\n$$\r\nV=V^{\\prime}\\left\\{0.75+3.9 \\times 10^{-4}(T / \\mathrm{K})+1.48 \\times 10^{-6}(T / \\mathrm{K})^2\\right\\}\r\n$$\r\nwhere $V^{\\prime}$ is its volume at $300 \\mathrm{~K}$. Calculate its expansion coefficient, $\\alpha$, at $320 \\mathrm{~K}$.",
+    "gt": "0.00131",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. Calculate the standard enthalpy of solution of $\\mathrm{AgCl}(\\mathrm{s})$ in water from the enthalpies of formation of the solid and the aqueous ions.",
+    "gt": "+65.49",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The base of a solid is a circular disk with radius 3 . Find the volume of the solid if parallel cross-sections perpendicular to the base are isosceles right triangles with hypotenuse lying along the base.",
+    "gt": "36",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": " A typical roulette wheel used in a casino has 38 slots that are numbered $1,2,3, \\ldots, 36,0,00$, respectively. The 0 and 00 slots are colored green. Half of the remaining slots are red and half are black. Also, half of the integers between 1 and 36 inclusive are odd, half are even, and 0 and 00 are defined to be neither odd nor even. A ball is rolled around the wheel and ends up in one of the slots; we assume that each slot has equal probability of $1 / 38$, and we are interested in the number of the slot into which the ball falls. Let $A=\\{0,00\\}$. Give the value of $P(A)$.",
+    "gt": "0.0526315789",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Let $X_1, X_2$ be independent random variables representing lifetimes (in hours) of two key components of a\r\ndevice that fails when and only when both components fail. Say each $X_i$ has an exponential distribution with mean 1000. Let $Y_1=\\min \\left(X_1, X_2\\right)$ and $Y_2=\\max \\left(X_1, X_2\\right)$, so that the space of $Y_1, Y_2$ is $ 0< y_1 < y_2 < \\infty $ Find $G\\left(y_1, y_2\\right)=P\\left(Y_1 \\leq y_1, Y_2 \\leq y_2\\right)$.",
+    "gt": "0.5117",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Find the number of CSFs in a full CI calculation of $\\mathrm{CH}_2 \\mathrm{SiHF}$ using a 6-31G** basis set.",
+    "gt": "1.86",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that a honeybee is a sphere of diameter 1.000 $\\mathrm{cm}$ with a charge of $+45.0 \\mathrm{pC}$ uniformly spread over its surface. Assume also that a spherical pollen grain of diameter $40.0 \\mu \\mathrm{m}$ is electrically held on the surface of the bee because the bee's charge induces a charge of $-1.00 \\mathrm{pC}$ on the near side of the grain and a charge of $+1.00 \\mathrm{pC}$ on the far side. What is the magnitude of the net electrostatic force on the grain due to the bee? ",
+    "gt": "2.6",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "To perform a rescue, a lunar landing craft needs to hover just above the surface of the moon, which has a gravitational acceleration of $g / 6$. The exhaust velocity is $2000 \\mathrm{~m} / \\mathrm{s}$, but fuel amounting to only 20 percent of the total mass may be used. How long can the landing craft hover?",
+    "gt": "273",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate the number of photons in a $2.00 \\mathrm{~mJ}$ light pulse at (a) $1.06 \\mu \\mathrm{m}$\r\n",
+    "gt": "1.07",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. A sample of carbon dioxide of mass $2.45 \\mathrm{~g}$ at $27.0^{\\circ} \\mathrm{C}$ is allowed to expand reversibly and adiabatically from $500 \\mathrm{~cm}^3$ to $3.00 \\mathrm{dm}^3$. What is the work done by the gas?",
+    "gt": " -194",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "In a spherical metal shell of radius $R$, an electron is shot from the center directly toward a tiny hole in the shell, through which it escapes. The shell is negatively charged with a surface charge density (charge per unit area) of $6.90 \\times 10^{-13} \\mathrm{C} / \\mathrm{m}^2$. What is the magnitude of the electron's acceleration when it reaches radial distances $r=0.500 R$?",
+    "gt": "0",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Suppose that a mass weighing $10 \\mathrm{lb}$ stretches a spring $2 \\mathrm{in}$. If the mass is displaced an additional 2 in. and is then set in motion with an initial upward velocity of $1 \\mathrm{ft} / \\mathrm{s}$, by determining the position of the mass at any later time, calculate the phase of the motion.",
+    "gt": "-0.40864",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A student drops a water-filled balloon from the roof of the tallest building in town trying to hit her roommate on the ground (who is too quick). The first student ducks back but hears the water splash $4.021 \\mathrm{~s}$ after dropping the balloon. If the speed of sound is $331 \\mathrm{~m} / \\mathrm{s}$, find the height of the building, neglecting air resistance.",
+    "gt": "71",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A British warship fires a projectile due south near the Falkland Islands during World War I at latitude $50^{\\circ} \\mathrm{S}$. If the shells are fired at $37^{\\circ}$ elevation with a speed of $800 \\mathrm{~m} / \\mathrm{s}$, by how much do the shells miss their target?",
+    "gt": "260",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A quality engineer wanted to be $98 \\%$ confident that the maximum error of the estimate of the mean strength, $\\mu$, of the left hinge on a vanity cover molded by a machine is 0.25 . A preliminary sample of size $n=32$ parts yielded a sample mean of $\\bar{x}=35.68$ and a standard deviation of $s=1.723$. How large a sample is required?",
+    "gt": "257",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298 K unless otherwise stated. 3.17 Estimate the standard reaction Gibbs energy of $\\mathrm{N}_2(\\mathrm{~g})+3 \\mathrm{H}_2(\\mathrm{~g}) \\rightarrow$ $2 \\mathrm{NH}_3(\\mathrm{~g})$ at $1000 \\mathrm{~K}$ from their values at $298 \\mathrm{~K}$.",
+    "gt": "+107",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Find the value of the integral $\\int_S(\\nabla \\times \\mathbf{A}) \\cdot d \\mathbf{a}$ if the vector $\\mathbf{A}=y \\mathbf{i}+z \\mathbf{j}+x \\mathbf{k}$ and $S$ is the surface defined by the paraboloid $z=1-x^2-y^2$, where $z \\geq 0$.",
+    "gt": "-3.141592",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A gas at $250 \\mathrm{~K}$ and $15 \\mathrm{~atm}$ has a molar volume 12 per cent smaller than that calculated from the perfect gas law. Calculate the molar volume of the gas.",
+    "gt": "1.2",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A playful astronaut releases a bowling ball, of mass $m=$ $7.20 \\mathrm{~kg}$, into circular orbit about Earth at an altitude $h$ of $350 \\mathrm{~km}$.\r\nWhat is the mechanical energy $E$ of the ball in its orbit?",
+    "gt": "-214",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "An urn contains 10 red and 10 white balls. The balls are drawn from the urn at random, one at a time. Find the probability that the fourth white ball is the fourth ball drawn if the sampling is done with replacement.",
+    "gt": "0.0625",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": " Two point charges of $30 \\mathrm{nC}$ and $-40 \\mathrm{nC}$ are held fixed on an $x$ axis, at the origin and at $x=72 \\mathrm{~cm}$, respectively. A particle with a charge of $42 \\mu \\mathrm{C}$ is released from rest at $x=28 \\mathrm{~cm}$. If the initial acceleration of the particle has a magnitude of $100 \\mathrm{~km} / \\mathrm{s}^2$, what is the particle's mass?",
+    "gt": "2.2",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "An insurance company sells several types of insurance policies, including auto policies and homeowner policies. Let $A_1$ be those people with an auto policy only, $A_2$ those people with a homeowner policy only, and $A_3$ those people with both an auto and homeowner policy (but no other policies). For a person randomly selected from the company's policy holders, suppose that $P\\left(A_1\\right)=0.3, P\\left(A_2\\right)=0.2$, and $P\\left(A_3\\right)=0.2$. Further, let $B$ be the event that the person will renew at least one of these policies. Say from past experience that we assign the conditional probabilities $P\\left(B \\mid A_1\\right)=0.6, P\\left(B \\mid A_2\\right)=0.7$, and $P\\left(B \\mid A_3\\right)=0.8$. Given that the person selected at random has an auto or homeowner policy, what is the conditional probability that the person will renew at least one of those policies?",
+    "gt": "0.686",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The densities of air at $-85^{\\circ} \\mathrm{C}, 0^{\\circ} \\mathrm{C}$, and $100^{\\circ} \\mathrm{C}$ are $1.877 \\mathrm{~g} \\mathrm{dm}^{-3}, 1.294 \\mathrm{~g}$ $\\mathrm{dm}^{-3}$, and $0.946 \\mathrm{~g} \\mathrm{dm}^{-3}$, respectively. From these data, and assuming that air obeys Charles's law, determine a value for the absolute zero of temperature in degrees Celsius.",
+    "gt": "-273",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The world’s largest ball of string is about 2 m in radius. To the nearest order of magnitude, what is the total length L of the string in the ball?",
+    "gt": "2",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Halley's comet, which passed around the sun early in 1986, moves in a highly elliptical orbit with an eccentricity of 0.967 and a period of 76 years. Calculate its minimum  distances from the Sun.",
+    "gt": "8.8",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Find the probability that the electron in the ground-state $\\mathrm{H}$ atom is less than a distance $a$ from the nucleus.",
+    "gt": "0.323",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "$\\mathrm{N}_2 \\mathrm{O}_3$ dissociates according to the equilibrium $\\mathrm{N}_2 \\mathrm{O}_3(\\mathrm{~g}) \\rightleftharpoons \\mathrm{NO}_2(\\mathrm{~g})+\\mathrm{NO}(\\mathrm{g})$. At $298 \\mathrm{~K}$ and one bar pressure, the degree of dissociation defined as the ratio of moles of $\\mathrm{NO}_2(g)$ or $\\mathrm{NO}(g)$ to the moles of the reactant assuming no dissociation occurs is $3.5 \\times 10^{-3}$. Calculate $\\Delta G_R^{\\circ}$ for this reaction.",
+    "gt": "28",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A skier weighing $90$ kg starts from rest down a hill inclined at $17^\\circ$. He skis 100 m down the hill and then coasts for 70 m along level snow until he stops. Given a coefficient of kinetic friction of $\\mu_k = 0.18$, what velocity does the skier have at the bottom of the hill?",
+    "gt": "15.6",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "At time $t=0$ a tank contains $Q_0 \\mathrm{lb}$ of salt dissolved in 100 gal of water. Assume that water containing $\\frac{1}{4} \\mathrm{lb}$ of salt/gal is entering the tank at a rate of $r \\mathrm{gal} / \\mathrm{min}$ and that the well-stirred mixture is draining from the tank at the same rate. Set up the initial value problem that describes this flow process. By finding the amount of salt $Q(t)$ in the tank at any time, and the limiting amount $Q_L$ that is present after a very long time, if $r=3$ and $Q_0=2 Q_L$, find the time $T$ after which the salt level is within $2 \\%$ of $Q_L$.",
+    "gt": "130.400766848",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. Calculate the change in the molar Gibbs energy of hydrogen gas when its pressure is increased isothermally from $1.0 \\mathrm{~atm}$ to 100.0 atm at $298 \\mathrm{~K}$.",
+    "gt": "+11",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A particle is subject to the potential energy $V=a x^4+b y^4+c z^4$. If its ground-state energy is $10 \\mathrm{eV}$, calculate $\\langle V\\rangle$ for the ground state.",
+    "gt": "3.333333333",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "For a macroscopic object of mass $1.0 \\mathrm{~g}$ moving with speed $1.0 \\mathrm{~cm} / \\mathrm{s}$ in a one-dimensional box of length $1.0 \\mathrm{~cm}$, find the quantum number $n$.",
+    "gt": "3",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Consider the initial value problem (see Example 5)\r\n$$\r\ny^{\\prime \\prime}+5 y^{\\prime}+6 y=0, \\quad y(0)=2, \\quad y^{\\prime}(0)=\\beta\r\n$$\r\nwhere $\\beta>0$.\r\nDetermine the smallest value of $\\beta$ for which $y_m \\geq 4$.",
+    "gt": "16.3923",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A constant-volume perfect gas thermometer indicates a pressure of $6.69 \\mathrm{kPa}$ at the triple point temperature of water (273.16 K). What change of pressure indicates a change of $1.00 \\mathrm{~K}$ at this temperature?",
+    "gt": "0.0245",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Consider the initial value problem\r\n$$\r\ny^{\\prime}=t y(4-y) /(1+t), \\quad y(0)=y_0>0 .\r\n$$\r\nIf $y_0=2$, find the time $T$ at which the solution first reaches the value 3.99.",
+    "gt": "2.84367",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "At $298.15 \\mathrm{~K}, \\Delta G_f^{\\circ}(\\mathrm{HCOOH}, g)=-351.0 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$ and $\\Delta G_f^{\\circ}(\\mathrm{HCOOH}, l)=-361.4 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$. Calculate the vapor pressure of formic acid at this temperature.",
+    "gt": "1.51",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. A sample of $4.50 \\mathrm{~g}$ of methane occupies $12.7 \\mathrm{dm}^3$ at $310 \\mathrm{~K}$. Calculate the work done when the gas expands isothermally against a constant external pressure of 200 Torr until its volume has increased by\r\n$3.3 \\mathrm{dm}^3$.",
+    "gt": "-88",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The force constant of ${ }^{35} \\mathrm{Cl}^{35} \\mathrm{Cl}$ is $319 \\mathrm{~N} \\cdot \\mathrm{m}^{-1}$. Calculate the fundamental vibrational frequency",
+    "gt": "556",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": " If $R$ is the total resistance of three resistors, connected in parallel, with resistances $R_1, R_2, R_3$, then\r\n$$\r\n\\frac{1}{R}=\\frac{1}{R_1}+\\frac{1}{R_2}+\\frac{1}{R_3}\r\n$$\r\nIf the resistances are measured in ohms as $R_1=25 \\Omega$, $R_2=40 \\Omega$, and $R_3=50 \\Omega$, with a possible error of $0.5 \\%$ in each case, estimate the maximum error in the calculated value of $R$.",
+    "gt": "0.05882352941",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A recent college graduate borrows $\\$ 100,000$ at an interest rate of $9 \\%$ to purchase a condominium. Anticipating steady salary increases, the buyer expects to make payments at a monthly rate of $800(1+t / 120)$, where $t$ is the number of months since the loan was made.\r\nAssuming that this payment schedule can be maintained, when will the loan be fully paid?",
+    "gt": " 135.36",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "During a storm, a crate of crepe is sliding across a slick, oily parking lot through a displacement $\\vec{d}=(-3.0 \\mathrm{~m}) \\hat{\\mathrm{i}}$ while a steady wind pushes against the crate with a force $\\vec{F}=(2.0 \\mathrm{~N}) \\hat{\\mathrm{i}}+(-6.0 \\mathrm{~N}) \\hat{\\mathrm{j}}$. If the crate has a kinetic energy of $10 \\mathrm{~J}$ at the beginning of displacement $\\vec{d}$, what is its kinetic energy at the end of $\\vec{d}$ ?",
+    "gt": "4.0",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The sedimentation coefficient of lysozyme $\\left(\\mathrm{M}=14,100 \\mathrm{~g} \\mathrm{~mol}^{-1}\\right)$ in water at $20^{\\circ} \\mathrm{C}$ is $1.91 \\times 10^{-13} \\mathrm{~s}$ and the specific volume is $0.703 \\mathrm{~cm}^3 \\mathrm{~g}^{-1}$. The density of water at this temperature is $0.998 \\mathrm{~g} \\mathrm{~cm}^{-3}$ and $\\eta=1.002 \\mathrm{cP}$. Assuming lysozyme is spherical, what is the radius of this protein?",
+    "gt": "1.94",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "If $X$ is a random variable with mean 33 and variance 16, use Chebyshev's inequality to find An upper bound for $P(|X-33| \\geq 14)$.",
+    "gt": "0.082",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A constant-volume perfect gas thermometer indicates a pressure of $6.69 \\mathrm{kPa}$ at the triple point temperature of water (273.16 K). What change of pressure indicates a change of $1.00 \\mathrm{~K}$ at the latter temperature?",
+    "gt": "0.0245",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. Calculate the work needed for a $65 \\mathrm{~kg}$ person to climb through $4.0 \\mathrm{~m}$ on the surface of the Earth.",
+    "gt": "2600",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A planning engineer for a new alum plant must present some estimates to his company regarding the capacity of a silo designed to contain bauxite ore until it is processed into alum. The ore resembles pink talcum powder and is poured from a conveyor at the top of the silo. The silo is a cylinder $100 \\mathrm{ft}$ high with a radius of $200 \\mathrm{ft}$. The conveyor carries ore at a rate of $60,000 \\pi \\mathrm{~ft}^3 / \\mathrm{h}$ and the ore maintains a conical shape whose radius is 1.5 times its height. If, at a certain time $t$, the pile is $60 \\mathrm{ft}$ high, how long will it take for the pile to reach the top of the silo?",
+    "gt": "9.8",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The $J=2$ to 3 rotational transition in a certain diatomic molecule occurs at $126.4 \\mathrm{GHz}$, where $1 \\mathrm{GHz} \\equiv 10^9 \\mathrm{~Hz}$. Find the frequency of the $J=5$ to 6 absorption in this molecule.",
+    "gt": " 252.8",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Consider the initial value problem\r\n$$\r\n5 u^{\\prime \\prime}+2 u^{\\prime}+7 u=0, \\quad u(0)=2, \\quad u^{\\prime}(0)=1\r\n$$\r\nFind the smallest $T$ such that $|u(t)| \\leq 0.1$ for all $t>T$.",
+    "gt": "14.5115",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "What pressure would $131 \\mathrm{g}$ of xenon gas in a vessel of volume $1.0 \\mathrm{dm}^3$ exert at $25^{\\circ} \\mathrm{C}$ if it behaved as a van der Waals gas?",
+    "gt": "22",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A young person with no initial capital invests $k$ dollars per year at an annual rate of return $r$. Assume that investments are made continuously and that the return is compounded continuously.\r\nIf $r=7.5 \\%$, determine $k$ so that $\\$ 1$ million will be available for retirement in 40 years.",
+    "gt": "3930",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The barometric formula relates the pressure of a gas of molar mass $M$ at an altitude $h$ to its pressure $p_0$ at sea level. Derive this relation by showing that the change in pressure $\\mathrm{d} p$ for an infinitesimal change in altitude $\\mathrm{d} h$ where the density is $\\rho$ is $\\mathrm{d} p=-\\rho g \\mathrm{~d} h$. Remember that $\\rho$ depends on the pressure. Evaluate the pressure difference between the top and bottom of a laboratory vessel of height 15 cm.",
+    "gt": "0.00017",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. Calculate the Carnot efficiency of a modern steam turbine that operates with steam at $300^{\\circ} \\mathrm{C}$ and discharges at $80^{\\circ} \\mathrm{C}$.",
+    "gt": "0.38",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate the percentage difference between $\\ln (1+x)$ and $x$ for $x=0.0050$",
+    "gt": "0.249",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Point charges of $+6.0 \\mu \\mathrm{C}$ and $-4.0 \\mu \\mathrm{C}$ are placed on an $x$ axis, at $x=8.0 \\mathrm{~m}$ and $x=16 \\mathrm{~m}$, respectively. What charge must be placed at $x=24 \\mathrm{~m}$ so that any charge placed at the origin would experience no electrostatic force?\r\n",
+    "gt": "-45",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "An investor deposits $1000 in an account paying interest at a rate of 8% compounded monthly, and also makes additional deposits of \\$25 per month. Find the balance in the account after 3 years.",
+    "gt": "2283.63",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A device contains three components, each of which has a lifetime in hours with the pdf\r\n$$\r\nf(x)=\\frac{2 x}{10^2} e^{-(x / 10)^2}, \\quad 0 < x < \\infty .\r\n$$\r\nThe device fails with the failure of one of the components. Assuming independent lifetimes, what is the probability that the device fails in the first hour of its operation? HINT: $G(y)=P(Y \\leq y)=1-P(Y>y)=1-P$ (all three $>y$ ).",
+    "gt": "0.03",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Let $X_1, X_2, \\ldots, X_{16}$ be a random sample from a normal distribution $N(77,25)$. Compute $P(77<\\bar{X}<79.5)$.",
+    "gt": "0.4772",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "If $P(A)=0.4, P(B)=0.5$, and $P(A \\cap B)=0.3$, find $P(B \\mid A)$.",
+    "gt": "0.75",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. The standard enthalpy of decomposition of the yellow complex $\\mathrm{H}_3 \\mathrm{NSO}_2$ into $\\mathrm{NH}_3$ and $\\mathrm{SO}_2$ is $+40 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$. Calculate the standard enthalpy of formation of $\\mathrm{H}_3 \\mathrm{NSO}_2$.",
+    "gt": "-383",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The volatile liquids $A$ and $\\mathrm{B}$, for which $P_A^*=165$ Torr and $P_B^*=85.1$ Torr are confined to a piston and cylinder assembly. Initially, only the liquid phase is present. As the pressure is reduced, the first vapor is observed at a total pressure of 110 . Torr. Calculate $x_{\\mathrm{A}}$",
+    "gt": "0.312",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A proton and a negatively charged $\\mu$ meson (called a muon) can form a short-lived species called a mesonic atom. The charge of a muon is the same as that on an electron and the mass of a muon is $207 m_{\\mathrm{e}}$. Assume that the Bohr theory can be applied to such a mesonic atom and calculate the frequency associated with the $n=1$ to $n=2$ transition in a mesonic atom.",
+    "gt": "4.59",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The charges and coordinates of two charged particles held fixed in an $x y$ plane are $q_1=+3.0 \\mu \\mathrm{C}, x_1=3.5 \\mathrm{~cm}, y_1=0.50 \\mathrm{~cm}$, and $q_2=-4.0 \\mu \\mathrm{C}, x_2=-2.0 \\mathrm{~cm}, y_2=1.5 \\mathrm{~cm}$. Find the magnitude of the electrostatic force on particle 2 due to particle 1.",
+    "gt": "35",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A muscle fiber contracts by $3.5 \\mathrm{~cm}$ and in doing so lifts a weight. Calculate the work performed by the fiber. Assume the muscle fiber obeys Hooke's law $F=-k x$ with a force constant $k$ of $750 . \\mathrm{N} \\mathrm{m}^{-1}$.",
+    "gt": "0.46",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The vibrational frequency of $I_2$ is $208 \\mathrm{~cm}^{-1}$. At what temperature will the population in the first excited state be half that of the ground state?",
+    "gt": "432",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A $360-\\mathrm{lb}$ gorilla climbs a tree to a height of $20 \\mathrm{~ft}$. Find the work done if the gorilla reaches that height in 5 seconds.",
+    "gt": "7200",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Determine the diffusion coefficient for Ar at $298 \\mathrm{~K}$ and a pressure of $1.00 \\mathrm{~atm}$.",
+    "gt": "1.1",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. Calculate the Carnot efficiency of a primitive steam engine operating on steam at $100^{\\circ} \\mathrm{C}$ and discharging at $60^{\\circ} \\mathrm{C}$.",
+    "gt": "0.11",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A potato of mass 0.5 kg moves under Earth's gravity with an air resistive force of -$kmv$. The terminal velocity of the potato when released from rest is $v = 1000$ m/s, with $k=0.01s^{-1}$. Find the maximum height of the potato if it has the same value of k, but it is initially shot directly upward with a student-made potato gun with an initial velocity of $120$ m/s.",
+    "gt": "680",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A force of $30 \\mathrm{~N}$ is required to maintain a spring stretched from its natural length of $12 \\mathrm{~cm}$ to a length of $15 \\mathrm{~cm}$. How much work is done in stretching the spring from $12 \\mathrm{~cm}$ to $20 \\mathrm{~cm}$ ?\r\n",
+    "gt": "3.2",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "In a rotational spectrum of $\\operatorname{HBr}\\left(B=8.46 \\mathrm{~cm}^{-1}\\right)$, the maximum intensity transition in the R-branch corresponds to the $J=4$ to 5 transition. At what temperature was the spectrum obtained?",
+    "gt": "4943",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A camper stranded in snowy weather loses heat by wind convection. The camper is packing emergency rations consisting of $58 \\%$ sucrose, $31 \\%$ fat, and $11 \\%$ protein by weight. Using the data provided in Problem P4.32 and assuming the fat content of the rations can be treated with palmitic acid data and the protein content similarly by the protein data in Problem P4.32, how much emergency rations must the camper consume in order to compensate for a reduction in body temperature of $3.5 \\mathrm{~K}$ ? Assume the heat capacity of the body equals that of water. Assume the camper weighs $67 \\mathrm{~kg}$.",
+    "gt": "49",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Suppose the concentration of a solute decays exponentially along the length of a container. Calculate the thermodynamic force on the solute at $25^{\\circ} \\mathrm{C}$ given that the concentration falls to half its value in $10 \\mathrm{~cm}$.",
+    "gt": "17",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "If the coefficient of static friction between the block and plane in the previous example is $\\mu_s=0.4$, at what angle $\\theta$ will the block start sliding if it is initially at rest?",
+    "gt": "22",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A particle of charge $1.8 \\mu \\mathrm{C}$ is at the center of a Gaussian cube $55 \\mathrm{~cm}$ on edge. What is the net electric flux through the surface?",
+    "gt": "2.0",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. Calculate the work needed for a $65 \\mathrm{~kg}$ person to climb through $4.0 \\mathrm{~m}$ on the surface of the Moon $\\left(g=1.60 \\mathrm{~m} \\mathrm{~s}^{-2}\\right)$.",
+    "gt": "420",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The activation energy for a reaction is $50 . \\mathrm{J} \\mathrm{mol}^{-1}$. Determine the effect on the rate constant for this reaction with a change in temperature from $273 \\mathrm{~K}$ to $298 \\mathrm{~K}$.",
+    "gt": "0.15",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A hawk flying at $15 \\mathrm{~m} / \\mathrm{s}$ at an altitude of $180 \\mathrm{~m}$ accidentally drops its prey. The parabolic trajectory of the falling prey is described by the equation\r\n$$\r\ny=180-\\frac{x^2}{45}\r\n$$\r\nuntil it hits the ground, where $y$ is its height above the ground and $x$ is the horizontal distance traveled in meters. Calculate the distance traveled by the prey from the time it is dropped until the time it hits the ground. Express your answer correct to the nearest tenth of a meter.",
+    "gt": "209.1",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A simple harmonic oscillator consists of a 100-g mass attached to a spring whose force constant is $10^4 \\mathrm{dyne} / \\mathrm{cm}$. The mass is displaced $3 \\mathrm{~cm}$ and released from rest. Calculate the natural frequency $\\nu_0$.",
+    "gt": "6.9",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Roll a fair six-sided die three times. Let $A_1=$ $\\{1$ or 2 on the first roll $\\}, A_2=\\{3$ or 4 on the second roll $\\}$, and $A_3=\\{5$ or 6 on the third roll $\\}$. It is given that $P\\left(A_i\\right)=1 / 3, i=1,2,3 ; P\\left(A_i \\cap A_j\\right)=(1 / 3)^2, i \\neq j$; and $P\\left(A_1 \\cap A_2 \\cap A_3\\right)=(1 / 3)^3$. Use Theorem 1.1-6 to find $P\\left(A_1 \\cup A_2 \\cup A_3\\right)$.",
+    "gt": "0.6296296296",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The osmotic pressures of solutions of poly(vinyl chloride), PVC, in cyclohexanone at $298 \\mathrm{~K}$ are given below. The pressures are expressed in terms of the heights of solution (of mass density $\\rho=0.980 \\mathrm{~g} \\mathrm{~cm}^{-3}$ ) in balance with the osmotic pressure. Determine the molar mass of the polymer.\r\n$\\begin{array}{llllll}c /\\left(\\mathrm{g} \\mathrm{dm}^{-3}\\right) & 1.00 & 2.00 & 4.00 & 7.00 & 9.00 \\\\ h / \\mathrm{cm} & 0.28 & 0.71 & 2.01 & 5.10 & 8.00\\end{array}$\r\n",
+    "gt": "1.2",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "An urn contains four colored balls: two orange and two blue. Two balls are selected at random without replacement, and you are told that at least one of them is orange. What is the probability that the other ball is also orange?",
+    "gt": "0.2",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The NOF molecule is an asymmetric rotor with rotational constants $3.1752 \\mathrm{~cm}^{-1}, 0.3951 \\mathrm{~cm}^{-1}$, and $0.3505 \\mathrm{~cm}^{-1}$. Calculate the rotational partition function of the molecule at $25^{\\circ} \\mathrm{C}$.",
+    "gt": "7.97",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Imagine gaseous $\\mathrm{Ar}$ at $298 \\mathrm{~K}$ confined to move in a two-dimensional plane of area $1.00 \\mathrm{~cm}^2$. What is the value of the translational partition function?",
+    "gt": "3.9",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Two long, charged, thin-walled, concentric cylindrical shells have radii of 3.0 and $6.0 \\mathrm{~cm}$. The charge per unit length is $5.0 \\times 10^{-6} \\mathrm{C} / \\mathrm{m}$ on the inner shell and $-7.0 \\times 10^{-6} \\mathrm{C} / \\mathrm{m}$ on the outer shell. What is the magnitude $E$ of the electric field at radial distance $r=4.0 \\mathrm{~cm}$?",
+    "gt": "2.3",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The mean temperature of the earth's surface is $288 \\mathrm{~K}$. What is the maximum wavelength of the earth's blackbody radiation?",
+    "gt": "1.01",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "One liter of fully oxygenated blood can carry 0.18 liters of $\\mathrm{O}_2$ measured at $T=298 \\mathrm{~K}$ and $P=1.00 \\mathrm{~atm}$. Calculate the number of moles of $\\mathrm{O}_2$ carried per liter of blood. Hemoglobin, the oxygen transport protein in blood has four oxygen binding sites. How many hemoglobin molecules are required to transport the $\\mathrm{O}_2$ in $1.0 \\mathrm{~L}$ of fully oxygenated blood?",
+    "gt": "1.11",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Determine the molar standard Gibbs energy for ${ }^{35} \\mathrm{Cl}^{35} \\mathrm{Cl}$ where $\\widetilde{\\nu}=560 . \\mathrm{cm}^{-1}, B=0.244 \\mathrm{~cm}^{-1}$, and the ground electronic state is nondegenerate.",
+    "gt": "-57.2",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A helium-neon laser (used in supermarket scanners) emits light at $632.8 \\mathrm{~nm}$. Calculate the frequency of this light.",
+    "gt": "4.738",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The temperature at the point $(x, y, z)$ in a substance with conductivity $K=6.5$ is $u(x, y, z)=2 y^2+2 z^2$. Find the rate of heat flow inward across the cylindrical surface $y^2+z^2=6$, $0 \\leqslant x \\leqslant 4$",
+    "gt": "3920.70763168",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Three drugs are being tested for use as the treatment of a certain disease. Let $p_1, p_2$, and $p_3$ represent the probabilities of success for the respective drugs. As three patients come in, each is given one of the drugs in a random order. After $n=10$ 'triples' and assuming independence, compute the probability that the maximum number of successes with one of the drugs exceeds eight if, in fact, $p_1=p_2=p_3=0.7$ ",
+    "gt": "0.0384",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Find $Y_l^m(\\theta, \\phi)$  for  $l=0$.",
+    "gt": "0.28209479",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": " In the infrared spectrum of $\\mathrm{H}^{127} \\mathrm{I}$, there is an intense line at $2309 \\mathrm{~cm}^{-1}$. Calculate the force constant of $\\mathrm{H}^{127} \\mathrm{I}$.",
+    "gt": "313",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "In a typical model rocket (Estes Alpha III) the Estes C6 solid rocket engine provides a total impulse of $8.5$ N-s. Assume the total rocket mass at launch is $54$ g and that it has a rocket engine of mass $20$ g that burns evenly for $1.5$ s. The rocket diameter is $24$ mm. Assume a constant burn rate of the propellent mass ($11$ g), a rocket exhaust speed $800$ m/s, vertical ascent, and drag coefficient $c_w = 0.75$. Take into account the change of rocket mass with time and omit the effect of gravity. The rocket's speed at burn out is 131 m/s. How far has the rocket traveled at that moment?",
+    "gt": "108",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Let $Y_1 < Y_2 < \\cdots < Y_8$ be the order statistics of eight independent observations from a continuous-type distribution with 70 th percentile $\\pi_{0.7}=27.3$. Determine $P\\left(Y_7<27.3\\right)$.",
+    "gt": "0.2553",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "If the distribution of $Y$ is $b(n, 0.25)$, give a lower bound for $P(|Y / n-0.25|<0.05)$ when $n=1000$.",
+    "gt": "0.925",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Find the value of $y_0$ for which the solution of the initial value problem\r\n$$\r\ny^{\\prime}-y=1+3 \\sin t, \\quad y(0)=y_0\r\n$$\r\nremains finite as $t \\rightarrow \\infty$",
+    "gt": " -2.5",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The mass density of water vapour at $327.6 \\mathrm{~atm}$ and $776.4 \\mathrm{~K}$ is $133.2 \\mathrm{~kg} \\mathrm{~m}^{-3}$. Given that for water $T_{\\mathrm{c}}=647.4 \\mathrm{~K}, p_{\\mathrm{c}}=218.3 \\mathrm{~atm}, a=5.464 \\mathrm{dm}^6 \\mathrm{~atm} \\mathrm{~mol}^{-2}$, $b=0.03049 \\mathrm{dm}^3 \\mathrm{~mol}^{-1}$, and $M=18.02 \\mathrm{~g} \\mathrm{~mol}^{-1}$, calculate the molar volume.",
+    "gt": "0.1353",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Approximately how many oxygen molecules arrive each second at the mitochondrion of an active person with a mass of $84 \\mathrm{~kg}$ ? The following data are available: Oxygen consumption is about $40 . \\mathrm{mL}$ of $\\mathrm{O}_2$ per minute per kilogram of body weight, measured at $T=300 . \\mathrm{K}$ and $P=1.00 \\mathrm{~atm}$. In an adult there are about $1.6 \\times 10^{10}$ cells per kg body mass. Each cell contains about 800 . mitochondria.",
+    "gt": "1.27",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The AM1 valence electronic energies of the atoms $\\mathrm{H}$ and $\\mathrm{O}$ are $-11.396 \\mathrm{eV}$ and $-316.100 \\mathrm{eV}$, respectively. For $\\mathrm{H}_2 \\mathrm{O}$ at its AM1-calculated equilibrium geometry, the AM1 valence electronic energy (core-core repulsion omitted) is $-493.358 \\mathrm{eV}$ and the AM1 core-core repulsion energy is $144.796 \\mathrm{eV}$. For $\\mathrm{H}(g)$ and $\\mathrm{O}(g), \\Delta H_{f, 298}^{\\circ}$ values are 52.102 and $59.559 \\mathrm{kcal} / \\mathrm{mol}$, respectively. Find the AM1 prediction of $\\Delta H_{f, 298}^{\\circ}$ of $\\mathrm{H}_2 \\mathrm{O}(g)$.",
+    "gt": "-59.24",
+    "tag": [
+      "SciBench",
+      "quan"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Consider the initial value problem\r\n$$\r\n2 y^{\\prime \\prime}+3 y^{\\prime}-2 y=0, \\quad y(0)=1, \\quad y^{\\prime}(0)=-\\beta,\r\n$$\r\nwhere $\\beta>0$.\r\nFind the smallest value of $\\beta$ for which the solution has no minimum point.",
+    "gt": "2",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "What is the number of possible 5-card hands (in 5-card poker) drawn from a deck of 52 playing cards?",
+    "gt": "2598960",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A container is divided into two equal compartments. One contains $3.0 \\mathrm{~mol} \\mathrm{H}_2(\\mathrm{~g})$ at $25^{\\circ} \\mathrm{C}$; the other contains $1.0 \\mathrm{~mol} \\mathrm{~N}_2(\\mathrm{~g})$ at $25^{\\circ} \\mathrm{C}$. Calculate the Gibbs energy of mixing when the partition is removed. Assume perfect behaviour.",
+    "gt": "-6.9",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. Calculate the total change in entropy, when a sample of nitrogen gas of mass $14 \\mathrm{~g}$ at $298 \\mathrm{~K}$ and $1.00 \\mathrm{bar}$ doubles its volume in an isothermal irreversible expansion against $p_{\\mathrm{ex}}=0$.",
+    "gt": "+2.9",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "If $\\mathbf{x}=\\left(\\begin{array}{c}2 \\\\ 3 i \\\\ 1-i\\end{array}\\right)$ and $\\mathbf{y}=\\left(\\begin{array}{c}-1+i \\\\ 2 \\\\ 3-i\\end{array}\\right)$, find $(\\mathbf{y}, \\mathbf{y})$.",
+    "gt": "16",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Express the van der Waals parameters $a=0.751 \\mathrm{~atm} \\mathrm{dm}^6 \\mathrm{~mol}^{-2}$ in SI base units.",
+    "gt": "0.0761",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The standard enthalpy of formation of $\\mathrm{H}_2 \\mathrm{O}(\\mathrm{g})$ at $298 \\mathrm{~K}$ is $-241.82 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$. Estimate its value at $100^{\\circ} \\mathrm{C}$ given the following values of the molar heat capacities at constant pressure: $\\mathrm{H}_2 \\mathrm{O}(\\mathrm{g}): 33.58 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1} ; \\mathrm{H}_2(\\mathrm{~g}): 28.82 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1} ; \\mathrm{O}_2(\\mathrm{~g})$ : $29.36 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$. Assume that the heat capacities are independent of temperature.",
+    "gt": "-242.6",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Unless otherwise stated, thermodynamic data are for 298.15 K. Calculate the final temperature of a sample of argon of mass $12.0 \\mathrm{~g}$ that is expanded reversibly and adiabatically from $1.0 \\mathrm{dm}^3$ at $273.15 \\mathrm{~K}$ to $3.0 \\mathrm{dm}^3$.",
+    "gt": "131",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Three students $(S)$ and six faculty members $(F)$ are on a panel discussing a new college policy. In how many different ways can the nine participants be lined up at a table in the front of the auditorium?",
+    "gt": "362880",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The logistic model has been applied to the natural growth of the halibut population in certain areas of the Pacific Ocean. ${ }^{12}$ Let $y$, measured in kilograms, be the total mass, or biomass, of the halibut population at time $t$. The parameters in the logistic equation are estimated to have the values $r=0.71 /$ year and $K=80.5 \\times 10^6 \\mathrm{~kg}$. If the initial biomass is $y_0=0.25 K$, find the biomass 2 years later. ",
+    "gt": "46.7",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A gas at $250 \\mathrm{~K}$ and $15 \\mathrm{~atm}$ has a molar volume 12 per cent smaller than that calculated from the perfect gas law. Calculate the compression factor under these conditions.",
+    "gt": "0.88",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The nucleus of a plutonium-239 atom contains 94 protons. Assume that the nucleus is a sphere with radius $6.64 \\mathrm{fm}$ and with the charge of the protons uniformly spread through the sphere. At the surface of the nucleus, what are the magnitude of the electric field produced by the protons?",
+    "gt": "3.07",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "In nuclear and particle physics, momentum is usually quoted in $MeV / c$ to facilitate calculations. Calculate the kinetic energy of an electron if it has a momentum of $1000$ $MeV/c$",
+    "gt": "999.5",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume all gases are perfect unless stated otherwise. Note that 1 atm = 1.013 25 bar. Unless otherwise stated, thermochemical data are for 298.15 K. A sample consisting of $2.0 \\mathrm{~mol} \\mathrm{CO}_2$ occupies a fixed volume of $15.0 \\mathrm{dm}^3$ at $300 \\mathrm{~K}$. When it is supplied with $2.35 \\mathrm{~kJ}$ of energy as heat its temperature increases to $341 \\mathrm{~K}$. Assume that $\\mathrm{CO}_2$ is described by the van der Waals equation of state, and calculate $\\Delta U$.",
+    "gt": "+2.35",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Let a metallic rod $20 \\mathrm{~cm}$ long be heated to a uniform temperature of $100^{\\circ} \\mathrm{C}$. Suppose that at $t=0$ the ends of the bar are plunged into an ice bath at $0^{\\circ} \\mathrm{C}$, and thereafter maintained at this temperature, but that no heat is allowed to escape through the lateral surface. Determine the temperature at the center of the bar at time $t=30 \\mathrm{~s}$ if the bar is made of silver.",
+    "gt": " 35.91",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate $K_P$ at $600 . \\mathrm{K}$ for the reaction $\\mathrm{N}_2 \\mathrm{O}_4(l) \\rightleftharpoons 2 \\mathrm{NO}_2(g)$ assuming that $\\Delta H_R^{\\circ}$ is constant over the interval 298-725 K.",
+    "gt": "4.76",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "An unknown charge sits on a conducting solid sphere of radius $10 \\mathrm{~cm}$. If the electric field $15 \\mathrm{~cm}$ from the center of the sphere has the magnitude $3.0 \\times 10^3 \\mathrm{~N} / \\mathrm{C}$ and is directed radially inward, what is the net charge on the sphere?\r\n",
+    "gt": "-7.5",
+    "tag": [
+      "SciBench",
+      "fund"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "At 303 . K, the vapor pressure of benzene is 120 . Torr and that of hexane is 189 Torr. Calculate the vapor pressure of a solution for which $x_{\\text {benzene }}=0.28$ assuming ideal behavior.",
+    "gt": "170",
+    "tag": [
+      "SciBench",
+      "thermo"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Find the area of the region enclosed by the parabolas $y=x^2$ and $y=2 x-x^2$",
+    "gt": "0.333333333333333",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Consider the initial value problem\r\n$$\r\ny^{\\prime \\prime}+2 a y^{\\prime}+\\left(a^2+1\\right) y=0, \\quad y(0)=1, \\quad y^{\\prime}(0)=0 .\r\n$$\r\nFor $a=1$ find the smallest $T$ such that $|y(t)|<0.1$ for $t>T$.",
+    "gt": "1.8763",
+    "tag": [
+      "SciBench",
+      "diff"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Shot towers were popular in the eighteenth and nineteenth centuries for dropping melted lead down tall towers to form spheres for bullets. The lead solidified while falling and often landed in water to cool the lead bullets. Many such shot towers were built in New York State. Assume a shot tower was constructed at latitude $42^{\\circ} \\mathrm{N}$, and the lead fell a distance of $27 \\mathrm{~m}$. How far did the lead bullets land from the direct vertical?",
+    "gt": "2.26",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "When an excited nucleus decays, it emits a $\\gamma$ ray. The lifetime of an excited state of a nucleus is of the order of $10^{-12} \\mathrm{~s}$. What is the uncertainty in the energy of the $\\gamma$ ray produced?",
+    "gt": "7",
+    "tag": [
+      "SciBench",
+      "chemmc"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A constant-volume perfect gas thermometer indicates a pressure of $6.69 \\mathrm{kPa}$ at the triple point temperature of water (273.16 K). What pressure indicates a temperature of $100.00^{\\circ} \\mathrm{C}$?",
+    "gt": "9.14",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A string is set into motion by being struck at a point $L/4$ from one end by a triangular hammer. The initial velocity is greatest at $x = L/4$ and decreases linearly to zero at $x = 0$ and $x = L/2$. The region $L/2 \\leq x \\leq L$ is initially undisturbed. Determine the subsequent motion of the string. How many decibels down from the fundamental are the second harmonics?'",
+    "gt": "4.4",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Calculate the typical wavelength of neutrons after reaching thermal equilibrium with their surroundings at $373 \\mathrm{~K}$. For simplicity, assume that the particles are travelling in one dimension.",
+    "gt": "226",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "One model for the spread of an epidemic is that the rate of spread is jointly proportional to the number of infected people and the number of uninfected people. In an isolated town of 5000 inhabitants, 160 people have a disease at the beginning of the week and 1200 have it at the end of the week. How long does it take for $80 \\%$ of the population to become infected?",
+    "gt": "15",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": " If $P(A)=0.8, P(B)=0.5$, and $P(A \\cup B)=0.9$. What is $P(A \\cap B)$?",
+    "gt": "0.9",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The flux of visible photons reaching Earth from the North Star is about $4 \\times 10^3 \\mathrm{~mm}^{-2} \\mathrm{~s}^{-1}$. Of these photons, 30 per cent are absorbed or scattered by the atmosphere and 25 per cent of the surviving photons are scattered by the surface of the cornea of the eye. A further 9 per cent are absorbed inside the cornea. The area of the pupil at night is about $40 \\mathrm{~mm}^2$ and the response time of the eye is about $0.1 \\mathrm{~s}$. Of the photons passing through the pupil, about 43 per cent are absorbed in the ocular medium. How many photons from the North Star are focused onto the retina in $0.1 \\mathrm{~s}$ ?",
+    "gt": "4.4",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. Consider a system consisting of $2.0 \\mathrm{~mol} \\mathrm{CO}_2(\\mathrm{~g})$, initially at $25^{\\circ} \\mathrm{C}$ and $10 \\mathrm{~atm}$ and confined to a cylinder of cross-section $10.0 \\mathrm{~cm}^2$. It is allowed to expand adiabatically against an external pressure of 1.0 atm until the piston has moved outwards through $20 \\mathrm{~cm}$. Assume that carbon dioxide may be considered a perfect gas with $C_{V, \\mathrm{~m}}=28.8 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$ and calculate $w$.",
+    "gt": "-20",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Suppose a nanostructure is modelled by an electron confined to a rectangular region with sides of lengths $L_1=1.0 \\mathrm{~nm}$ and $L_2=2.0 \\mathrm{~nm}$ and is subjected to thermal motion with a typical energy equal to $k T$, where $k$ is Boltzmann's constant. How low should the temperature be for the thermal energy to be comparable to the zero-point energy？",
+    "gt": "5.5",
+    "tag": [
+      "SciBench",
+      "matter"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Suppose that a fair $n$-sided die is rolled $n$ independent times. A match occurs if side $i$ is observed on the $i$ th trial, $i=1,2, \\ldots, n$. Find the limit of this probability as $n$ increases without bound.",
+    "gt": "0.6321205588",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "The data below show the temperature variation of the equilibrium constant of the reaction $\\mathrm{Ag}_2 \\mathrm{CO}_3(\\mathrm{~s}) \\rightleftharpoons \\mathrm{Ag}_2 \\mathrm{O}(\\mathrm{s})+\\mathrm{CO}_2(\\mathrm{~g})$. Calculate the standard reaction enthalpy of the decomposition.\r\n$\\begin{array}{lllll}T / \\mathrm{K} & 350 & 400 & 450 & 500 \\\\ K & 3.98 \\times 10^{-4} & 1.41 \\times 10^{-2} & 1.86 \\times 10^{-1} & 1.48\\end{array}$",
+    "gt": "+80",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "What pressure would $131 \\mathrm{g}$ of xenon gas in a vessel of volume $1.0 \\mathrm{dm}^3$ exert at $25^{\\circ} \\mathrm{C}$ assume it behaved as a perfect gas?",
+    "gt": "24",
+    "tag": [
+      "SciBench",
+      "atkins"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A CAT scan produces equally spaced cross-sectional views of a human organ that provide information about the organ otherwise obtained only by surgery. Suppose that a CAT scan of a human liver shows cross-sections spaced $1.5 \\mathrm{~cm}$ apart. The liver is $15 \\mathrm{~cm}$ long and the cross-sectional areas, in square centimeters, are $0,18,58,79,94,106,117,128,63, 39, 0$. Use the Midpoint Rule to estimate the volume of the liver.\r\n",
+    "gt": "1110",
+    "tag": [
+      "SciBench",
+      "calculus"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "Given below example: Approximate $P(39.75 \\leq \\bar{X} \\leq 41.25)$, where $\\bar{X}$ is the mean of a random sample of size 32 from a distribution with mean $\\mu=40$ and variance $\\sigma^2=8$. In the above example, compute $P(1.7 \\leq Y \\leq 3.2)$ with $n=4$",
+    "gt": "0.6749",
+    "tag": [
+      "SciBench",
+      "stat"
+    ],
+    "source": "SciBench"
+  },
+  {
+    "query": "A particle moves in a plane elliptical orbit described by the position vector $r = 2b \\sin \\omega ti + b \\cos \\omega tj$ \r\n\r\nWhat is the angle between $v$ and $a$ at time $t = \\frac{\\pi}{2\\omega}$ ?",
+    "gt": "90",
+    "tag": [
+      "SciBench",
+      "class"
+    ],
+    "source": "SciBench"
+  }
+]

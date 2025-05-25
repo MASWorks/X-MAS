@@ -1,0 +1,1 @@
+from .x_mas_proto_main import X_MAS_PROTO_MAIN
