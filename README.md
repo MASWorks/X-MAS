@@ -17,13 +17,13 @@
     }
 ```
 
-2. Inference on a dataset/several datasets (the outputs will be saved under "./X-MAS-Bench/results/")
+2. Inference on a dataset (the outputs will be saved under "./X-MAS-Bench/results/")
 ```
 # bash scripts/infer_X-MAS_Bench.sh
-  python X-MAS-Bench/infer_direct.py --model_name <model_name> --model_config <config_path> --test_dataset_name <dataset_name>
+python X-MAS-Bench/infer_direct.py --model_name <model_name> --model_config <config_path> --test_dataset_name <dataset_name>
 ```
 
-3. Evaluate on a dataset/several datasets (the outputs will be saved under "./X-MAS-Bench/results/")
+3. Evaluate on a dataset (the outputs will be saved under "./X-MAS-Bench/results/")
 ```
 # bash scripts/eval_X-MAS_Bench.sh
 python X-MAS-Bench/eval_bench.py --model_name <eval_model_name> --model_config <config_path> --dataset_name <dataset_name> --infer_name <infer_name> --eval_mode bench-test
@@ -45,24 +45,19 @@ You can download the .zip file named results.zip to the "./X-MAS-Bench/results/"
     }
 ```
 
-2. To see if the codebase is executable (e.g., vanilla)
+2. Inference on a dataset (the outputs will be saved under "./X-MAS-Design/results/")
 ```
-python X-MAS-Design/inference_X-MAS.py --method_name vanilla --debug
-```
+# bash scripts/infer_X-MAS_Design.sh
 
-3. To inference on a dataset/several datasets (the outputs will be saved under "./X-MAS-Design/results/")
-```
-# Inference on the whole dataset (Parallel)
+# (Parallel)
 python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --model_name <model_name> --test_dataset_name <test_dataset_name> --model_api_config <model_api_config>
 
 
-# Or inference on the whole dataset (Sequential)
+# Or (Sequential)
 python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --model_name <model_name> --test_dataset_name <test_dataset_name> --model_api_config <model_api_config> --sequential
-
-# bash scripts/infer_X-MAS_Design.sh
 ```
 
-4. To evaluate on a dataset/several datasets (the outputs will be saved under "./X-MAS-Design/results/")
+3. Evaluate on a dataset (the outputs will be saved under "./X-MAS-Design/results/")
 ```
 bash scripts/eval_X-MAS_Design.sh
 ```
