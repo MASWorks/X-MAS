@@ -115,123 +115,73 @@ def save_obj_to_jsonl(query:str, response_text:str, prompt:str, save_path:str):
 import logging
 class LLM():
 
-    def __init__(self, model_list):
-        self.model_list = model_list
+    def __init__(self, general_config, model_list):
+        self.model_temperature = general_config["model_temperature"]
+        self.model_max_tokens = general_config["model_max_tokens"]
+        self.model_timeout = general_config["model_timeout"]        
 
-        if len(self.model_list[0]) == 2:
-            self.model_name, self.model_url = random.choice(self.model_list)
-            self.api_key = "EMPTY"
-        elif len(self.model_list[0]) == 3:
-            self.model_name, self.model_url, self.api_key = random.choice(self.model_list)
-        else:
-            raise ValueError("Invalid model list format.")
+        self.model_list = model_list
+        print(f"model_list: {self.model_list}")
+        model_dict = random.choice(self.model_list)
+        self.model_name, self.model_url, self.api_key = model_dict['model_name'], model_dict['model_url'], model_dict['api_key']
+
     
     @retry(wait=wait_exponential(multiplier=1, min=4, max=10), stop=stop_after_attempt(5), retry_error_callback=handle_retry_error)
-    def call_llm(self, prompt, temperature=0.5):
+    def call_llm(self, prompt=None, system_prompt=None, messages=None, model_name=None, temperature=0.5):
+        model_name = model_name if model_name is not None else self.model_name
+        model_url, api_key = self.model_url, self.api_key
+        print(f"\nmodel_name: {model_name}, model_url: {model_url}, api_key: {api_key}")
+
+        if messages is None:
+            assert prompt is not None, "'prompt' must be provided if 'messages' is not provided."
+            if system_prompt is not None:
+                messages = [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}]
+            else:
+                messages = [{"role": "user", "content": prompt}]
         
-        retries = 0
-        while retries < 3:
+        model_temperature = temperature if temperature is not None else self.model_temperature
+        model_max_tokens = 2048 if "7b" in model_name else 8192
+
+        request_dict = {
+            "model": model_name,
+            "messages": messages,
+            "max_tokens": model_max_tokens,
+            "timeout": self.model_timeout
+        }
+        if "o1" not in model_name:              # OpenAI's o1 models do not support temperature
+            request_dict["temperature"] = model_temperature
+            
+        llm = openai.OpenAI(base_url=model_url, api_key=api_key)
+        
+        try:
+            completion = llm.chat.completions.create(**request_dict)
+            # response, num_prompt_tokens, num_completion_tokens = completion.choices[0].message.content, completion.usage.prompt_tokens, completion.usage.completion_tokens
+            response = completion
+        except Exception as e:
+            # response = f"Error occurred in call_llm: {str(e)}"   
+            if isinstance(e, str):
+                print("error:", e)
+            else:
+                print("error:", e)
+                print("errorytpe:", type(e))
+                
+        if "r1" in model_name or "qwq" in model_name:
             try:
+                response.choices[0].message.content = response.choices[0].message.content.split("</think>")[-1].strip()
+            except:
+                pass
+        elif "openthinker" in model_name:
+            try:
+                response.choices[0].message.content = response.choices[0].message.content.split('<|begin_of_solution|>')[-1].split('<|end_of_solution|>')[0].strip()
+            except:
+                pass
+        elif "huatuo" in model_name:
+            try:
+                response.choices[0].message.content = response.choices[0].message.content.split('## Final Response')[-1].strip()
+            except:
+                pass
 
-                if self.model_name == "deepseek-reasoner":
-                    proxy_on()
-                    llm = openai.OpenAI(base_url="https://api.deepseek.com", api_key="..")
-                    completion = llm.chat.completions.create(
-                        model="deepseek-reasoner",
-                        messages=[
-                            {"role":"user", "content":prompt}
-                        ],
-                        max_tokens=8192,
-                        stream=False
-                    )
-                    proxy_off()
-
-                    response = completion.choices[0].message.content
-                    if "r1" in self.model_name:
-                        try:
-                            response = response.split("</think>")[-1]
-                        except:
-                            pass
-                    ############### 添加 写入文件的逻辑 ######################
-
-                    response_text = completion.choices[0].message.content
-                    
-                    save_obj_to_jsonl(self.query, response_text, prompt, self.save_path)
-                    return response
-
-                if ("gpt" not in self.model_name and "o1" not in self.model_name) or self.model_name in default_model_list:
-                    llm = openai.OpenAI(base_url=f"{self.model_url}", api_key=self.api_key)
-                    if 'qwq' in self.model_name or 'r1' in self.model_name:
-                        max_tokens = 8192
-                        timeout = 600
-                    else:
-                        max_tokens = 2048
-                        timeout = 180
-                    try:
-                        completion = llm.chat.completions.create(
-                            model=f"{self.model_name}",
-                            messages=[
-                                {"role": "user", "content": prompt}
-                            ],
-                            stop=['<|eot_id|>'],
-                            temperature=temperature,
-                            max_tokens=max_tokens,
-                            timeout=timeout
-                        )
-                        # response = completion.choices[0].message.content
-                        response = completion
-                    except Exception as e:
-                        response = f"Error occurred: {str(e)}"
-                        print(response)
-                        return response
-                    
-                    ############### 添加 写入文件的逻辑 ######################
-                    response_text = completion.choices[0].message.content
-                    save_obj_to_jsonl(self.query, response_text, prompt, self.save_path)
-                    return response
-                else:
-                    proxy_on()
-                    payload_dict = {
-                        "model": self.model_name,
-                        "messages": [
-                            {
-                                "role": "user",
-                                "content": prompt
-                            }
-                        ]
-                    }
-                    if "o1" not in self.model_name:
-                        payload_dict["temperature"] = temperature
-                    if "o1" not in self.model_name:
-                        payload_dict["max_completion_tokens"] = 4096
-                    # else:
-                    #     payload_dict["max_completion_tokens"] = 16384
-                    payload = json.dumps(payload_dict)
-                    headers = {
-                        'Authorization': 'sk-',
-                        'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',
-                        'Content-Type': 'application/json',
-                        'Accept': '*/*',
-                        'Host': '..',
-                        'Connection': 'keep-alive'
-                        }
-                    result = requests.request("POST", "http://../v1/chat/completions", headers=headers, data=payload)
-                    print(result.json())
-                    # if "o1" in self.model_name:
-                    print(result)
-                    response = result.json()["choices"][0]["message"]["content"]
-
-                    ############### 添加 写入文件的逻辑 ######################
-                    response_text = result.json()["choices"][0]["message"]["content"]
-                    save_obj_to_jsonl(self.query, response_text, prompt, self.save_path)
-
-                    return response
-            except Exception as e:
-                retries += 1
-                logging.error(f"{retries}-th request failed with error: {e}")
-                if retries == 3:
-                    logging.error(f"After 3 retries, request failed with error: {e}")
-                    return None
+        return response
 
 
 def execute_code(code, temp_dir="mas_workspace_1/mas_workspace_2/mas_workspace_3", timeout=10):

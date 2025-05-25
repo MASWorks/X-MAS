@@ -12,13 +12,17 @@ from copy import deepcopy
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--model_name", type=str, default="llama-3-70b-instruct", help="The agent backend to be used for inference.")
+parser.add_argument("--model_temperature", type=float, default=0.5, help="Temperature for sampling.")
+parser.add_argument("--model_max_tokens", type=int, default=2048, help="Maximum tokens for sampling.")
+parser.add_argument("--model_timeout", type=int, default=600, help="Timeout for sampling.")
 parser.add_argument("--model_config", type=str, default=".json")
 parser.add_argument("--aggregate_model_names", type=str, nargs='+', default=["llama-3.3-70b-instruct", "qwen2.5-32b-instruct", "deepseek-r1-distill-qwen-32b"])
-parser.add_argument("--test_dataset_names", type=str, nargs='+', default=["MATH", "GSM8K", "AQUA-RAT", "MedMCQA"])
+parser.add_argument("--test_dataset_name", type=str, default="MedMCQA")
 parser.add_argument("--sample_num", type=int, default=500)
 parser.add_argument("--sequential", action="store_true")
 parser.add_argument("--dry_run", action="store_true")
 args = parser.parse_args()
+general_config = vars(args)
 
 from utils import LLM
 
@@ -77,10 +81,10 @@ def create_shuffled_matrix(N, M):
 # # ============== parallel execution ==============
 def process_sample(sample):
     
-    llm = LLM(model_list)
+    llm = LLM(general_config, model_list)
     query = sample["aggregate_query"]
     try:
-        response = llm.call_llm(query)
+        response = llm.call_llm(prompt = query)
 
 
         if isinstance(response, str):
@@ -121,55 +125,54 @@ def process_sample(sample):
         logging.error(f"{query[:20]} failed to execute: {e}\nTraceback:\n{traceback.format_exc()}")
 
 # ============== main ==============
-for i, test_dataset_name in enumerate(args.test_dataset_names):
+test_dataset_name = args.test_dataset_name
 
-    try:
+try:
 
-        print(f">> Processing Aggregate {i}-th dataset: {test_dataset_name} with {args.model_name}")
+    # ================== Define the output files ==================
+    output_logging = f"X-MAS-Bench/results/{test_dataset_name}/log/{args.model_name}_aggregate.txt"
+    output_json = f"X-MAS-Bench/results/{test_dataset_name}/{args.model_name}_aggregate.jsonl"
+    output_dir_log = os.path.dirname(output_logging)
+    output_dir_json = os.path.dirname(output_json)
+    os.makedirs(output_dir_log, exist_ok=True)
+    os.makedirs(output_dir_json, exist_ok=True)
+    logging.basicConfig(filename=output_logging, level=logging.INFO, format='%(asctime)s - %(message)s')
 
-        # ================== Define the output files ==================
-        output_logging = f"X-MAS-Bench/results/{test_dataset_name}/log/{args.model_name}_aggregate.txt"
-        output_json = f"X-MAS-Bench/results/{test_dataset_name}/{args.model_name}_aggregate.jsonl"
-        output_dir = os.path.dirname(output_logging)
-        os.makedirs(output_dir, exist_ok=True)
-        logging.basicConfig(filename=output_logging, level=logging.INFO, format='%(asctime)s - %(message)s')
+    # ================== Load the files to be processed ==================
+    if test_dataset_name == "SciKnowEval":
+        sample_num = 800
+    else:
+        sample_num = args.sample_num
+    sample_pool = get_sample_pool(test_dataset_name, args.aggregate_model_names)
+    sample_pool = sample_pool[:sample_num] if sample_num > 0 else sample_pool
+    sample_pool = sample_pool[:5] if args.dry_run else sample_pool
+    print(f">> Aggregate Initially: {len(sample_pool)} samples ")
 
-        # ================== Load the files to be processed ==================
-        if test_dataset_name == "SciKnowEval":
-            sample_num = 800
-        else:
-            sample_num = args.sample_num
-        sample_pool = get_sample_pool(test_dataset_name, args.aggregate_model_names)
-        sample_pool = sample_pool[:sample_num] if sample_num > 0 else sample_pool
-        sample_pool = sample_pool[:5] if args.dry_run else sample_pool
-        print(f">> Aggregate Initially: {len(sample_pool)} samples ")
+    # ================== Load the processed queries ==================
+    processed_queries = set()
+    if os.path.exists(output_json):
+        with open(output_json, "r") as f:
+            for line in f:
+                infered_sample = json.loads(line)
+                processed_queries.add(infered_sample["query"])
+    sample_pool = [sample for sample in sample_pool if sample["query"] not in processed_queries]
+    print(f">> Aggregate After filtering: {len(sample_pool)} samples with {args.model_name} on {test_dataset_name}")
 
-        # ================== Load the processed queries ==================
-        processed_queries = set()
-        if os.path.exists(output_json):
-            with open(output_json, "r") as f:
-                for line in f:
-                    infered_sample = json.loads(line)
-                    processed_queries.add(infered_sample["query"])
-        sample_pool = [sample for sample in sample_pool if sample["query"] not in processed_queries]
-        print(f">> Aggregate After filtering: {len(sample_pool)} samples with {args.model_name} on {test_dataset_name}")
+    # ================== Define the model list ==================
+    with open(args.model_config, "r") as f:
+        config = json.load(f)
+        model_dict = config["model_dict"]
 
-        # ================== Define the model list ==================
-        with open(args.model_config, "r") as f:
-            config = json.load(f)
-            model_dict = config["model_dict"]
-            worker_dict = config["worker_dict"]
+    model_list = model_dict[args.model_name]["model_list"]
+    max_workers = model_dict[args.model_name]["max_workers_per_model"] * len(model_list)
 
-        model_list = model_dict[args.model_name]
-        max_workers = worker_dict[args.model_name] * len(model_list)
-
-        if args.sequential:
-            for sample in tqdm(sample_pool, desc=f"Processing aggregate queries with {args.model_name}"):
-                process_sample(sample)
-        else:
-            # Use ThreadPoolExecutor to process samples in parallel
-            with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-                for _ in tqdm(executor.map(process_sample, sample_pool), total=len(sample_pool), desc=f"Processing aggregate queries with {args.model_name} on {test_dataset_name}"):
-                    pass
-    except Exception as e:
-        print(f"Aggregate Traceback: {traceback.format_exc()}")
+    if args.sequential:
+        for sample in tqdm(sample_pool, desc=f"Processing aggregate queries with {args.model_name}"):
+            process_sample(sample)
+    else:
+        # Use ThreadPoolExecutor to process samples in parallel
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            for _ in tqdm(executor.map(process_sample, sample_pool), total=len(sample_pool), desc=f"Processing aggregate queries with {args.model_name} on {test_dataset_name}"):
+                pass
+except Exception as e:
+    print(f"Aggregate Traceback: {traceback.format_exc()}")

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 config_path="./configs/X-MAS_Bench_config.json"
-TEST_DATASET_NAMES=("GSM-Hard" "MATH-500" "AQUA-RAT" "AIME_2024" "MBPP-Plus" "MBPP" "HumanEval" "HumanEval-Plus" "MedQA" "MedMCQA" "PubMedQA" "FinanceBench" "FinQA" "FPB" "SciEval" "SciKnowEval" "SciBench" "GPQA" "GPQA-Diamond" "MMLU-Pro" "MMLU")
-# TEST_DATASET_NAMES=("AIME_2024" "FinanceBench" "FinQA" "FPB" "MBPP-Plus" "MBPP")
-# TEST_DATASET_NAMES=("AIME_2024")
+TEST_DATASET_NAMES=("GSM-Hard" "MATH-500" "AQUA-RAT" "AIME-2024" "MBPP-Plus" "MBPP" "HumanEval" "HumanEval-Plus" "MedQA" "MedMCQA" "PubMedQA" "FinanceBench" "FinQA" "FPB" "SciEval" "SciKnowEval" "SciBench" "GPQA" "GPQA-Diamond" "MMLU-Pro" "MMLU")
+# TEST_DATASET_NAMES=("AIME-2024" "FinanceBench" "FinQA" "FPB" "MBPP-Plus" "MBPP")
+# TEST_DATASET_NAMES=("AIME-2024")
 
 
 infer_names=(
@@ -25,7 +25,7 @@ infer_names=(
 
 
 for infer_name in "${infer_names[@]}"; do
-  python eval_output_x-mas-design.py --model_name llama-3.1-70b-instruct --model_config $config_path --dataset_names "${TEST_DATASET_NAMES[@]}" --infer_name $infer_name --eval_mode bench-test
+  python X-MAS-Design/eval_mas.py.py --model_name llama-3.1-70b-instruct --model_config $config_path --dataset_names "${TEST_DATASET_NAMES[@]}" --infer_name $infer_name --eval_mode bench-test
 done
 
 # wait

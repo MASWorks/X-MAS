@@ -1,5 +1,11 @@
 {
     "model_dict": {
+        "qwen-2.5-32b-instruct": {
+            "model_list": [
+                {"model_name": "qwen-2.5-32b-instruct", "model_url": "http://:8090/v1", "api_key": "EMPTY"}
+            ],
+            "max_workers_per_model": 25
+        },
         "gpt-4o-mini-2024-07-18": {
             "model_list": [
                 {"model_name": "gpt-4o-mini-2024-07-18", "model_url": "", "api_key": ""}

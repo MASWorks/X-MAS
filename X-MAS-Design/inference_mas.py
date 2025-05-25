@@ -6,8 +6,8 @@ import concurrent.futures
 from tqdm import tqdm
 import traceback
 
-from X-MAS_methods.mas_base import MAS
-from X-MAS_methods import get_method_class
+from methods.mas_base import MAS
+from methods import get_method_class
 
 def load_model_api_config(model_api_config):
     with open(model_api_config, "r") as f:
@@ -100,7 +100,7 @@ if __name__ == "__main__":
     else:
         print(f">> Method: {args.method_name} | Dataset: {args.test_dataset_name}")
         # load dataset
-        with open(f"./benchmarks/test_pool/{args.test_dataset_name}.json", "r") as f:
+        with open(f"./X-MAS-Design/benchmarks/{args.test_dataset_name}.json", "r") as f:
             test_dataset = json.load(f)
         
         # get output path

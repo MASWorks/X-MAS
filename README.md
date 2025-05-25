@@ -9,21 +9,25 @@
 
 1. Specify your model configs in `./configs/X-MAS_Bench_config.json`:
 ```
-"qwen2.5-32b-instruct": [
-    ["qwen2.5-32b-instruct", "http://a.b.c.d:e/v1", "xyz"]
-]
+"gpt-4o-mini-2024-07-18": {
+        "model_list": [
+            {"model_name": "gpt-4o-mini-2024-07-18", "model_url": "http://a.b.c.d:e/v1", "api_key": "xyz"}
+        ],
+        "max_workers_per_model": 10
+    }
 ```
 
 2. Inference on a dataset/several datasets (the outputs will be saved under "./X-MAS-Bench/results/")
 ```
 # bash scripts/infer_X-MAS_Bench.sh
-python X-MAS-Bench/infer_direct.py --model_name <model_name> --model_config <model_config> --test_dataset_names <test_dataset_name_1> <test_dataset_name_2>
+  python X-MAS-Bench/infer_direct.py --model_name <model_name> --model_config <config_path> --test_dataset_name <dataset_name>
 ```
 
 3. Evaluate on a dataset/several datasets (the outputs will be saved under "./X-MAS-Bench/results/")
 ```
 # bash scripts/eval_X-MAS_Bench.sh
-python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --model_name <model_name> --test_dataset_name <test_dataset_name> --model_api_config <model_api_config>
+python X-MAS-Bench/eval_bench.py --model_name <eval_model_name> --model_config <config_path> --dataset_name <dataset_name> --infer_name <infer_name> --eval_mode bench-test
+# We use llama-3.1-70b-instruct as <eval_model_name>
 ```
 
 Note that we release the experimental results of the X-MAS-Bench in [Google Drive](https://drive.google.com/file/d/1oukYZLDOuc98i-ICkoZ6OYME9a7-AuH1/view?usp=drive_link).
@@ -49,10 +53,11 @@ python X-MAS-Design/inference_X-MAS.py --method_name vanilla --debug
 3. To inference on a dataset/several datasets (the outputs will be saved under "./X-MAS-Design/results/")
 ```
 # Inference on the whole dataset (Parallel)
-python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --test_dataset_name <dataset_name>
+python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --model_name <model_name> --test_dataset_name <test_dataset_name> --model_api_config <model_api_config>
+
 
 # Or inference on the whole dataset (Sequential)
-python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --test_dataset_name <dataset_name> --sequential
+python X-MAS-Design/inference_X-MAS.py --method_name <method_name> --model_name <model_name> --test_dataset_name <test_dataset_name> --model_api_config <model_api_config> --sequential
 
 # bash scripts/infer_X-MAS_Design.sh
 ```
