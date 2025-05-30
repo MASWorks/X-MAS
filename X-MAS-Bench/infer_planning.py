@@ -74,16 +74,17 @@ def plan_init_answers(query):
     return str
 
 
-def get_sample_pool(test_dataset_name):              
+def get_sample_pool(test_dataset_name):    
+    test_data_path = f"X-MAS-Bench/benchmarks/{test_dataset_name}.json"
+    with open(test_data_path, "r") as f:
+        samples = json.load(f)        
+          
     sample_pool = []
-    with open(f"X-MAS-Bench/results/{test_dataset_name}/qwen2.5-32b-instruct/direct/qwen2.5-32b-instruct_direct.jsonl", "r") as f:
-        for i, line in enumerate(f):
-            sample = json.loads(line)
-            query = sample["query"]
-            sample_copy = deepcopy(sample)
-            sample_copy["plan_query"] = plan_init_answers(query)
-            del sample_copy["generated_output"]
-            sample_pool.append(sample_copy)
+    for i,sample in enumerate(samples):
+        query = sample["query"]
+        sample_copy = deepcopy(sample)
+        sample_copy["plan_query"] = plan_init_answers(query)
+        sample_pool.append(sample_copy)
 
     return sample_pool
 
@@ -193,8 +194,8 @@ try:
 
 
     # ================== Define the output files ==================
-    output_logging = f"X-MAS-Bench/results/{test_dataset_name}/log/{args.model_name}_plan.txt"
-    output_json = f"X-MAS-Bench/results/{test_dataset_name}/{args.model_name}_plan.jsonl"
+    output_logging = f"X-MAS-Bench/results/{test_dataset_name}/planning/log/{args.model_name}_planning.txt"
+    output_json = f"X-MAS-Bench/results/{test_dataset_name}/planning/{args.model_name}_planning.jsonl"
     output_dir_log = os.path.dirname(output_logging)
     output_dir_json = os.path.dirname(output_json)
     os.makedirs(output_dir_log, exist_ok=True)

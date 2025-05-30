@@ -43,7 +43,7 @@ def evaluate_init_answers(query, answer):
 
 def get_sample_pool(test_dataset_name):
     sample_pool = []
-    with open(f"X-MAS-Bench/results/{test_dataset_name}/qwen2.5-32b-instruct/direct/qwen2.5-32b-instruct_direct.jsonl", "r") as f:
+    with open(f"X-MAS-Bench/results/{test_dataset_name}/qa/qwen2.5-32b-instruct_qa.jsonl", "r") as f:
 
         for i, line in enumerate(f):
             sample = json.loads(line)
@@ -113,8 +113,8 @@ try:
 
 
     # ================== Define the output files ==================
-    output_logging = f"X-MAS-Bench/results/{test_dataset_name}/log/{args.model_name}_evaluate.txt"
-    output_json = f"X-MAS-Bench/results/{test_dataset_name}/{args.model_name}_evaluate.jsonl"
+    output_logging = f"X-MAS-Bench/results/{test_dataset_name}/evaluation/log/{args.model_name}_evaluation.txt"
+    output_json = f"X-MAS-Bench/results/{test_dataset_name}/evaluation/{args.model_name}_evaluation.jsonl"
     output_dir_log = os.path.dirname(output_logging)
     output_dir_json = os.path.dirname(output_json)
     os.makedirs(output_dir_log, exist_ok=True)

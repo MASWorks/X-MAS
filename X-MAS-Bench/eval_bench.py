@@ -658,7 +658,7 @@ def load_source_data(source_dir):
     print(f"Loaded {len(source_map)} source data items.")
     return source_map
 
-def get_evaluation(eval_data, model_url_list, model_name, dataset_name, infer_name, max_workers=4, sequential=False):
+def get_evaluation(eval_data, model_url_list, model_name, dataset_name, function_name, infer_name, max_workers=4, sequential=False):
     """
     批量评分函数，使用并行处理来加速评分过程。
     
@@ -668,7 +668,7 @@ def get_evaluation(eval_data, model_url_list, model_name, dataset_name, infer_na
     """
     # print(eval_data)
     if "evaluate" in infer_name:
-        source_dir = f"./X-MAS-Bench/results/{dataset_name}/qwen2.5-32b-instruct_direct_eval.json"
+        source_dir = f"./X-MAS-Bench/results/{dataset_name}/qa/qwen2.5-32b-instruct_qa_eval.json"
         source_map = load_source_data(source_dir)
     else:
         source_map = {}
@@ -704,7 +704,8 @@ def get_evaluation(eval_data, model_url_list, model_name, dataset_name, infer_na
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_name", type=str, default="llama-3.1-70b-instruct", help="the LLM for judgement")
+    parser.add_argument("--eval_model_name", type=str, default="llama-3.1-70b-instruct", help="the LLM for judgement")
+    parser.add_argument("--model_name", type=str, default="qwen-2.5-32b-instruct", help="the LLM to be judged")
     parser.add_argument("--function_name", type=str, default="direct", help="the function for judgement")
     parser.add_argument("--model_config", type=str, default="")
     parser.add_argument("--dataset_name", type=str, default="MedMCQA")
@@ -713,7 +714,7 @@ if __name__ == "__main__":
     parser.add_argument("--dry_run", action="store_true")
     parser.add_argument("--sequential", action="store_true")
     args = parser.parse_args()
-    # args.infer_name = f"{args.model_name}_{args.function_name}.jsonl"
+    args.infer_name = f"{args.model_name}_{args.function_name}.jsonl"
     print("="*50)
     print(json.dumps(vars(args), indent=4))
     
@@ -735,8 +736,7 @@ if __name__ == "__main__":
 
     # print('-'*20 + f"\n>> Evaluating {i}-th dataset: {dataset_name}")
     if args.eval_mode == "bench-test":
-        infer_path = f"./X-MAS-Bench/results/{dataset_name}/{args.infer_name}"
-        # infer_path = f"./results/{dataset_name}/{args.infer_name}"
+        infer_path = f"./X-MAS-Bench/results/{dataset_name}/{args.function_name}/{args.infer_name}"
 
 
     save_eval_path = infer_path.replace(".jsonl", "_eval.json")
@@ -782,7 +782,7 @@ if __name__ == "__main__":
 
         print(f">> Running Loaded {len(eval_data)} samples")
 
-        eval_content_list, score_list = get_evaluation(eval_data, model_url_list, args.model_name, dataset_name, args.infer_name, max_workers, args.sequential)
+        eval_content_list, score_list = get_evaluation(eval_data, model_url_list, args.model_name, dataset_name, args.function_name, args.infer_name, max_workers, args.sequential)
 
         # mapping the response back to the original query
         for i, eval_content, score in zip(range(len(eval_data)), eval_content_list, score_list):

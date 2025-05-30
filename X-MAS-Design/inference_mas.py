@@ -56,10 +56,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # args related to the method
     parser.add_argument("--method_name", type=str, default="vanilla", help="MAS name.")
-    parser.add_argument("--method_config_name", type=str, default=None, help="The config file name. If None, the default config file will be used.")
+    parser.add_argument("--method_config_name", type=str, default="config_main", help="The method config file name. If None, the default config file will be used.")
 
     # args related to the model
-    parser.add_argument("--model_name", type=str, default="gpt-4o-mini-2024-07-18", help="The agent backend to be used for inference.")
+    # parser.add_argument("--model_name", type=str, default="gpt-4o-mini-2024-07-18", help="The agent backend to be used for inference.")
     parser.add_argument("--model_api_config", type=str, default="configs/X-MAS_Design_config.json")
     parser.add_argument("--model_temperature", type=float, default=0.5, help="Temperature for sampling.")
     parser.add_argument("--model_max_tokens", type=int, default=2048, help="Maximum tokens for sampling.")
@@ -80,7 +80,7 @@ if __name__ == "__main__":
     model_api_config = load_model_api_config(args.model_api_config)
     general_config.update({"model_api_config": model_api_config})
     print("-"*50, f"\n>> Model API config: {general_config['model_api_config']}")
-    print("-"*50, f"\n>> Model API config for X-MAS: {model_api_config[args.model_name]}")
+    print("-"*50, f"\n>> method config for X-MAS: {args.method_config_name}")
     
     if args.debug:
         # MAS inference
@@ -104,7 +104,7 @@ if __name__ == "__main__":
             test_dataset = json.load(f)
         
         # get output path
-        output_path = args.output_path if args.output_path is not None else f"./X-MAS-Design/results/{args.test_dataset_name}/{args.method_name}_manual_4m_infer.jsonl"
+        output_path = args.output_path if args.output_path is not None else f"./X-MAS-Design/results/{args.test_dataset_name}/{args.method_name}/{args.method_name}_{args.method_config_name}.jsonl"
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         
         # reserve unprocessed samples
@@ -122,7 +122,7 @@ if __name__ == "__main__":
             for sample in test_dataset:
                 process_sample(args, general_config, sample, output_path)
         else:
-            max_workers = model_api_config[args.model_name]["max_workers"]
+            max_workers = model_api_config["gpt-4o-mini-2024-07-18"]["max_workers"]
             with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
                 for _ in tqdm(executor.map(lambda sample: process_sample(args, general_config, sample, output_path, lock), test_dataset), total=len(test_dataset), desc=f"Processing queries with {args.method_name} on {args.test_dataset_name}"):
                     pass

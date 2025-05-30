@@ -12,15 +12,12 @@ class MAS():
     def __init__(self, general_config, method_config_name=None):
         
         self.model_api_config = general_config["model_api_config"]
-        self.model_name = general_config["model_name"]
         self.model_temperature = general_config["model_temperature"]
         self.model_max_tokens = general_config["model_max_tokens"]
         self.model_timeout = general_config["model_timeout"]
         
         # Tracking compute costs
-        self.token_stats = {
-            self.model_name: {"num_llm_calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
-        }
+        self.token_stats = {}
 
         self.memory_bank = {}
         self.tools = {}
@@ -35,7 +32,7 @@ class MAS():
 
     @retry(wait=wait_exponential(multiplier=1, min=4, max=10), stop=stop_after_attempt(5), retry_error_callback=handle_retry_error)
     def call_llm(self, prompt=None, system_prompt=None, messages=None, model_name=None, temperature=None):
-        model_name = model_name if model_name is not None else self.model_name
+        model_name = model_name if model_name is not None else "gpt-4o-mini-2024-07-18"
         try:
             model_dict = random.choice(self.model_api_config[model_name]["model_list"])
         except Exception as e:

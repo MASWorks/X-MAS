@@ -3,7 +3,7 @@ from ..mas_base import MAS
 from ..utils import load_config
 
 class LLMDebate(MAS):
-    def __init__(self, general_config, method_config_name="config_general"):
+    def __init__(self, general_config, method_config_name="config_main"):
         super().__init__(general_config)
 
         self.method_config = load_config(os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs", f"{method_config_name}.yaml"))
