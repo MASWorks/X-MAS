@@ -5,9 +5,6 @@ import logging
 from tqdm import tqdm
 import traceback
 import sys
-import numpy as np
-from collections import defaultdict
-from copy import deepcopy
 
 import argparse
 parser = argparse.ArgumentParser()
@@ -15,11 +12,9 @@ parser.add_argument("--model_name", type=str, default="llama-3-70b-instruct", he
 parser.add_argument("--model_temperature", type=float, default=0.5, help="Temperature for sampling.")
 parser.add_argument("--model_max_tokens", type=int, default=2048, help="Maximum tokens for sampling.")
 parser.add_argument("--model_timeout", type=int, default=600, help="Timeout for sampling.")
-parser.add_argument("--model_config", type=str, default=".json")
-parser.add_argument("--aggregate_model_names", type=str, nargs='+', default=["llama-3.3-70b-instruct", "qwen2.5-32b-instruct", "deepseek-r1-distill-qwen-32b"])
+parser.add_argument("--model_config", type=str, default="./configs/X-MAS_Bench_config.json")
 parser.add_argument("--test_dataset_name", type=str, default="MedMCQA")
 parser.add_argument("--sample_num", type=int, default=500)
-parser.add_argument("--sequential", action="store_true")
 parser.add_argument("--dry_run", action="store_true")
 args = parser.parse_args()
 general_config = vars(args)
@@ -29,64 +24,13 @@ from utils import LLM
 print("="*50)
 print(json.dumps(vars(args), indent=4))
 
-def aggregate_init_answers(query, answer_dict, shuffle_index):
-    answers = list(answer_dict.values())
-    answers = [answers[i] for i in shuffle_index]
-
-    str = "You are given a [Question] and several [Solution] to the question. Your task is to provide a final complete solution to the question by reasoning over the given solutions. The question and the solutions are as follows:\n\n"
-
-    str += f"-----\n# [Question]:\n {query}\n\n# [Solutions]:\n"
-
-    for i, result in enumerate(answers):
-        str += f"## [Solution {i+1}]:\n{result}\n\n"
-
-    str += "-----\n\nNow, given the question and all the above solutions, reason over them carefully and provide a final complete solution to the question."
-    return str
-
-
-def get_sample_pool(test_dataset_name, aggregate_model_names):
-    query_dict = defaultdict(dict)
-    for model_name in aggregate_model_names:
-        with open(f"X-MAS-Bench/results/{test_dataset_name}/{model_name}_direct.jsonl", "r") as f:
-            for line in f:
-                sample = json.loads(line)
-                query = sample["query"]
-                query_dict[query][model_name] = sample['generated_output']
-                
-    shuffle_matrix = create_shuffled_matrix(len(query_dict), len(aggregate_model_names))
-    sample_pool = []
-    with open(f"X-MAS-Bench/results/{test_dataset_name}/{aggregate_model_names[0]}_direct.jsonl", "r") as f:
-        for i, line in enumerate(f):
-            sample = json.loads(line)
-            query = sample["query"]
-            sample_copy = deepcopy(sample)
-            del sample_copy["generated_output"]
-            sample_copy["aggregate_query"] = aggregate_init_answers(query, query_dict[query], shuffle_matrix[i])
-            sample_pool.append(sample_copy)
-
-    return sample_pool
-
-def create_shuffled_matrix(N, M):
-    """This function is for ensuring that the solutions to be aggregated are in same random order."""
-
-    np.random.seed(2025)
-    matrix = np.tile(np.arange(M), (N, 1))
-    
-    # 打乱每一行的顺序
-    for i in range(N):
-        np.random.shuffle(matrix[i])
-    
-    return matrix
-
 # # ============== parallel execution ==============
 def process_sample(sample):
     
     llm = LLM(general_config, model_list)
-    query = sample["aggregate_query"]
+    query = sample["query"]
     try:
         response = llm.call_llm(prompt = query)
-
-
         if isinstance(response, str):
             if "Error occurred:" in response and "Error code: 400" in response:
                 with open(output_json, "a") as result_file:
@@ -94,7 +38,7 @@ def process_sample(sample):
                     sample["num_prompt_tokens"] = 0
                     sample["num_completion_tokens"] = 0
                     json.dump(sample, result_file)
-                    result_file.write("\n")        
+                    result_file.write("\n")     
             else:
                 print(f"{query[:20]} failed to execute:{response}") 
         else:
@@ -119,34 +63,35 @@ def process_sample(sample):
                 sample["num_prompt_tokens"] = response.usage.prompt_tokens
                 sample["num_completion_tokens"] = response.usage.completion_tokens
                 json.dump(sample, result_file)
-                result_file.write("\n")        
+                result_file.write("\n")
     
     except Exception as e:
         logging.error(f"{query[:20]} failed to execute: {e}\nTraceback:\n{traceback.format_exc()}")
 
 # ============== main ==============
 test_dataset_name = args.test_dataset_name
-
 try:
-
     # ================== Define the output files ==================
-    output_logging = f"X-MAS-Bench/results/{test_dataset_name}/log/{args.model_name}_aggregate.txt"
-    output_json = f"X-MAS-Bench/results/{test_dataset_name}/{args.model_name}_aggregate.jsonl"
+    output_logging = f"X-MAS-Bench/results/{test_dataset_name}/qa/log/{args.model_name}_qa.txt"
+    output_json = f"X-MAS-Bench/results/{test_dataset_name}/qa/{args.model_name}_qa.jsonl"
+    test_data_path = f"X-MAS-Bench/benchmarks/{test_dataset_name}.json"
+
     output_dir_log = os.path.dirname(output_logging)
     output_dir_json = os.path.dirname(output_json)
     os.makedirs(output_dir_log, exist_ok=True)
     os.makedirs(output_dir_json, exist_ok=True)
     logging.basicConfig(filename=output_logging, level=logging.INFO, format='%(asctime)s - %(message)s')
 
-    # ================== Load the files to be processed ==================
+    # ================== Load the test query pool ==================
     if test_dataset_name == "SciKnowEval":
         sample_num = 800
     else:
         sample_num = args.sample_num
-    sample_pool = get_sample_pool(test_dataset_name, args.aggregate_model_names)
+    with open(test_data_path, "r") as f:
+        sample_pool = json.load(f)
     sample_pool = sample_pool[:sample_num] if sample_num > 0 else sample_pool
     sample_pool = sample_pool[:5] if args.dry_run else sample_pool
-    print(f">> Aggregate Initially: {len(sample_pool)} samples ")
+    print(f">> Initially: {len(sample_pool)} samples")
 
     # ================== Load the processed queries ==================
     processed_queries = set()
@@ -156,7 +101,7 @@ try:
                 infered_sample = json.loads(line)
                 processed_queries.add(infered_sample["query"])
     sample_pool = [sample for sample in sample_pool if sample["query"] not in processed_queries]
-    print(f">> Aggregate After filtering: {len(sample_pool)} samples with {args.model_name} on {test_dataset_name}")
+    print(f">> After filtering: {len(sample_pool)} samples with {args.model_name} on {test_dataset_name}")
 
     # ================== Define the model list ==================
     with open(args.model_config, "r") as f:
@@ -166,13 +111,9 @@ try:
     model_list = model_dict[args.model_name]["model_list"]
     max_workers = model_dict[args.model_name]["max_workers_per_model"] * len(model_list)
 
-    if args.sequential:
-        for sample in tqdm(sample_pool, desc=f"Processing aggregate queries with {args.model_name}"):
-            process_sample(sample)
-    else:
-        # Use ThreadPoolExecutor to process samples in parallel
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            for _ in tqdm(executor.map(process_sample, sample_pool), total=len(sample_pool), desc=f"Processing aggregate queries with {args.model_name} on {test_dataset_name}"):
-                pass
+    # Use ThreadPoolExecutor to process samples in parallel
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        for _ in tqdm(executor.map(process_sample, sample_pool), total=len(sample_pool), desc=f"Processing queries with {args.model_name} on {test_dataset_name}"):
+            pass
 except Exception as e:
-    print(f"Aggregate Traceback: {traceback.format_exc()}")
+    print(f"qa Traceback: {traceback.format_exc()}")

@@ -665,11 +665,7 @@ def get_evaluation(eval_data, model_url_list, model_name, dataset_name, infer_na
     :return: 返回评分列表
     """
     # print(eval_data)
-    if "evaluate" in infer_name:
-        source_dir = f"./X-MAS-Design/results/{dataset_name}/qwen2.5-32b-instruct_direct_eval.json"
-        source_map = load_source_data(source_dir)
-    else:
-        source_map = {}
+    source_map = {}
     
     eval_content_list, scores = [None] * len(eval_data), [None] * len(eval_data)
 
@@ -702,95 +698,94 @@ def get_evaluation(eval_data, model_url_list, model_name, dataset_name, infer_na
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_name", type=str, default="llama-3.1-70b-instruct", help="the LLM for judgement")
-    parser.add_argument("--model_config", type=str, default="config_.json")
-    parser.add_argument("--dataset_names", type=str, nargs='+', default=["MATH", "GSM8K", "AQUA-RAT", "MedMCQA"])
+    parser.add_argument("--eval_model_name", type=str, default="llama-3.1-70b-instruct", help="the LLM for judgement")
+    parser.add_argument("--model_api_config", type=str, default="configs/X-MAS_Design_config.json")
+    parser.add_argument("--method_name", type=str, default="vanilla", help="MAS name.")
+    parser.add_argument("--method_config_name", type=str, default="config_main", help="The method config file name. If None, the default config file will be used.")
+    parser.add_argument("--test_dataset_name", type=str, default="example_math", help="The dataset to be used for testing.")
     parser.add_argument("--eval_mode", type=str, choices=["test", "train", "bench-test"], required=True)
     parser.add_argument("--infer_name", type=str, default="mas_3_5cot-sc_general_infer.jsonl")
     parser.add_argument("--dry_run", action="store_true")
     parser.add_argument("--sequential", action="store_true")
     args = parser.parse_args()
-
+    args.infer_name = f"{args.method_name}_{args.method_config_name}.jsonl"
     print("="*50)
     print(json.dumps(vars(args), indent=4))
     
     # ================== Define the model list ==================
-    with open(args.model_config, "r") as f:
+    with open(args.model_api_config, "r") as f:
         config = json.load(f)
         model_dict = config["model_dict"]
-        worker_dict = config["worker_dict"]
-    model_list = model_dict[args.model_name]
-    model_url_list = [item[1] for item in model_list]
-    max_workers = worker_dict[args.model_name] * len(model_list)
+        
+    model_list = model_dict[args.eval_model_name]["model_list"]
+    model_url_list = [item["model_url"] for item in model_list]
+    max_workers = model_dict[args.eval_model_name]["max_workers_per_model"] * len(model_list)
     print(f">> {len(model_url_list)} models will be used for evaluation")
 
     # ============== main ==============
-    for i, dataset_name in enumerate(args.dataset_names):
-        if dataset_name in ["IFEval"]:
-            continue
-
-        print('-'*20 + f"\n>> Evaluating {i}-th dataset: {dataset_name}")
-        if args.eval_mode == "bench-test":
-            infer_path = f"./X-MAS-Design/results/{dataset_name}/{args.infer_name}"
+    dataset_name = args.test_dataset_name
+        
+    print('-'*20 + f"\n>> Evaluating dataset: {dataset_name}")
+    if args.eval_mode == "bench-test":
+        infer_path = f"./X-MAS-Design/results/{dataset_name}/{args.method_name}/{args.infer_name}"
 
 
-        save_eval_path = infer_path.replace(".jsonl", "_eval.json")
+    save_eval_path = infer_path.replace(".jsonl", "_eval.json")
 
-        eval_data, existing_eval_data = [], []
+    eval_data, existing_eval_data = [], []
 
-        try:
-            print(infer_path)
-            eval_data = []
-            with open(infer_path, "r") as f:
-                tmp = f.readlines()
-            # eval_data = [json.loads(line) for line in tmp]
+    try:
+        print(infer_path)
+        eval_data = []
+        with open(infer_path, "r") as f:
+            tmp = f.readlines()
+        # eval_data = [json.loads(line) for line in tmp]
 
-            for line in tmp:
-                try:
-                    eval_data.append(json.loads(line))
-                except Exception as e:
-                    print(line)
-                    print(f"{e}")
+        for line in tmp:
+            try:
+                eval_data.append(json.loads(line))
+            except Exception as e:
+                print(line)
+                print(f"{e}")
 
-            print(f">> Before filtering: {len(eval_data)} samples")
+        print(f">> Before filtering: {len(eval_data)} samples")
 
-            if os.path.exists(save_eval_path):
-                with open(save_eval_path, "r") as f:
-                    existing_eval_data = json.load(f)
+        if os.path.exists(save_eval_path):
+            with open(save_eval_path, "r") as f:
+                existing_eval_data = json.load(f)
 
-                # 获取已评估过的样本的 query 和 mas_name 的组合，mas_name 不存在时只用 query
-                evaluated_pairs = {
-                    (item['query'], item['mas_name']) if 'mas_name' in item else item['query']
-                    for item in existing_eval_data if 'gt_score' in item
-                }
+            # 获取已评估过的样本的 query 和 mas_name 的组合，mas_name 不存在时只用 query
+            evaluated_pairs = {
+                (item['query'], item['mas_name']) if 'mas_name' in item else item['query']
+                for item in existing_eval_data if 'gt_score' in item
+            }
 
-                # 筛选出那些没有被评估过的样本
-                eval_data = [
-                    item for item in eval_data
-                    if ('mas_name' in item and (item['query'], item['mas_name']) not in evaluated_pairs) or
-                    ('mas_name' not in item and item['query'] not in evaluated_pairs)
-                ]
+            # 筛选出那些没有被评估过的样本
+            eval_data = [
+                item for item in eval_data
+                if ('mas_name' in item and (item['query'], item['mas_name']) not in evaluated_pairs) or
+                ('mas_name' not in item and item['query'] not in evaluated_pairs)
+            ]
 
-            print(f">> After filtering: {len(eval_data)} samples")
+        print(f">> After filtering: {len(eval_data)} samples")
 
-            eval_data = eval_data[1:3] if args.dry_run else eval_data
+        eval_data = eval_data[1:3] if args.dry_run else eval_data
 
-            print(f">> Running Loaded {len(eval_data)} samples")
+        print(f">> Running Loaded {len(eval_data)} samples")
 
-            eval_content_list, score_list = get_evaluation(eval_data, model_url_list, args.model_name, dataset_name, args.infer_name, max_workers, args.sequential)
+        eval_content_list, score_list = get_evaluation(eval_data, model_url_list, args.eval_model_name, dataset_name, args.infer_name, max_workers, args.sequential)
 
-            # mapping the response back to the original query
-            for i, eval_content, score in zip(range(len(eval_data)), eval_content_list, score_list):
-                
-                # 将评分加入到responses中
-                eval_data[i]['eval_content'] = eval_content
-                eval_data[i]['gt_score'] = score
-                existing_eval_data.append(eval_data[i])
+        # mapping the response back to the original query
+        for i, eval_content, score in zip(range(len(eval_data)), eval_content_list, score_list):
+            
+            # 将评分加入到responses中
+            eval_data[i]['eval_content'] = eval_content
+            eval_data[i]['gt_score'] = score
+            existing_eval_data.append(eval_data[i])
 
-            print(f">> Finished evaluating {len(eval_data)} samples")
+        print(f">> Finished evaluating {len(eval_data)} samples")
 
-            with open(save_eval_path, "w") as f:
-                json.dump(existing_eval_data, f, ensure_ascii=False, indent=4)
-        except Exception as e:
-            print(f"Error occurred during evaluation: {e}")
-            continue
+        with open(save_eval_path, "w") as f:
+            json.dump(existing_eval_data, f, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"Error occurred during evaluation: {e}")
